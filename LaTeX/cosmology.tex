@@ -1,0 +1,252 @@
+\documentclass[12pt,twoside]{report}
+%\documentclass[12pt]{article}
+\newcommand{\fontscale}{1.2} % = font size in pt / 10
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman,english]{babel}
+%==== Titel des Beitrags: ======================================
+\newcommand{\autor}{Nicolas Berg and Andreas de Vries}
+\newcommand{\titel}{Cosmology: Basics and Current Trends}
+\newcommand{\untertitel}{}
+%===============================================================
+%%% Seiteneinstellungen: %%%%%%
+\usepackage[paper=a4paper,inner=30mm,outer=30mm,top=28mm,bottom=17mm]{geometry}
+%-------------------------------------------------
+\newcommand{\fett}[1]{\mbox{$\boldsymbol{#1}$}}
+\newcommand{\fettgr}[1]{\mbox{\mathversion{bold}$#1$}} % greeks
+%\newcommand{\fettbb}[1]{\mathbf{#1}} % für die Komplexitätsklassen!
+\usepackage{amsmath}  % geht wohl nicht zusammen mit pictex !!??
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{ifthen}
+\usepackage{listings}
+\usepackage{upquote} % ASCII Apostroph in listings und \verb
+%\usepackage{floatrow} % Positionierung von Float-Objekten wie figure und table
+%\usepackage[font=footnotesize,labelfont=bf,labelsep=period]{caption}
+\usepackage[labelfont=bf,labelsep=period]{caption}
+%%\captionsetup{justification=raggedright,singlelinecheck=false} % Text linksbündig
+
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{float} % [H] places floats (figures & tables) precisely here
+\usepackage{eurosym}
+\usepackage{makeidx}
+\usepackage{sidecap}  % erlaubt \begin{wide} in figure
+\usepackage{wasysym} % Symbole, u.a. Promille (\permil) und Astronomie
+%\usepackage{textcomp}  % Währungen, z.B. \textyen (Yen und Renminbi=Yuan)
+%                       % \texteuro, textcent, \textdollaroldstyle
+
+%%--- Klassische LaTeX Fonts: ----------------------------
+\usepackage[T1]{fontenc}
+%% Times: -------
+\usepackage{newtxtext,newtxmath}
+%\usepackage{mathptmx}
+\usepackage{aurical} % wunderschön, benötigt \Fontskrivan im Text
+\usepackage[scaled=.75]{beramono} % schmaler Monofont
+
+%--- wenn das Paket amsmath nicht geladen wurde:
+%\newcommand{\binom}[2]{{#1 \choose #2}} \newcommand{\boxed}[1]{\fbox{$#1$}}
+
+%% Appendix setting
+%\usepackage[page,toc,titletoc,title]{appendix}
+\usepackage{tocloft}
+
+% --- Konfiguration biblatex -----------------------------------------
+% ---  !!!  Befehl \printbibliography am Ende nicht vergessen !!!  ---
+\usepackage{csquotes,xpatch}
+%\usepackage[backend=biber,style=bwl-FU,dashed=true,giveninits=true,uniquelist=false,maxcitenames=2]{biblatex}\let\cite\footcite\let\cites\footcites
+%\usepackage[backend=biber,style=ieee,sorting=nyt]{biblatex} % nummeriert
+%\usepackage[style=nature,doi=true,sorting=nyt,intitle=true]{biblatex} %
+\usepackage[style=numeric-comp,sorting=nyt,firstinits=true,maxnames=5]{biblatex} % nummeriert
+
+%\DefineBibliographyStrings{ngerman}{andothers = {{et\,al\adddot}},} % "et al." statt "u.a."
+
+\addbibresource{./mathphys.bib}
+%\addbibresource{../../bibtex/mathphys.bib}
+%---------------------------------------------------------------------
+
+%--- Eigene Definitionen: -------------------------------------------
+\newcommand{\itemspace}{\hspace*{0ex}} % Abstandskorrektur in itemize-Umgebung: 3ex bei svmono, 0 sonst 
+\newcommand{\dist}{\hspace*{-1.1ex}} % Abstandskorrektur in eqnarray-Umgebung, -1.75ex/1.5ex/0ex
+\newcommand{\Euro}{\ \euro\,}
+\newcommand{\D}{\,\mathrm{d}}
+\newcommand{\DD}{\mathrm{d}} % ohne Abstand
+\newcommand{\E}{\,\mathrm{e}}
+\newcommand{\I}{\mathrm{i}}
+\renewcommand{\Im}{\mathrm{Im}\,}
+\renewcommand{\Re}{\mathrm{Re}\,}
+\newcommand{\qq}[1]{\symbol{34}#1\symbol{34}}
+%\newcommand{\qq}[1]{\code{'\hspace*{-1ex}'\hspace*{-.25ex}#1\hspace*{-.25ex}'\hspace*{-1.0ex}'\hspace*{-.25ex}}}
+\newcommand{\q}{\code{\symbol{34}}}
+%\newcommand{\q}{\code{'\hspace*{-1ex}'\hspace*{-.25ex}}}
+\newcommand{\bitrot}{\symbol{60}\symbol{60}\symbol{60}\ }
+\newcommand{\az}{\symbol{34}}  % Anführungszeichen "
+\newcommand{\unterstrich}{\symbol{95}}
+\newcommand{\leer}{\lambda}
+\newcommand{\bs}{\symbol{92}} % backslash, Schräger
+\renewcommand{\mid}{\,|\,}
+\newcommand{\scri}{\mathscr{I}}
+
+\usepackage[pdftex]{rotating,graphicx}
+\usepackage{hyperref}
+
+\hypersetup{%
+  pdftitle={\titel},
+  pdfauthor={\autor},%
+  colorlinks=false,plainpages=false,%
+  hidelinks,
+}
+
+\graphicspath{{./graphics},{../Historie/ART/bilder}}
+
+\usepackage{mathtools} % required to draw pentagon axiom / equation diagram
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usetikzlibrary{shapes,arrows,patterns,positioning,matrix,decorations.markings} %,snakes}
+\usepackage[europeanresistors,americaninductors]{circuitikz}\ctikzset{bipoles/length=5ex}
+\definecolor{rot}{rgb}{.9,0,0} % tikz color
+\definecolor{gruen}{rgb}{0,.6,0} % tikz color
+\definecolor{blau}{rgb}{0,0,.6} % tikz color
+\definecolor{gold}{rgb}{1.,.95,0} % tikz color
+\definecolor{hellblau}{rgb}{.95,.95,1} % tikz color
+\definecolor{weiss}{rgb}{1,1,1} % tikz color
+
+% Marginalien:
+\marginparwidth10ex % Marginalie
+\newcommand\mpar[1]{\marginpar{\sffamily\scriptsize #1}} % Marginalie
+%\newcommand\mpar[1]{\marginpar{\flushleft\sffamily\small #1}} % Marginalie
+\newcommand\marginnote[1]{\mpar{#1}} % Marginalie
+
+\newcounter{meinZaehler}%  Zähler für Fußnoten aus figure-/table-Umgebungen
+
+\newcommand{\hellblau}{\color[rgb]{0.97,.97,1}} % Hintergrundfarbe
+\newcommand{\weiss}{\color[rgb]{1,1,1}} % Hintergrundfarbe
+\newcommand{\rot}  [1]{\textcolor[rgb]{.9,0,0}   {\textbf{#1}}}
+\newcommand{\gruen}[1]{\textcolor[rgb]{0,.6,0}   {\textbf{#1}}}
+\newcommand{\blau} [1]{\textcolor[rgb]{0,0,.6}   {\textbf{#1}}}
+\newcommand{\grau} [1]{\textcolor[rgb]{.5,.5,.5} {\textbf{\textit{#1}}}}
+\newcommand{\gray} [1]{\textcolor[rgb]{.5,.5,.5} {\textrm{#1}}}
+\newcommand{\pink} [1]{\textcolor[rgb]{.8,.2,.4} {\textbf{#1}}}
+\newcommand{\gold} [1]{\textcolor[rgb]{1.0,.6,0} {\textbf{#1}}}
+\newcommand{\schwarz} [1]{\textcolor[rgb]{0,0,0} {\textmd{#1}}}
+%\newcommand{\URL}  [1]{\textcolor[rgb]{0,0,1}    {\underline{\textit{#1}}}}
+\newcommand{\URL}  [1]{\url{#1}}
+\newcommand{\rottt} [1]{\textcolor[rgb]{.9,0,0}  {\textbf{\texttt{\footnotesize #1}}}}
+\newcommand{\blautt} [1]{\textcolor[rgb]{0,0,.6}  {\textbf{\texttt{#1}}}}
+\newcommand{\pinktt}[1]{\textcolor[rgb]{.8,.2,.4} {\textbf{\texttt{#1}}}}
+\newcommand{\code} [1]{\texttt{#1}} %{{\footnotesize\tt #1}}
+\newcommand{\codlet} [1]{{\footnotesize\tt #1}} %{{\scriptsize\tt #1}}
+
+\newcommand{\pinkverb}[1] {\color[rgb]{.8,.2,.4}}
+\newcommand{\schwarzverb}[1] {\color[rgb]{0,0,0}}
+
+\hyphenation{%
+ Ber-lin
+ De-zi-mal-bruch-ent-wick-lung
+ Dienst-an-bie-ter Dienst-an-bie-ters Dienst-an-bie-tern
+ Fest-schrift Fest-schrif-ten
+ Grund-idee Grund-ide-en
+ Han-dels-struk-tur Han-dels-struk-tu-ren
+ Hash-funk-tion Hash-funk-tionen
+ Hash-wert Hash-wer-te Hash-werts Hash-wer-ten
+ Hei-del-berg
+ Kauf-manns-und
+ Kind-ele-ment Kind-ele-men-te Kind-ele-men-ten Kind-ele-men-tes
+ mac-ro-state mac-ro-states
+ Mann-heim
+ Soft-ware-ent-wick-ler Soft-ware-ent-wick-lung
+ Wahr-schein-lich-keits-the-o-rie
+ Web-ad-res-se Web-ad-res-sen
+ Web-ser-ver Web-ser-vers
+ Wert-pa-pier-ma-nage-ment
+}
+
+%\newtheorem{satz}{Theorem}[chapter]
+%\newtheorem{satz}{Satz}[chapter]
+\newtheorem{satz}{Theorem}[section]
+%\newtheorem{satz}{Satz}[section]
+\newtheorem{lem}[satz]{Lemma}
+\newtheorem{prop}[satz]{Proposition}
+\newtheorem{axi}[satz]{Axiom}
+\newtheorem{axiom}[satz]{Axiom}
+%%%---  deutsch:
+%\newtheorem{cor}[satz]{Korollar}
+%\newtheorem{reg}[satz]{Regel}
+%\theoremstyle{definition}
+%\newtheorem{aufgabe}{Aufgabe}[chapter]
+%\newtheorem{defi}[satz]{Definition}
+%\newtheorem{rem}[satz]{Bemerkung}
+%\newtheorem{beisp}[satz]{Beispiel}
+%\newtheorem{beispe}[satz]{Beispiele}
+%%---  englisch:
+\newtheorem{cor}[satz]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[satz]{Definition}
+\newtheorem{rem}[satz]{Remark}
+\newtheorem{beisp}[satz]{Example}
+\newtheorem{beispe}[satz]{Examples}
+%\newtheorem{uebung}{Problem}[chapter]
+%%---------------------------------
+%\newenvironment{definition} {\begin{defi}}{\hfill{$\square$}\end{defi}}
+\newenvironment{beispiel} {\begin{beisp}}{\hfill{$\square$}\end{beisp}}
+\newenvironment{beispiele} {\begin{beispe}}{\hfill{$\square$}\end{beispe}}
+\newenvironment{bem} {\begin{rem}}{\hfill{$\square$}\end{rem}}
+\newenvironment{algo} {\begin{algorithm}}{\end{algorithm}}
+\newenvironment{beweis}{\noindent\emph{Proof idea.}}{\hfill{Q.E.D.}\\ }
+%\newenvironment{beweis}{\noindent\emph{Beweisidee.}}{\hfill{Q.E.D.}\\ }
+
+
+\makeindex
+\usepackage[nottoc]{tocbibind}
+
+%\includeonly{%%%  unten nicht "\include{...}" vergessen!!
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\author{\autor}
+\title{\textbf{\titel}}
+\date{%
+	Version: \today
+%	\\ [2em] %[12em]
+%	{\footnotesize
+%		%Dieses Skript unterliegt der
+%		This work underlies the 
+%		\emph{Creative Commons License} CC BY 4.0
+%		\\
+%		(\url{https://creativecommons.org/licenses/by/4.0/deed.en})
+%		\\ [1.0ex]
+%		\phantom{x}\hspace*{-1ex}%
+%		\href{https://creativecommons.org/licenses/by/4.0/deed.en}
+%		     {\includegraphics[scale=.5]{CC-BY}}
+%	}
+}
+
+\maketitle
+%\setcounter{page}{2}
+%%\setcounter{tocdepth}{2}
+%\pagestyle{toc}
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{general-relativity}
+\input{FLRW-models}
+\input{conformal-geometry}
+
+\appendix
+\cftaddtitleline{toc}{chapter}{Appendix}{}
+
+\input{differential-geometry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\printbibliography[heading=bibintoc]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{footnotesize}
+\printindex
+\end{footnotesize}
+
+\end{document}
