@@ -1,0 +1,621 @@
+\chapter{Cosmological models}
+
+In this chapter we will shortly review the standard models of cosmology. In essence they follow from the classes of geometry that are determined by the cosmological principle. In turn, the geometry and its symmetries prescribe the physical form and distribution of matter and energy in the universe, due to the Einstein field equations (\ref{eq:Feldgleichungen}).
+
+The standard models of cosmology are essentially the three geometries of the Friedmann-Lemaître-Robertson-Walker metrics, each of which has variants with or without a cosmological constant, i.e., $\Lambda \ne 0$ or $\Lambda = 0$, respectively. The all rely on the cosmological principle, which in essence fixes the possible geometries and therefore prescribe the overall distribution of energy and matter in the cosmos.
+
+The standard models of the universe all go back to Alexander Friedmann. They and more modern modifications such as the “inflationary universe” in its initial phase have repeatedly been confirmed by physical observations. The first important confirmation was the discovery of the expansion of the universe by the Belgian priest and astrophysicist Georges Lemaître in 1927 \cite{Lemaitre-1927} and the US astronomer Edwin Hubble in 1929 \cite{Hubble-1929}. Further confirming observations were the discovery of cosmic background radiation by Penzias and Wilson in 1965 and the discovery of the Higgs boson in 2012, cf.
+\cite[§20.1]{Karttunen-et-al-2000},
+\cite[§13.3]{Unsoeld-Baschek-1999}
+
+
+\section{The cosmological principle}
+The cosmological principle summarizes two basic assumptions of cosmology that underlie its models of the universe as a whole. %It has been introduced in 1933 by astrophysicist Edward A. Milne and states the following.
+
+\begin{axiom}[\textbf{Cosmological principle}]
+	\label{axiom:cosmological-principle}
+	Viewed on a sufficiently large scale, the properties of the universe are the same for all observers.
+	Especially the universe is homogeneous and isotropic.
+	Homogeneity means that the universe appears the same to all observers regardless to their locations in space, isotropy means that the universe always appears the same to observers regardless of their direction of observation in space.
+\end{axiom}
+
+In general, the two concepts homogeneity and isotropy are independent. For instance, a structure of equidistant parallel lines is homogeneous in the plane, but not isotropic, and concentric lines are istropic around the center but not homogeneous. 
+
+\begin{bem}
+\label{bem:isotropy-and-constant-curvature}
+From the point of view of differential geometry, isotropy at each point means local rotational symmetry everywhere and implies the space to have a constant curvature. Therefore, isotropy at each point implies homogeneity, but a homogeneous universe could be anisotropic somewhere.
+\cite[448]{Karttunen-et-al-2000}, \cite[130]{Sexl-Urbantke-1987}
+\end{bem}
+
+The cosmological principle is based on the assumption that the uniformity of the universe observed from Earth cannot be explained by a special position, but rather by any position in the universe. This assumption cannot be proved. Its validity has to be assumed \emph{a priori}, i.e., it is an axiom.
+
+The cosmological principle does not apply to small distances. For example, the density of matter in the solar system is significantly greater than in interstellar space. Furthermore, individual galaxies are not evenly distributed, but form groups, clusters, superclusters, and filaments. On an even larger scale, however, the cosmological principle has been repeatedly confirmed by increasingly accurate measurements.
+%All of humanity's observations in all directions in space at distances of at least 100 million light-years, based on centuries of repeated measurements at various points in the Earth's orbit and a large number of satellites, space probes, and manned and unmanned space missions, confirm this assumption to date. This suggests that there is no systematic change in the density of matter in space and that the universe is infinite.
+
+
+\section{Friedmann-Lemaître-Robertson-Walker universes}
+\label{sec:FLRW-universes}
+
+Translated into the language of Riemannian geometry, the cosmological principle implies that the three-dimensional space has maximum symmetry, i.e., has constant curvature which, if variable at all, can only depend on time. There are three possible geometries of space satisfying this criterion, depending on a parameter $k$. \cite[222]{Stephani-1991}
+It will turn out that $k$ geometrically determines the spatial curvature of the universe, and physically $-k$ represents a part of its energy density. \cite[155]{Sexl-Urbantke-1987}
+
+\begin{bem}
+	One remarkable property of standard FLRW cosmology, as it will be described in the sequel, is that  the energy density of the universe depends on its \emph{global} geometry, represented by a discrete curvature parameter $k$. Of course, \emph{locally} this follows immediately from the Einstein field equations (\ref{eq:Feldgleichungen}), since geometry determines physics, and physics determines geometry. But \emph{globally} it is not clear at first sight, why there should be only three cases. In fact, this is a consequence of the strong symmetry requirements due to the cosmological principle \ref{axiom:cosmological-principle} and Remark \ref{bem:isotropy-and-constant-curvature}.
+\end{bem}
+%
+For $k$ $\in$ \{$-1$, 0, 1\} let $\mathscr{M}_k$ denote one of the three manifolds
+\begin{equation}
+	\mathscr{M}_k = \left\{\begin{array}{cl}
+		\mathbb{R}^4 & \mbox{for $k$ $=$ $-1$, 0,} \\
+		\mathbb{R} \times S^3 & \mbox{for $k$ $=$ 1.}
+	\end{array}\right.
+	\label{eq:FLRW-manifolds} %{(3.20)}
+\end{equation}
+Define then the coordinates $(t,\chi,\theta,\varphi)$ $\in$ $\mathbb{R} \times I_k \times (0,\pi) \times (0, 2\pi)$ of $\mathscr{M}_k$ with the intervals
+\begin{equation}
+	I_k = \left\{ \begin{array}{ll}
+		(0, \infty) & \mbox{for $k$ $=$ $-1$, 0,} \\
+		(0, \pi) & \mbox{for $k$ $=$ 1,}
+	\end{array}\right.
+%	\qquad
+%	J_k = \left\{ \begin{array}{@{\ }ll}
+%		(0, \infty) & \mbox{for $k$ $=$ $-1$, 0,} \\
+%		(-1, 1) & \mbox{for $k$ $=$ 1,}
+%	\end{array}\right.
+	\label{eq:FLRW-tau-interval} %{(3.21)}
+\end{equation}
+Especially for $k$ $=$ $-1$, $0$, let
+$(\chi,\theta,\varphi)$ $\in$ $(0, \infty) \times (0,\pi) \times (0, 2\pi)$
+denote the polar coordinates of $\mathbb{R}^3$ (with the radial coordinate $\chi$). For $k$ $=$ $1$, on the other hand, let $(\chi, \theta, \varphi)$ $\in$ $(0, \pi) \times (0,\pi) \times (0, 2\pi)$ denote the polar coordinates of $S^3$ (i.e., $\chi$ is an angular coordinate). Moreover, let
+\begin{equation}
+	R \in C^\infty(\mathbb{R}, (0, \infty)), \qquad t \mapsto R(t),
+	\label{eq:FLRW-R} %{eq:FLRW-a} %{(3.22)}
+\end{equation}
+be a function depending on $t$, and let $f_k$: $I_k \to J_k$ denote the functions
+\begin{equation}
+	f_k(\chi) = \left\{\begin{array}{@{\ }ll}
+		\sinh \chi & \mbox{for $k=-1$,} \\
+		\chi       & \mbox{for $k=0$,} \\
+		\sin \chi  & \mbox{for $k=1$.}
+	\end{array}\right.
+	\label{(3.23)}
+\end{equation}
+%We often simply write $f$ instead of $f_k$.
+The parameter $t$ is called \emph{cosmic time}\index{cosmic time},
+and $R$ the \emph{scale factor} of the universe. 
+Defining the covariant %and contravariant 
+components of the metric tensor by
+\begin{eqnarray*}
+	(g_{ij}) & \hspace*{-1.5ex} = \hspace{-1.5ex} & 
+	\mathrm{diag}\,(1, -R^2, -R^2 f_k^2, - R^2 f_k^2 \sin^2\theta)
+%	\\
+%	(g^{ij}) & \hspace*{-1.5ex} = \hspace{-1.5ex} & 
+%	\frac{1}{a^2}\ \mathrm{diag} \left(1, -1, -\frac{1}{f_k^2}- \frac{1}{f_k^2 \sin^2\theta}\right)
+	,
+\end{eqnarray*}
+the line element reads
+\begin{equation}
+	\D s^2 = 
+	\D t^2 - R^2(t) \left( \D\chi^2 - f_k^2(\chi) \D \theta^2 - f_k^2(\chi) \D\varphi^2 \right)
+	.
+	\label{eq:FLRW-line-element-in-polar-coordinates} %{(3.26)}
+\end{equation}
+cf. \cite[(112,2)]{Landau-Lifschitz-1997}. 
+%We have
+$ %\begin{equation}
+	\sqrt{g} = R^3(t) \, f_k^2(\chi) \sin \theta.
+%	\label{(3.27)}
+$ %\end{equation}
+For $k=1$, the spatial part of(\ref{eq:FLRW-line-element-in-polar-coordinates}), i.e.,
+$R^2(t)\, (\!\D \chi^2 + \sin^2 \chi \D\theta^2 + \sin^2\chi\sin^2 \theta \D\varphi^2 )$, 
+is exactly the three-dimensional line element of a hypersphere with radius $R(t)$ embedded in Euclidian space $\mathbb{R}^4$. Therefore, the scale factor $R$ is sometimes also called the \emph{world radius}\index{world radius}.
+\cite[pp.~149]{Sexl-Urbantke-1987}
+Especially, for $k=1$ the universe has a finite volume. In general, the volume of a 3-space with coordinates $(x_1, x_2, x_3)$ and a metric with determinant $g$ is defined as $V$ $=$ $\iiint \! \sqrt{g} \D x_1\D x_2 \D x_3$, cf. (\ref{eq:volume-element}). For the line element (\ref{eq:FLRW-line-element-in-polar-coordinates}) we therefore have
+\begin{align}
+	V 
+	& = 
+	\int\limits_0^\pi \! \int\limits_0^\pi \! \int\limits_0^{2\pi} \! \sqrt{g} \D \varphi \D \theta \D r
+	=
+	R^3(t)  \int\limits_0^\pi \! \sin^2 \chi  \D \chi \cdot \int\limits_0^\pi \! \sin \theta   \D \theta \cdot \int\limits_0^{2\pi} \! \D \varphi
+%	\nonumber \\ & =
+%	R^3(t) \cdot \frac{1}{2} \, (\chi - \sin \chi \cos \chi)\, \Big|_0^\pi 
+%	\cdot (- \cos \theta) \, \Big|_0^\pi \cdot \varphi \, \Big|_0^{2\pi}
+%	=
+%	R^3(t) \cdot \frac{\pi}{2} \cdot 2 \cdot 2\pi
+%	\nonumber \\ & 
+	=
+	2 \pi^2 R^3(t).
+	\label{eq:FLRW-volume-k=1}
+\end{align}
+
+\begin{bem}
+\label{Bemerkung 3.7}%
+In cosmology it is more familiar to consider another coordinate than $\chi$, namely the parameter
+$r \in J_k$, with $J_k = I_k$ for $k=0,-1$ and $J_1 = (0,1)$ for $k=1$, given by
+\begin{equation}
+	\chi \mapsto r = f_k(\chi),
+	\label{eq:FLRW-r} % {eq:FLRW-coordinate-cosmic-time} %{(3.29)}
+%\end{equation}
+%i.e.,
+	\qquad \mbox{i.e.,} \qquad
+%\begin{equation}
+	\D\chi = \frac{\D r}{\sqrt{1 - kr^2}}\,.
+	%\label{(3.32)}
+\end{equation}
+where $	\chi = f_k^{-1}(r) \in (0, \frac{\pi}{2})$.
+%\begin{equation}
+%	\chi = f_k^{-1}(r) = \left\{\begin{array}{@{\ }ll}
+%		\mathrm{arsinh}\, r & \mbox{for $k=-1$,} \\
+%		r & \mbox{for $k=0$,} \\
+%		\arcsin\, r & \mbox{for $k=1$,}
+%	\end{array}\right.
+%	\label{(3.30)}
+%\end{equation}
+Thus the metric (\ref{eq:FLRW-line-element-in-polar-coordinates}) transforms to
+\begin{equation}
+	\D s^2 = c^2 \D t^2 - R^2(t) 
+	\left( \frac{\D r^2}{1 - kr^2} + r^2 \D \theta^2 + r^2 \sin^2 \theta \D \varphi^2 \right)
+	,
+	\label{eq:FLRW-line-element} %{(3.33)}
+\end{equation}
+and the determinant of the metric is $\sqrt{g} = R^3(t) \frac{r^2}{\sqrt{1 - r^2}}$.
+This is the line element of the \emph{Fried\-mann-Lemaître-Robertson-Walker (FLRW) models}.
+It is a metric of a space-time that is obtained from the {cosmological principle} of space-like isotropy at each fixed cosmic time $t = \mathrm{const}$. \cite{Hawking-Ellis-1973}, \cite{Sexl-Urbantke-1987}
+
+For $k=1$, i.e., a three-dimensional hypersphere $S^3(R)$ with world radius $R$, the metric gets singular at $r=1$. However, this is not a physical singularity, but a pure coordinate singularity. An analogy in two dimensions may illustrate this, see Fig. \ref{fig:S2-coordinate-change-analogy-to-FLRW-metric}. 
+%--- Figure: ---------------------------------------------------------
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=1]{S2-coordinate-change-analogy-to-FLRW-metric}
+\caption[The FLRW cosmological models]{\label{fig:S2-coordinate-change-analogy-to-FLRW-metric}
+	The coordinate change $(\chi, \varphi) \mapsto (r, \varphi)$ on the sphere $S^2(R)$ embedded in three-space $\mathbb{R}^3$, as an analog to the coordinate change (\ref{eq:FLRW-r}) on $S^3(R)$.
+	Graphics modified from \cite[151]{Sexl-Urbantke-1987}
+}	
+\end{figure}
+%--- Figure^ ---------------------------------------------------------
+We have $r = \sin \chi$, but there is no singularity at the equator $\chi = \frac{\pi}{2}$.
+Moreover, this analogy illustrates the role of the cosmological scale factor $R$.
+A sphere $S^2$ is a two-dimensional surface embedded in a 3-dimensional space. Its radius lives in the third dimension, it is not part of the surface. However, the value of this radius affects distances measured on the two-dimensional surface. Similarly, the cosmological scale factor is not a distance in our 3-dimensional space, but its value affects the measurement of distances.
+%
+%%The coordinates $(\tau, \chi, \theta, \varphi)$ are also called  \emph{chronometrical comoving}.
+%%%\cite{Villalba-Percoco-1991} or 
+%%\cite{Landau-Lifschitz-1997}
+%From the function $a$, or equivalently the world radius $R$, the \emph{Hubble constant} $H$ is defined by %\cite[445]{Landau-Lifschitz-1997}
+%\[
+%	H = c\ \frac{\dot{a}}{a^2} = \frac{1}{R(t)}\, \frac{\D R}{\D t}
+%\]
+%e.g., \cite[p.~445]{Landau-Lifschitz-1997}.
+%% ---
+%For 
+%$\dot{a}>0$ the Friedmann-Lemaître-Robertson-Walker space-time describes an expanding universe, whereas for $\dot{a}<0$ it is a \emph{contracting} one.
+\end{bem}
+
+
+\section{Solving the field equations by FLRW geometries}
+
+So far, we only derived the \emph{geometry} of a universe satisfying the cosmological principle. To solve the Einstein field equations (\ref{eq:Feldgleichungen}), however, we have to find suitable distributions of energy and matter in the spacetime, determined by $T_{ij}$. In other words, a physical model of the universe is derived, if (\ref{eq:FLRW-line-element}) is inserted in the Einstein field equations.
+By the strong spatial symmetries implied by the cosmological principle they only can determine the evolution of the universe in time, i.e., its dynamics.
+It turns out that, given the FLRW geometry, the energy-momentum tensor must represent an ideal fluid with pressure $p$ and energy density $\rho$, i.e., must be of the form 
+\begin{equation}
+	T_{ij}
+	= 
+	p g_{ij} + (\rho + p/c^2) u_i u_j
+%	\left(\begin{array}{@{}cccc}
+%	  c^2\rho  &  0  &  0  &  0 \\
+%		0   &  p  &  0  &  0 \\
+%		0   &  0  &  p  &  0 \\
+%		0   &  0  &  0  &  p \\
+%	\end{array}\right)
+\end{equation}
+with $c$ the speed of light and $u_i$ the four-velocity of the fluid with respect to the rest system of the FLRW metric (\ref{eq:FLRW-line-element}).
+Moreover, $p$ and $\rho$ depend only on the cosmic time but not on their spatial positions, i.e., $p = p(t)$ and $\rho = \rho(t)$.
+\cite[83,233-234]{Stephani-1991}
+In the rest system of the fluid, we have
+\begin{equation}
+	T_{ij}
+	=
+	\left(\begin{array}{@{}cccc}
+	  c^2\rho  &  0  &  0  &  0 \\
+		0   &  p  &  0  &  0 \\
+		0   &  0  &  p  &  0 \\
+		0   &  0  &  0  &  p \\
+	\end{array}\right)
+\end{equation}
+Inserting this tensor into the Einstein field equations yields the two ordinary differential equations for $R(t)$,
+\begin{equation}
+	%2 \ddot{R}/R + (\dot{R}^2 + k)/R^2 
+	\frac{\dot{R}^2}{R^2} + \frac{2 \ddot{R}}{R} + \frac{c^2 k}{R^2} 
+	= 
+	- \kappa p + c^2 \Lambda
+	\label{eq:FLRW-dynamics-1}
+\end{equation}
+and
+\begin{equation}
+	%3 \, (\dot{R}^2 + k)/R^2 = 
+	\frac{3 \dot{R}^2}{R^2} + \frac{3 c^2 k}{R^2} = 
+	\kappa c^4 \rho + c^2\Lambda
+	\label{eq:FLRW-dynamics-2}
+\end{equation} 
+\cite[154]{Sexl-Urbantke-1987}, \cite[234]{Stephani-1991}
+Here $\dot{R}$ denotes the derivative with respect to the cosmic time, i.e., $\dot{R} = \!\D R/\!\D t$.
+For $p=0$, these equations have been derived first by Friedmann in 1922. \cite[(4) \& (5)]{Friedmann-1922}
+%Rearranging (\ref{eq:FLRW-dynamics-2}) for $\frac{\dot{R}^2}{R^2}$ and inserting this in (\ref{eq:FLRW-dynamics-1}) gives
+Subtracting $\frac{1}{6}$ times (\ref{eq:FLRW-dynamics-2}) from $\frac{1}{2}$ times (\ref{eq:FLRW-dynamics-1}) gives
+\begin{equation}
+	\frac{\ddot{R}}{R}
+	= \frac{c^2\Lambda}{3}
+	- \frac{\kappa c^4}{6} \left( \rho + 3p/c^2 \right)
+	.
+	\label{eq:FLRW-dynamics-1'}
+\end{equation}
+cf. \textcite[485]{Unsoeld-Baschek-2002}.
+Hence the system of the two equations (\ref{eq:FLRW-dynamics-1}) and (\ref{eq:FLRW-dynamics-2}) is equivalent to the system of (\ref{eq:FLRW-dynamics-1'}) and (\ref{eq:FLRW-dynamics-2}). Nowadays, (\ref{eq:FLRW-dynamics-2}) and (\ref{eq:FLRW-dynamics-1'}) are called \emph{Friedmann equations}\index{Friedmann equations}.
+Note that equation (\ref{eq:FLRW-dynamics-1'}) does not contain the geometric parameter $k$, in contrast to Friedmann's original equation (\ref{eq:FLRW-dynamics-1}).
+
+Equation (\ref{eq:FLRW-dynamics-1'}) states that both the energy density and the pressure cause the expansion rate of the universe $\dot{R}$ to decrease. This is a consequence of gravitation, with pressure playing a similar role to that of energy density. The cosmological constant, on the other hand, causes an acceleration in the expansion of the universe.
+Under the assumption that the total mass of the universe is constant, i.e., $\rho R = \mathrm{const}$, Equation (\ref{eq:FLRW-dynamics-1}) on the other hand expresses the energy conservation of the universe. \cite[155]{Sexl-Urbantke-1987}
+
+Another important identity can be deduced from the Friedmann equations, assuming that all the terms $R$, $\dot{R}$, and $(c^2 \rho + p)$ do nat vanish: Deriving first (\ref{eq:FLRW-dynamics-2}) times $R^2$ with respect to $t$, rearranging the resulting equation for $\ddot{R}/R$, and inserting this into (\ref{eq:FLRW-dynamics-1'}), we obtain
+\begin{equation}
+	\frac{\dot{\rho}}{\rho + p/c^2} = - \frac{3 \dot{R}}{R}
+	.
+	\label{eq:FLRW-dynamics-3}
+\end{equation}
+cf. \cite[(26,9)]{Stephani-1991}.
+Physically this equation expresses the first law of thermodynamics, assuming the expansion of the universe is an adiabatic process, i.e., a process without a change of entropy.
+
+
+\section{FLRW models with $\fettgr{\Lambda}$ = 0 and \textit{p} = 0: Exact solutions}
+\label{sec:FLRW-Lambda=0-p=0}
+The Friedmann equation (\ref{eq:FLRW-dynamics-1'}) expresses the dynamics of the FLRW models. That is, the behavior in time follows from the energy density $\rho$ and the pressure $p$.
+In a matter-dominated universe, as we observe it today, we have $p \approx 0  < \rho$. A cosmos like this is also called “incoherent” or “dust-like”.
+If we set $p=0$ and let moreover the cosmological constant vanish, 
+%the Friedmann equation (\ref{eq:FLRW-dynamics-2}) 
+(\ref{eq:FLRW-dynamics-3})
+reduces to $\dot{\rho}/\rho = - 3\dot{R}/R$ and can be immediately integrated by
+\begin{equation}
+	\rho R^3 = \mathscr{A} = \mathrm{const}
+	.
+	\label{eq:FLRW-Lambda=p=0-integration-constant}
+\end{equation}
+The integration constant $\mathscr{A}$ can be interpreted as a multiple of the total mass $\mathfrak{M}$ of the universe. With (\ref{eq:FLRW-volume-k=1}), for instance, we have $\mathfrak{M} = 2 \pi^2 \mathscr{A}$.
+By (\ref{eq:FLRW-Lambda=p=0-integration-constant}) we have $\rho = \mathscr{A}/R^3$, i.e., equation (\ref{eq:FLRW-dynamics-2}) simplifies to
+$(\dot{R})^2 = {\kappa c^2 \mathscr{A}}/{R} - k$, which by the transformation $t \mapsto \tau = \pm \frac{1}{c}\int \! \frac{\D t}{R(t)}$,
+i.e., $\D \tau = \pm \frac{c}{R} \D t$ or $\frac{\DD}{\DD t} = \pm \frac{c}{R} \frac{\DD}{\DD \tau}$, 
+attains the form
+\begin{equation}
+	(R')^2 = \kappa \mathscr{A} R / 3 - k R^2
+	\label{eq:FLRW-dynamics-simple-case}
+\end{equation}
+with $A_0 = \kappa \mathscr{A}/3$, and $'$ denoting the derivative with respect to $\tau$. \cite[237]{Stephani-1991}
+Separation of variables\footnote{
+	In more detail, %with $A_0 = \kappa \mathfrak{M}/3$ 
+	separation of variables (\ref{eq:FLRW-dynamics-simple-case})
+	yields
+	$
+		\frac{\D R}{\sqrt{A_0 R - k R^2}} = \pm\!\D \tau
+	$,
+	or
+	$\pm\tau = \int \frac{\D R}{\sqrt{A_0 R - k R^2}}$.
+	For $k=-1$ this is 
+	$\pm\tau 
+	= \int \frac{\D R}{\sqrt{A_0 R + R^2}}
+	= \mathrm{arcosh}\, (1 + 2R/A_0)
+	$,
+	for $k=0$ we have 
+	$\pm\tau 
+	= \int \frac{\D R}{\sqrt{A_0 R}}
+	= 2 \sqrt{R/A_0}
+	$,
+	and for $k=1$, finally,
+	$\pm\tau 
+	= \int \frac{\D R}{\sqrt{A_0 R - R^2}}
+	= \arccos (1 - 2R/A_0)
+	$.
+	The identities for the integral can be shown elementarily by derivation with respect to $R$.
+	Rearranging the equations for $R$ yields (\ref{eq:FLRW-solutions-Lambda=0}), independently from the sign of $\tau$.
+}
+then yields the solutions
+\begin{equation}
+	R(\tau) = \left\{ \begin{array}{@{\ }ll}
+		\frac{1}{2}\, A_0 \, (1 - \cos \tau) & \mbox{for $k = 1$,}
+		\\[1.0ex]
+		\frac{1}{4}\, A_0 \, \tau^2 & \mbox{for $k = 0$,}
+		\\[1.0ex]
+		\frac{1}{2}\, A_0 \, (\cosh \tau - 1) & \mbox{for $k = -1$,}
+%		\frac{\kappa \mathfrak{M}}{6}\, (\cosh \tau - 1) & \mbox{for $k = -1$,} \\[1.0ex]
+%		\frac{\kappa \mathfrak{M}}{12}\, \tau^2 & \mbox{for $k = 0$,} \\[1.0ex]
+%		\frac{\kappa \mathfrak{M}}{6} (1 - \cos \tau) & \mbox{for $k = 1$}
+	\end{array}\right.
+	\label{eq:FLRW-solutions-Lambda=0} %{(3.34)}
+\end{equation}
+with $\tau \in I_k$. The cosmic time then satisfies $t = \frac{1}{c} \int_0^\tau R \D \tau$, 
+i.e., $t \in J_k$ and
+\[
+	t = \pm \left\{ \begin{array}{@{\ }ll}
+		\frac{1}{2c}\ A_0 (\tau - \sin \tau) & \mbox{for $k = 1$,}
+		\\[1.0ex]
+		\frac{1}{12c}\ A_0 \tau^3 & \mbox{for $k = 0$,}
+		\\[1.0ex]
+		\frac{1}{2c}\ A_0 (\sinh \tau - \tau) & \mbox{for $k = -1$.}
+	\end{array}\right.
+\]
+Here $t = 0$ denotes the “beginning of the world.”
+Since $R$ (except for a positive factor corresponding to the radius of the universe) describes the expansion of the universe,
+there are three different development scenarios depending on the parameter $k$, Fig. \ref{fig:Friedmann-Kosmen}.
+The first scenario $k = +1$ is the so-called “big crunch,” in which the universe collapses into a singularity after reaching its maximum expansion. This scenario is based on the assumption that the universe is finite and has a finite volume.
+%--- Figure: ---------------------------------------------------------
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=1]{Friedmann-universes_Lambda=0}
+\hspace*{5ex}
+\includegraphics[scale=1]{Hubble-constant}
+\caption{\label{fig:Friedmann-Kosmen}
+	Expansions of the three FLRW cosmologies with $\Lambda=0$. The reciprocal of the Hubble constant $H_0$ represents an upper limit for the age of the universe, as can be seen from the tangent equation $h(t) = \dot{R}(t_0) (t-t_0) + R(t_0)$.}
+\end{figure}
+%--- Figure ----------------------------------------------------------
+
+\noindent
+Also for a radiation-dominated Friedmann universe
+elementary solutions can be obtained for $\Lambda = 0$,
+cf. \cite[§26]{Stephani-1991}, 
+\cite[§5, especially pp. 156f and pp. 160ff]{Sexl-Urbantke-1987},
+\cite[p.~347ff]{O-Neill-1983},
+\cite[§§111--113]{Landau-Lifschitz-1997}.
+
+If we form the quotient of the derivative $\dot{R}$ of the world radius 
+and $R$, we obtain the relative rate of change of the universe
+\begin {equation}
+    H(t) = \frac{\dot{R}(t)}{R(t)}
+    ,
+    \label{eq:Hubble-function}
+\end{equation}
+the \emph{Hubble function} $H$.
+For the time $t_0$ $=$ “now,” $H_0$ $:=$ $H(t_0)$ 
+is called the \emph{Hubble constant}\index{Hubble constant}.
+%
+Its reciprocal $1/H_0$ indicates the maximum 
+age of the universe\index{age of the universe} for a non-accelerating
+expanding universe
+\cite{Sexl-Urbantke-1987}, because the equation of the tangent
+of the graph of $R(t)$ at the point $t_0$ is
+$h(t)$ $=$ $\dot{R}(t_0) (t-t_0) + R(t_0)$, 
+and its zero point is given by
+\begin{equation}
+	t_0 - t = \frac{R(t_0)} {\dot{R}(t_0)} = \frac{1}{H_0}
+	,
+\end{equation}
+see Figure \ref{fig:Friedmann-Kosmen}.
+For a nonvanishing cosmological constant, $\Lambda > 0$, we have qualitatively the same results for $k = 0, +1$. For $k = -1$, however, the vacuum energy density prohibits the big crunch occurring for $\Lambda$ greater than a critical value $\Lambda_c$, i.e., $\Lambda > \Lambda_c \geqq 0$. In this case the universe instead expands forever.
+For the illustration of the six FLRW universes see  Figure \ref{fig:FLRW-universes}.
+
+
+
+\section{FLRW models with $\fettgr{\Lambda}$ > 0}
+
+A positive cosmological constant $\Lambda$ represents a vacuum energy density.
+In general, for $\Lambda > 0$ there are no elementary solutions of the Friedmann equations (\ref{eq:FLRW-dynamics-2}) and (\ref{eq:FLRW-dynamics-1'}), as determined in Section \ref{sec:FLRW-Lambda=0-p=0}.
+A remarkable exception is the Einstein cosmos which will we consider shortly.
+It turns out, however, that the qualitative behaviors of the FLRW models with $\Lambda > 0$ can be classified by the three elementary solutions (\ref{eq:FLRW-solutions-Lambda=0}).
+
+\subsection{The Einstein cosmos}
+The first exact cosmological solution of the field equations (\ref{eq:Feldgleichungen}) was accomplished by Einstein in 1917 \cite{Einstein-1917}, 
+two years after their publication. According to the state of knowledge at that time, he assumed the universe to be static. This implies that all derivatives with respect to time in (\ref{eq:FLRW-dynamics-2}) and (\ref{eq:FLRW-dynamics-1'}) vanish, i.e.,
+\begin{equation}
+%	\frac{k}{R^2}
+%	= \Lambda - \kappa p,
+%	\qquad
+	\frac{3k}{R^2}
+	= \Lambda + \kappa c^2 \rho
+	,
+	\qquad
+	\Lambda
+	= \frac{\kappa}{2} \left(c^2 \rho + 3p\right)
+	.
+\end{equation}
+Inserting the second equation into the first one we obtain
+$\frac{3k}{R^2} = \frac{\kappa}{2} \left(c^2 \rho + 3p\right) + \kappa c^2 \rho$,
+or
+\begin{equation}
+	k
+	%= \frac{\kappa R^2}{2 c^2} \left( c^2 \rho + p \right)
+	= \frac{\kappa R^2}{2} \left( c^2 \rho + p \right)
+	> 0
+	.
+\end{equation}
+Since $k$ can only be $-1$, $0$, or $+1$, it must be $k=1$.
+This, in turn, determines the constant radius $R$ to be
+\begin{equation}
+	R^2 = \frac{2}{\kappa (c^2 \rho + p)}.
+	\label{eq:Einstein-cosmos-radius}
+\end{equation}
+By $\mathfrak{M} = V \rho$ and (\ref{eq:FLRW-volume-k=1}) the total mass of the universe is
+\begin{equation}
+	\mathfrak{M} 
+	= 2 \pi^2 R^3 \rho
+	= \frac{\sqrt{32} \, \pi^2 \rho}{\sqrt{\kappa^3 (c^2 \rho + p)^3}}
+	%= {\pi^2 \rho} \, \sqrt{\frac{32}{\kappa^3 (c^2 \rho + p)^3}}
+	.
+	\label{eq:Einstein-cosmos-mass}
+\end{equation}
+In other words:
+\begin{satz}
+	A static isotropic universe must be a 3-sphere with a constant radius given by (\ref{eq:Einstein-cosmos-radius}) and with a total mass given by (\ref{eq:Einstein-cosmos-mass}).
+	It is called the Einstein cosmos.
+\end{satz}
+
+\begin{beispiel}
+	According to astronomical observations, the current energy density of the universe is\footnote{
+		\url{https://map.gsfc.nasa.gov/universe/uni_matter.html}
+	}
+	$\rho = 9.9 \cdot 10 ^{-27}$ kg$/$m$^3$ and $p = 0$.
+	With $\kappa = 2.07665 \cdot 10^{-43}$ s$^2$kg$^{-1}$m$^{-3}$ equation 
+	(\ref{eq:Einstein-cosmos-radius}) gives
+	\begin{equation}
+		R
+		= \frac{1}{\sqrt{\Lambda}}
+		= \sqrt{\frac{2}{\kappa c^2 \rho}}
+		= 1.04 \cdot 10^{26} \mbox{ m}
+		= 11 \cdot 10^{9} \mbox{ ly}
+		,
+	\end{equation}
+	and (\ref{eq:Einstein-cosmos-mass})
+	\begin{equation}
+		\mathfrak{M}
+		= \frac{\sqrt{32} \, \pi^2}{\sqrt{\kappa^3 c^6 \rho}}
+		= \frac{\pi^2}{c^3} \sqrt{\frac{32}{\kappa^3 \rho}}
+		= 2.2 \cdot 10^{53} \mbox{ kg}
+		= 1.1 \cdot 10^{23} \, \mathfrak{M}_{\odot}
+		.
+	\end{equation}
+	A light ray propagates on a geodesic line of the 3-sphere, i.e., a great circle.
+	The length of the longest possible path of a photon therefore is the circumference of the sphere, $\ell = 2 \pi R$. For the Einstein cosmos we therefore have
+	$\ell = 6.54 \cdot 10^{26}$ m $=$ $69 \cdot 10^{9}$ ly.
+	Interestingly, the diameter of the observable universe, which is a 2-sphere with the Earth in the center, is estimated to be 
+	%$8.8 \times 10^{26}$~m $=$ 
+	$93 \times 10^{9}$~ly. 
+	If we lived in the Einstein cosmos, it would last “only” about another 
+	$
+		69 - 93/2 
+		= 69 - 46.5 
+		=
+		22.5
+	$ billion lightyears so that we can see light from the Earth having been emitted then 69 billion years ago.
+\end{beispiel}
+
+However, the Einstein cosmos is unstable in the sense that any slight change in either the value of the cosmological constant or the matter density will result in a universe that either expands and accelerates forever, or collapses to a singularity.
+
+
+\subsection{The de Sitter universes}
+In 1917, shortly after Einstein published his \emph{Kos\-mo\-lo\-gi\-sche Be\-trach\-tun\-gen}, de Sitter introduced vacuum models of the universe with a non-vanishing cosmological constant.
+\cites{de-Sitter-1917a,de-Sitter-1917b,de-Sitter-1917c}
+In fact, for $\rho = p = 0$ the Friedmann equations (\ref{eq:FLRW-dynamics-2}) and (\ref{eq:FLRW-dynamics-1'}) read
+\begin{equation}
+	\frac{3 \dot{R}^2}{R^2} + \frac{3 c^2 k}{R^2}
+	= c^2 \Lambda,
+	\qquad
+	\ddot{R} = \frac{c^2 \Lambda}{3} \, R
+	.
+\end{equation}
+In fact, multiplying the first equation by $R^2$ and deriving it, gives exactly the second equation, i.e., the second equation is redundant here. However, to solve the first one it is convenient to start the general solutions of the second one and inserting them into the first one. Thereby they are filtered by the curvature parameter $k$ such that we obtain the possible elementary solutions \cite[235]{Stephani-1991}
+\begin{equation}
+	R(t) 
+	= \left\{\begin{array}{ll} \displaystyle
+		\frac{1}{A} \cosh A c t & \mbox{for $k = +1$,}
+		\\ [1.25ex] \displaystyle
+		R_0 \E^{Act} & \mbox{for $k = 0$,}
+		\\ [.5	ex] \displaystyle
+		\frac{1}{A} \sinh A c t & \mbox{for $k = -1$,}
+	\end{array}\right.
+	\qquad
+	\mbox{with $A = \sqrt{\Lambda / 3}$, \ $R_0 \in \mathbb{R}^+.$}
+	\label{eq:de-Sitter-universes-Lambda>0}
+\end{equation}
+In any case, the scale factor thus grows exponentially in time.
+Remarkably, de Sitter universes with a spherical geometry, $k=1$, 
+or a flat geometry, $k=0$, do not initiate with a bing bang, but with a positive scale factor $R(0) = 1/\sqrt{\Lambda/3}$ or $R_0$, respectively.
+Moreover, for a negative cosmological constant we have another solution,
+\begin{equation}
+	R(t) = \frac{1}{A} \sin Act
+	\quad \mbox{or} \quad
+	R(t) = \frac{1}{A} \cos Act	
+	\qquad
+	\mbox{with \ $A = \sqrt{-\Lambda/3}$, \ $k = -1$.}
+	\label{eq:de-Sitter-universe-Lambda<0}
+\end{equation}
+Therefore the only solution to representing an isotropic vacuum universe with a negative cosmological constant has a hyperbolic geometry, may start either with a big bang, $R(0)=0$, or with a finite scale factor $R(0)=1/\sqrt{-\Lambda/3}>0$, and eventually terminates with a big crunch in any case. 
+%--- Figure: ---------------------------------------------------------
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=1]{de-Sitter-universes}
+\caption{\label{fig:de-Sitter-universes}
+	Scale factor $R(t)$ of the de Sitter universes according to equations (\ref{eq:de-Sitter-universes-Lambda>0}) and (\ref{eq:de-Sitter-universe-Lambda<0}).
+	The dashed lines show the two cases, both with $k=-1$, starting with a big bang.
+}
+\end{figure}
+%--- Figure ----------------------------------------------------------
+However, a negative cosmological constant expressing negative vacuum energy seems unprobable according to the astronomical observations.
+
+\begin{satz}
+	If the energy density and the pressure are negligibly small compared to the cosmological constant, i.e., $c^2 \rho$, $p$ $\ll$ $\Lambda$,
+	all solutions of the Friedmann equations (\ref{eq:FLRW-dynamics-2}) and (\ref{eq:FLRW-dynamics-1'}) are approximately given by (\ref{eq:de-Sitter-universes-Lambda>0}).
+	Especially, the scaling factor $R$ of the universe then grows exponentially with respect to the cosmological time $t$.
+\end{satz}
+
+The exponential expansion of the scale factor means that the physical distance between any two non-accelerating observers will eventually be growing faster than the speed of light. At this point they will no longer be able to communicate with each other.
+
+Nowadays, “the” de Sitter universe usually is referred to the flat geometry case $k=0$ with $\Lambda > 0$ in (\ref{eq:de-Sitter-universes-Lambda>0}).
+
+
+\subsection{Radiation-dominated universe}
+
+
+\subsection{Matter-dominated universe}
+
+
+\subsection{The $\fettgr{\Lambda}$CDM model}
+
+The present-day density $\rho_{0}$, which according to the current state of knowledge suggest to give zero curvature $k$. Substituting these conditions to the Friedmann equation gives
+\begin{equation}
+	\rho_{\mathrm{crit}}
+	=
+	\frac{3H_{0}^{2}}{8\pi G}
+%	=
+%	1.878\;47(23) \times 10^{-26}\;h^{2}\;\mathrm{kg{\cdot}m^{-3}}
+	.
+\end{equation}
+%where $h = H_0/(100 \mathrm{km \, s \, Mpc}^{-1})$ is the reduced Hubble constant. 
+If the cosmological constant were actually zero, the critical density would also mark the dividing line between eventual recollapse of the universe to a Big Crunch, or unlimited expansion.
+
+
+The present-day density parameter $\Omega_{x}$ for various species is defined as the dimensionless ratio
+\begin{equation}
+	\Omega_{x} 
+	\equiv 
+	\frac{\rho _{x}(t_{0})}{\rho_{\mathrm{crit}}}
+	=
+	\frac{8\pi G\rho_{x}(t_{0})}{3H_{0}^{2}},
+\end{equation}
+where the subscript $x$ is one of b for baryons, c for cold dark matter, rad for radiation (photons plus relativistic neutrinos), and $\Lambda$ for dark energy.
+By construction we therefore have
+\begin{equation}
+	\Omega_{\mathrm{b}}
+	+ \Omega_{\mathrm{c}}
+	+ \Omega_{\mathrm{rad}}
+	+ \Omega_{\Lambda}
+	= 1.
+\end{equation}
+
+
+\subsection{The Gödel universe}
+
+
+\subsection{Astronomical evidence}
+FLRW models of the universe and more modern
+modifications such as the “inflationary universe” in its
+initial phase have repeatedly been confirmed by 
+physical observations. 
+%--- Figure: ---------------------------------------------------------
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=.8]{FLRW-universes}
+\caption[The FLRW cosmological models]{\label{fig:FLRW-universes}
+	The FLRW cosmological models. Time is depicted upwards and each model starts with a big bang.
+	Graphics from \cite[719]{Penrose-2004}
+}	
+\end{figure}
+%--- Figure^ ---------------------------------------------------------
+The first important
+confirmation was the discovery of the expansion of the universe
+by the Belgian priest and astrophysicist Georges Lemaître
+in 1927 \cite{Lemaitre-1927} and the US astronomer
+Edwin Hubble in 1929 \cite{Hubble-1929}.
+Further confirming observations were
+the discovery of cosmic background radiation by
+Penzias and Wilson in 1965 and the discovery of the Higgs boson
+in 2012, cf.
+\cite[§20.1]{Karttunen-et-al-2000},
+\cite[§13.3]{Unsoeld-Baschek-1999}
+
+
+

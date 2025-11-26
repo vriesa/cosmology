@@ -1,0 +1,1178 @@
+\chapter{Differential geometry}
+
+
+\section{Smooth manifolds}
+
+A \emph{topological space}\index{topological space} is a pair $(X,\mathscr{O})$ of a set $X$ and a set $\mathscr{O}$ of subsets of $X$, defining the “open” subsets, such that the following three axioms are valid. \cite[7]{Jaenich-1999}
+\begin{itemize}
+\item
+\emph{Axiom 1:}
+Any union of open sets is open.
+
+\item
+\emph{Axiom 2:}
+The intersection of two open sets is open.
+
+\item
+\emph{Axiom 3:}
+$\emptyset$ and $X$ are open.
+\end{itemize}
+%
+Then $\mathscr{O}$ is called the \emph{topology}\index{topology} of $X$.
+Often, we shortly write $X$ instead of $(X,\mathscr{O})$.
+A topological space $X$ is called \emph{Hausdorff}\index{Hausdorff} if any two different points of $X$ have disjoint open neighborhoods. \cite[22]{Jaenich-1999}
+
+\begin{beispiel}
+	The topological space $(X, \{\emptyset, X\})$ is not Hausdorff. \cite[23]{Jaenich-1999}
+\end{beispiel}
+
+A topological space satisfies the \emph{second countability axiom}\index{countability axiom}\index{second countability axiom} if its topology $\mathscr{O}$ has a countable basis. \cite[98]{Jaenich-1999}
+
+\begin{bem}
+	The second countability axiom enables  to find a countable subcovering
+	for every covering $\{U_\lambda\}_{\lambda \in \Lambda}$, especially for any family of open coverings $\{U_x\}_{x \in X}$.
+	It is required for many inductive constructions and proofs. \cite[106]{Jaenich-1999}
+\end{bem}
+
+A mapping $f:X \to Y$ between two topological spaces $X$ and $Y$ is called \emph{continuous}\index{continuous mapping} if the pre-image $f^{-1}(U')$ of an open set $U' \in Y$ is open in $X$. \cite[16]{Jaenich-1999} 
+
+\begin{bem}
+	Especially, if $f:X \to Y$ is continuous and $U'$ is an open neighborhood of $f(x)$ in $Y$, then $f^{-1}(U')$ is an open neighborhood of $x$.
+\end{bem}
+
+A bijective mapping $f: X \to Y$ is called a \emph{homeomorphism}\index{homeomorphism} if both $f$ and $f^{-1}$ are continuous, i.e., if $U \subset X$ is open if and only if $f(U) \subset Y$ is open. \cite[17]{Jaenich-1999} 
+We then often write shortly $f : X \stackrel{\cong}{\to} Y$ and call the spaces $X$ and $Y$ being \emph{homeomorphic}.
+
+
+%Finally, a topological space has an \emph{$n$-dimensional differential structure}\index{differential structure} 
+
+
+
+\begin{definition}
+	Let $X$ be a topological space. 
+	Then an 
+	\emph{$n$-dimensional chart}\index{chart},
+	or \emph{coordinate system}\index{coordinate system},
+	of $X$ 
+	is a homeomorphism $h: U \stackrel{\cong}{\to} U'$
+	of an open subset $U \subset X$ to an open subset $U' \subset \mathbb{R}^n$.
+	The values $h = (x^1, \ldots, x^n)$ around $p \in U \subset X$ are called \emph{local coordinates}\index{coordinates}.
+	The set $U$ is called the \emph{chart domain}.
+	The inverse $h^{-1}$ is called a \emph{parametrization}\index{parametrization} of $X$.
+	\cite[1]{Jaenich-1992}, \cite[369]{Jaenich-2001}
+\end{definition}
+
+\begin{definition}
+	If $(U,h)$ and $(V,k)$ are two $n$-dimensional charts for $X$, the homeomorphism
+	$
+	k \circ (h^{-1} \mid h(U \cap V))
+	$
+	from $h(U \cap V)$ onto $k(U \cap V)$ is called a \emph{coordinate change}\index{coordinate change}.
+	If it is differentiable as a function from $\mathbb{R}^n$ to $\mathbb{R}^n$, it is called a \emph{diffeomorphism}\index{diffeomorphism} and the charts are said to \emph{change differentiably}.
+\end{definition}
+
+\begin{definition}
+	%[\emph{Atlas}]
+	A set $\mathfrak{A}$ of $n$-dimensional charts of a topological space $X$, whose chart domains cover the whole space $X$, is called an \emph{$n$-dimensional atlas}\index{atlas} of $X$.
+	The atlas is \emph{differentiable} if all coordinate changes are changing differentiably.
+\end{definition}
+
+The set $\mathscr{D}(\mathfrak{A})$ of all charts $(U, h)$ of $X$ changing differentiably is then an $n$-dimensional maximal atlas of $X$. \cite[2]{Jaenich-1992}
+
+\begin{definition}
+	An \emph{$n$-dimensional differential structure}\index{differential structure} of a topological space $X$ is a maximal differentiable atlas. 
+\end{definition}
+
+\begin{definition}
+A \emph{smooth manifold}\index{manifold}\index{smooth manifold} of dimension $n$ is 
+a Hausdorff topological space $\mathscr{M}$ with a differentiable structure $\mathscr{D}$, satisfying the second countability axiom and the property that every point of $\mathscr{M}$ has a neighborhood diffeomorphic to $\mathbb{R}^n$.
+\end{definition}
+
+Many approximations of complicated situations in physics are done by linearizations. In case of manifolds a kind of local linearization is given by the tangent space of some given point $p \in \mathscr{M}$ of the manifold.
+
+\begin{definition}
+	A \emph{tangent vector}\index{tangent vector} $v$ to a smooth manifold $\mathscr{M}$ at a point $p \in \mathscr{M}$ is a linear function from the space of smooth functions defined on some neighborhood of $p \in \mathscr{M}$ which satisfies the Leibniz rule:
+	\begin{itemize}
+	\item
+	\emph{Linearity:} 
+	$v(\alpha f + \beta g) = \alpha v(f) + \beta v(g)$
+	for $\alpha, \beta \in \mathbb{R}$ and functions $f$, $g$ on $\mathscr{M}$ differentiable at $p$;
+	
+	\item
+	\emph{Leibniz rule:}\index{Leibniz rule}
+	$v (fg) = f(p)\, v(g) + g(p) \, v(f).$
+	\end{itemize}
+	Then $v(f)$ is the \emph{directional derivative}\index{directional derivative}
+	of $f$ along $v$.
+	The space $T_p \mathscr{M}$ of tangent vectors to $\mathscr{M}$ at $p$ together with addition and scalar multiplication defined by
+	\begin{equation*}
+		(\alpha u + \beta v) (f)
+		= \alpha u (f) + \beta v (f)
+	\end{equation*}
+	is a vector space of dimension $n$, the \emph{tangent vector space}.
+\end{definition}
+
+This definition can be formulated more precisely by identifying functions which coincide on a neighborhood of $p$: two function $f$ and $g$ on $\mathscr{M}$ differentiable at $p$ have the same \emph{germ}\index{germ} at $p$ if there exists a neighborhood of $p$ where they coincide. The equivalence class of differentiable functions at $p$ whch have the same germ as a function $f$ is called a \emph{germ} of $f$. The disjoint equivalence classes are called the \emph{germs of differentiable functions} at $p$. Germs form an algebra.
+A \emph{tangent vector} then is derivation on the algebra of of germs of differentiable functions at $p$.
+
+In a local chart $(U, h)$ with coordinates $(x^1, \ldots, x^n)$ a tangent vector $v \in T_p \mathscr{M}$ can be expressed as
+\begin{equation}
+	v^i {\partial x^i}
+	:= 
+	v^i \frac{\partial}{\partial x^i}
+\end{equation}
+with the Einstein summation convention that double indices are summed over.
+Here the components $(v^1, \ldots, v^n)$ are defined as
+$v^i = v(x^i)$. \cites[119]{Choquet-Bruhat-et-al-1982}[32]{Jaenich-1992}
+
+More intuitively a tangent vector can be described in terms of differentiable parametrized curves $\gamma: (-\varepsilon, \varepsilon) \to \mathscr{M}$ with $\gamma(0) = p$, see Figure \ref{fig:tangent-space}. \cites[120]{Choquet-Bruhat-et-al-1982}[29]{Jaenich-1992}
+%--- Figure: --------------------------------------------------------------
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=\fontscale]{tangent-space}
+	\caption[Geometric view of the Lie algebra]{\label{fig:tangent-space}
+		The tangent space $T_p \mathscr{M}$ of $\mathscr{M}$ at $p \in \mathscr{M}$ can be viewed as the derivative of a curve $\gamma: (-\varepsilon, \varepsilon) \to \mathscr{M}$ with $\gamma(0) = p$. \cites[120]{Choquet-Bruhat-et-al-1982}[29]{Jaenich-1992}
+		Graphic modified from \href{https://tikz.pablopie.xyz/figures/tangent-space.tex.html}{G. Mezzovilla} under \href{https://creativecommons.org/licenses/by/4.0/}{CC-BY 4.0}
+	}
+\end{figure}
+%--- Figure ---------------------------------------------------------------
+
+\begin{beispiel}
+	\label{example:spherical-coordinates}
+	An illustrative example of a two-dimensional manifold is the surface $S^2 (r)$ of a three-dimensional sphere of radius $r$ in $\mathrm{R}^3$,
+	\begin{equation}
+		S^2(r) = \{ (x, y, z) \in \mathbb{R}^3 : x^2 + y^2 + z^2 = r^2 \}
+		.
+	\end{equation}
+	Without its poles $\{z = \pm r\}$ it has the chart
+	$h: S^2(r) \setminus \{z = \pm r\} \to (0, \pi) \times (0, 2\pi)$,
+	\begin{equation}
+		\left(\begin{array}{l} 
+			\vartheta \\ \varphi
+		\end{array} \right)
+		\
+		\stackrel{h}{\mapsto}
+		\
+		\left(\begin{array}{@{\ }c@{\ }} x \\ y \\ z \end{array} \right)
+		=
+		\left(\begin{array}{l} 
+			r \ \sin\vartheta \cos\varphi \\ 
+			r \ \sin\vartheta \sin\varphi \\
+			r \ \cos\vartheta
+		\end{array} \right)
+		.
+		\quad
+		\begin{tabular}{c}
+			\includegraphics[scale=1]{S2-coordinate-chart}		
+		\end{tabular}
+		\label{eq:s^2-chart}
+	\end{equation}
+	The local coordinates
+	$(\vartheta, \varphi) \in (0, \pi) \times [0, 2\pi)$
+	are called \emph{spherical coordinates}\index{spherical coordinates}.
+\end{beispiel}
+
+\begin{bem}
+	\label{rem:differentiable-fiber-bundle}
+	If $\mathscr{M}$ is a differentiable manifold of class $C k$, $T\mathscr{M}$ is a differentiable manifold of class $C^{k-1}$, and it is called a \emph{differentiable tangent bundle} of class $C^{k-1}$.
+	However there is no canonical isomorphism between the fiber at a point and the typical fiber, and hence no canonical isomorphism between fibers at different points, unless the fiber bundle is given an additional structure. Such a structure may be for instance parallel displacement as considered in case of semi-Riemannian manifolds.
+\end{bem}
+
+
+\section{Smooth fiber bundles}
+In mathematics, and particularly topology, a fiber bundle is a space that is locally a product space, but globally may have a different topological structure. 
+In fact, bundle have been introduced to generalize topological products. The need to generalize topological products can be seen already by a simple example: a cylinder obtained by glueing a strip of paper is the Cartesian product $S^1 \times (-1, 1)$ of a 1-sphere $S^1$ (a circle) and a line segment $(-1,1)$, see Figure \ref{fig:cylinder-vs-Möbius-strip}.
+%--- Figure: --------------------------------------------------------------
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=.6]{cylinder}
+	\qquad
+	\includegraphics[scale=.6]{Moebius-strip}
+	\vspace*{-3ex}
+	\caption[A cylinder and a Möbius strip]{\label{fig:cylinder-vs-Möbius-strip}
+		A cylinder $S^1 \times (-1, 1)$ and a Möbius strip.
+		For each open arc $U \subsetneq S^1$ of the circle, $U \times (-1, 1)$ is a local chart of both the cylinder and the Möbius strip.
+	}
+\end{figure}
+%--- Figure ---------------------------------------------------------------
+But a Möbius strip is obtained by twisting a strip of paper and then glueing it.
+Therefore it cannot be described globally as a product space: For $U \subsetneq S^1$ the topological product $U \times [0, 2\pi)$ decribes a segment of the Möbius strip. But we need some mechanism to say that twisting occurs somewhere.
+
+
+\begin{definition}
+A \emph{fiber bundle}\index{fiber bundle} is a 6-tuple 
+$(E, B, F, \pi, \mathscr{F}, G)$ consisting of:
+\begin{itemize}
+%\item
+%a smooth manifold $E$, called the \emph{total space};
+%
+%\item
+%a smooth manifold $B$, called the \emph{base};
+%
+%\item
+%a smooth manifold $F$, called the \emph{typical fiber};
+
+\item
+Manifolds $E$, $B$, and $F$, called the \emph{total space}, the \emph{base},
+and the \emph{typical fiber}, respectively.
+
+\item
+A surjective mapping $\pi: E \to B$, called the \emph{projection}.
+For any point $p \in B$ the preimage $F_p$ is called the \emph{fiber}\index{fiber} at $x$.
+
+\item 
+A family $\mathscr{F} = \{(U_i, \varphi_i)\}$ of open sets $U_i \subset B$ covering $B$ and homeomorphisms $\varphi_i: \pi^{-1}(U_i) \to U_i \times F$ such that the following diagram commutes:
+\begin{center}
+	\includegraphics{fiber-bundle-local-triviality-condition}
+\end{center}
+The sets $\{(U_i, \varphi_i)\}$ are called \emph{local trivializations}\index{local trivialization fo a fiber bundle} of the bundle.
+As a consequence, for each $x \in \pi^{-1}(U_i) \subset E$ the homeomorphisms can be written as $\varphi(x) = (\pi(x), \hat{\varphi}_i(x))$ by unique homeomorphisms $\hat{\varphi}_i: F_{p} \to F$ where $F_p$ with $p = \pi(x) \subset B$ is the fiber over $p$. To simplify notation, let for $p \in U_i$ denote 
+$\hat{\varphi}_{i,p} := \hat{\varphi}_i|_{F_p}$.
+
+\item
+A topological group $G$ of homeomorphisms $F \to F$, called the \emph{structure group}, such that for any $p \in U_i \cap U_j \subset B$ the homeomorphism $\hat{\varphi}_{i,p} \circ \hat{\varphi}_{j,p}^{-1}: F \to F$ is an element of $G$.
+The mappings $f_{ij}: U_i \cap U_j \to G$ induced by $p \mapsto f_{ij}(p) = \hat{\varphi}_{i,p} \circ \hat{\varphi}_{j,p}^{-1}$ are called \emph{transition functions}\index{transition function of a fiber bundle}.
+
+\end{itemize}
+Often, a fiber bundle is shortly written as the short sequence 
+$F \to E \stackrel{\pi}{\to} B$.
+If $F$ and $G$ are isomorphic, $F \cong G$, and $G$ acts on $F$ by left translation, the bundle is called a \emph{principal fiber bundle}\index{principal fiber bundle}.
+\end{definition}
+
+\noindent
+In other words, the similarity between a space $E$ and a product space $B \times F$ is defined using the projection $\pi: E \to B$, that in small regions of $E$ behaves just like a projection from corresponding regions of $B \times F$ to $B$. % where in addition overlapping regions are connected differentiably.
+
+\begin{beispiel}
+	\emph{(Möbius strip)}
+	According to \cite[126-127]{Choquet-Bruhat-et-al-1982} we can represent the Möbius strip as a smooth fiber bundle according to the following profile.
+	
+	\medskip
+	\noindent
+	\begin{tabular}[b]{@{}|ll|}
+		\hline
+		\multicolumn{2}{|l|}{\textbf{Profile}} \\ \hline
+		\textbf{Bundle space:} & $E = \mbox{Möbius strip}$
+		\\
+		\textbf{Base space:} & $B = S^1 \cong \{(\cos t, \sin t) \mid 0 \leqq t < 2\pi \}$
+		\\
+		\textbf{Fiber:} & $F = (-1,1)$
+		\\
+		%\textbf{Projection:} &  $\pi:E \to B$ \\
+		\textbf{Covering of \emph{B}:} &
+		$U_1 = \{t \mid -\pi < t < \frac{\pi}{2}\}$,
+		$U_2 = \{t \mid 0 < t < \frac{3\pi}{2}\}$
+		\\
+		\textbf{Transition function:} &
+		$f_{12}\big|_{(-\pi, -\frac{\pi}{2})} (t) = - \fett{1}_F$,
+		$f_{12}\big|_{(0, \frac{\pi}{2})} (t) = +\fett{1}_F$
+		\\
+		\textbf{Structure group:} &
+		$G = \{- \fett{1}_F, + \fett{1}_F\} \cong \mathbb{Z}_2$
+		\\ \hline
+	\end{tabular}
+	
+	\medskip
+	\noindent
+	Here $U_1$ and $U_2$ are two local charts for the sphere $S^1$ overlapping in two disjoint regions,
+	\begin{equation*}
+		\textstyle
+		U_1 \cap U_2 
+		= (-\pi, -\frac{\pi}{2}) 
+		\cup (0, \frac{\pi}{2})
+	\end{equation*}
+	The first region then is the set $(-\pi, -\frac{\pi}{2}) \times F$ for which every point on the fiber $\pi^{-1}(t)$ is reflected with respect to the origin, whereas for the second regions $(0, \frac{\pi}{2}) \times F$ every point on the fiber is identified with itself. 
+	%--- Figure: --------------------------------------------------------------
+	\begin{figure}[ht]
+		\centering
+		%\includegraphics[scale=.6]{Moebius-strip}
+		%\qquad
+		\includegraphics[scale=1]{Moebius-strip-as-a-fiber-bundle}
+		\caption[Identifying scheme to construct a Möbius strip as a fiber bundle]{\label{fig:Möbius-strip-as-a-fiber-bundle}
+			Identifying scheme to construct a Möbius strip as a fiber bundle.
+			Here $a = \frac{\pi}{2}$, $I = (-1,1)$, and $\{U_1, U_2\}$ covers $S^1$.
+			Points with he same label A, B, C, D are identified.
+			Modified from \cite[126]{Choquet-Bruhat-et-al-1982}
+		}
+	\end{figure}
+	%--- Figure ---------------------------------------------------------------
+	Thus the structure group is
+	$G = \{- \fett{1}_F, + \fett{1}_F\} \cong \mathbb{Z}_2$.
+\end{beispiel}
+
+\begin{beispiel}
+	\label{bsp:tangent-bundle}
+	\emph{(Tangent bundle)}
+	\cite[127-128]{Choquet-Bruhat-et-al-1982}
+	Let $\mathscr{M}$ be a manifold of dimension $n$. Then let $T \mathscr{M}$ be the space of pairs $(p, v_p)$ of all points $p \in \mathscr{M}$ and all $v_p \in T_p \mathscr{M}$.
+	Then the \emph{tangent bundle}\index{tangent bundle}
+	as given in the following profile is a fiber bundle.
+	
+	\medskip
+	\noindent
+	\begin{tabular}[b]{@{}|lp{50ex}|}
+		\hline
+		\multicolumn{2}{|l|}{\textbf{Profile of a tangent bundle}} \\ \hline
+		\textbf{Bundle space:} & $E = T \mathscr{M} = \bigcup_{p \in \mathscr{M}} \{(p, v_p) \mid v_p \in T_p \mathscr{M})\}$
+		\\
+		\textbf{Base space:} & $B = \mathscr{M}$
+		\\
+		\textbf{Fiber:} & $F = \mathbb{R}^n$, $F_p = \pi^{-1}(p) = T_p \mathscr{M}$
+		\\
+		%\textbf{Projection:} &  $\pi:E \to B$ \\
+		\textbf{Covering of \emph{B}:} &
+		$\{U_i \mid \{(U_i, \psi_i)\} \mbox{ is an atlas of } \mathscr{M}\}$
+		\\
+		\textbf{Transition function:} &
+		$f_{ij} = \psi'_{i,p} \circ {\psi'}_{j,p}^{\ -1}$ where $\psi'_{i,p}(v_p)$ is the representative of $v_p \in T_p \mathscr{M}$ in the chart $(U_i, \psi_i)$
+		\\
+		\textbf{Structure group:} &
+		$G = GL(n, \mathbb{R})$
+		\\ \hline
+	\end{tabular}
+	
+	\medskip
+	\noindent
+	For each fixed $p \in \mathscr{M}$, we have $\{p\} \times T_p \mathscr{M} \subset T\mathscr{M}$.
+	The projection $\pi: T\mathscr{M} \to \mathscr{M}$ simply maps $(p, v_p) \mapsto p$, and the fiber at $p$ is $F_p = \pi^{-1}(p) = T_p \mathscr{M} \cong \mathbb{R}^n$, i.e., $F = \mathbb{R}^n$.
+	The covering of $\mathscr{M}$ is given by the chart domains $U_i$ of an arbitrary atlas of $\mathscr{M}$, and their charts $\psi_i$ induce the homeomorphisms $\varphi_i$ as the pair of the projection $\pi$ and the mapping $(\pi, \psi' \circ \pi_2)$ where $\pi_2(p, v_p) = v_p$ and $\psi'_i(v_p)$ is the representative of $v_p$ in the chart $(U_i, \psi_i)$, namely
+	\begin{equation}
+		\varphi_i = (\pi, \psi' \circ \pi_2) : \pi^{-1}(U_i) \to U_i \times \mathbb{R}^n,
+		\qquad
+		(p, v_p) \mapsto (p, \psi'_i(v_p))
+		.
+	\end{equation}
+	The fiber coordinates on $T_p \mathscr{M}$ are given by the mappings
+	\begin{equation}
+		(\psi_i, \operatorname{id}_{\mathbb{R}^n})
+		\circ (\psi' \circ \pi_2) : \pi^{-1}(U_i) \to \mathbb{R}^n \times \mathbb{R}^n,
+		.
+	\end{equation}
+	The coordinates of a point $y = (p, v_p) \in \pi^{-1}(U_i) \subset T\mathscr{M}$ are thus
+	\begin{equation}
+		(x^1, \ldots, x^n, v_p^1, \ldots, v_p^n)
+	\end{equation}
+	where $(x^1, \ldots, x^n)$ denote the coordinates of $p$ in $\mathscr{M}$.
+	A change of fiber  coordinates on $T\mathscr{M}$ is therefore entirely determined by a change of coordinates on $\mathscr{M}$.
+	Thus the structure group is $GL(n, \mathbb{R})$ of automorphisms of $\mathbb{R}^n$ whose matrix representation is given as the set of $n \times n$ matrices with non-vanishing determinant.
+	The tangent bundle is a $2n$-dimensional real manifold. \cite[584]{Teubner-Taschenbuch-2}
+\end{beispiel}
+
+\begin{definition}
+	A \emph{cross-section}\index{cross-section} of the fiber bundle
+	$F \to E \stackrel{\pi}{\to} B$ is a mapping $f: B \to E$ such that $f \circ \pi$ is the identity on $B$.
+	A \emph{vector field}\index{vector field} $v$ is a cross-section on a tangent bundle $T\mathscr{M}$. In other words, a vector field associates to each point $p \in \mathscr{M}$ a tangent vector $v_p \in T_p \mathscr{M}$ by the mapping $v: \mathscr{M} \to T\mathscr{M}$, $p \mapsto (p, v_p)$, often abbreviated $p \mapsto v_p$.
+	A vector field $v$ on a smooth manifold $\mathscr{M}$ is called \emph{smooth} or \emph{differentiable} if the mapping $v: \mathscr{M} \to T\mathscr{M}$ is smooth.
+	\cite[132]{Choquet-Bruhat-et-al-1982}
+\end{definition}
+
+\begin{bem}
+	\label{bem:vector-field-as-a-derivation-on-C^k(M)}
+	A vector field can be regarded as a derivation on the algebra of $C^k(\mathscr{M})$ of functions ofclass $C^k$ on $\mathscr{M}$:
+	\begin{equation}
+		 v: C^k(\mathscr{M}) \to C^{k-1}(\mathscr{M})
+		 \qquad
+		 \mbox{by}
+		 \qquad
+		 v(f) = vf.
+	\end{equation}
+	Hence $v_p(f) = (vf)(p)$, or in local coordinates $(x^i)$ of $p \in \mathscr{M}$:
+	$ %\begin{equation}
+		(vf)(x^i)
+		= v_p \partial_{x^i}.
+	$ %\end{equation}
+\end{bem}
+
+
+\section{Differential forms on smooth manifolds}
+
+\begin{definition}
+	\cite[219]{Jaenich-2002}
+	Let $\mathscr{M}$ be a smooth manifold of dimension $n$.
+	Then a \emph{differential $k$-form}\index{differential form}\index{k-form},
+	or shortly a \emph{$k$-form} on $\mathscr{M}$ is a mapping that assigns to each $p \in \mathscr{M}$
+	an alternating multilinear mapping $\omega_p \in \Lambda^k (T_p \mathscr{M})$ \cite[cf.][217]{Jaenich-2001}.
+	Its dimension is $\binom{n}{k}$.
+	It is called \emph{differentiable} if it is differentiable in local coordinates.
+	The vector space of all differentiable ($C^\infty$) $k$-forms on $\mathscr{M}$ is denoted by
+	$\Omega ^k \mathscr{M}$.
+	By definition functions $f: \mathscr{M} \to \mathbb{R}$ are 0-forms, and thus $\Omega^0 \mathscr{M}$ is the space of differentiable functions on $\mathscr{M}$.
+\end{definition}
+
+A differentiable 1-form $\omega: \Omega^1 \mathscr{M}$ is called a \emph{Pfaffian form}\index{Pfaffian form}. A special kind of Pfaffian forms are the “exact Pfaffian forms” which are differentials of differentiable functions.
+
+\begin{definition}
+\cite[60]{Jaenich-1992}
+Let $f$ be a differentiable function $f:\mathscr{M} \to \mathbb{R}$ from a smooth manifold $\mathscr{M}$ to a real number. Then the differentiable 1-form $\D f \in \Omega^1 \mathscr{M}$ given by $p \to \Lambda^1 T_p \mathscr{M}$ is called the \emph{differential}\index{differential} of $f$.
+\end{definition}
+
+In local coordinates $h = (x^1, \ldots, x^n)$ around $p \in U \subset \mathscr{M}$ the differentials $\D x^1$, \ldots, $\D x^n$ form a basis of the space $T_p^* \mathscr{M}$, in fact the dual basis of $\partial_i := \frac{\partial}{\partial x^i} \in T_p \mathscr{M}$.
+Therefore a general 1-form $\omega \in \Omega^1 \mathscr{M}$ on the local chart $(U,h)$ can be expressed as
+\begin{equation}
+	\omega = \sum_{i=1}^{n} \omega_i \D x^i
+\end{equation}
+where $\omega_i: U \to \mathbb{R}$ are the component functions $\omega_i := \omega(\partial_i)$.
+Especially the differential of a smooth function $f:\mathscr{M} \to \mathbb{R}$ is given by 
+the Leibniz rule\index{Leibniz rule}
+\begin{equation}
+	\D f = \sum_{i=1}^{n} \partial_i f \D x^i
+\end{equation}
+cf. \cite[61]{Jaenich-1992}.
+%In general a smooth function $f:\mathscr{M} \to N$ induces a linear mapping 
+%$f^*: \Omega^k N \to \Omega^k \mathscr{M}$
+%which assigns to a $k$-form on $N$ the induced $k$-form $f^* \omega$ on $\mathscr{M}$ by
+%\begin{equation}
+%	(f^* \omega) (v_1, \ldots, v_k) = \omega_{f(p)} (\D f_p(v_1), \ldots, \D f_p(v_k))
+%	.
+%\end{equation}
+%\cites[41]{Jaenich-1992}
+%[137]{Jaenich-2002}
+
+\begin{definition}
+	\cites[196]{Choquet-Bruhat-et-al-1982}[135]{Jaenich-1992}
+	Let $V$ be a real vector space. smooth manifold. Then the 
+	\emph{exterior product}\index{exterior product},
+	also called \emph{wedge product}\index{wedge product}
+	or \emph{Graßmann product}\index{Graßmann product},
+	\begin{equation}
+		\wedge: \Omega^r \mathscr{M} \times \Omega^s \mathscr{M} \to \Omega^{r+s} \mathscr{M},
+		\qquad
+		(\omega, \eta) \mapsto \omega \wedge \eta
+	\end{equation}
+	of differential forms on $\mathscr{M}$ pointwise by $(\omega \wedge \eta) := \omega_p \wedge \eta_p$ for each $p \in \mathscr{M}$.
+\end{definition}
+
+\begin{definition}
+	\cites[139]{Jaenich-1992}
+	Let $\mathscr{M}$ be a smooth manifold. Then the 
+	\emph{exterior product}\index{exterior product},
+	also called \emph{wedge product}\index{wedge product}
+	or \emph{Graßmann product}\index{Graßmann product},
+	\begin{equation}
+		\wedge: \Omega^r \mathscr{M} \times \Omega^s \mathscr{M} \to \Omega^{r+s} \mathscr{M},
+		\qquad
+		(\omega, \eta) \mapsto \omega \wedge \eta
+	\end{equation}
+	of differential forms on $\mathscr{M}$ is defined
+	pointwise by $(\omega \wedge \eta) := \omega_p \wedge \eta_p$ for each $p \in \mathscr{M}$.
+	Here
+	\begin{eqnarray*}
+		\lefteqn{(\omega_p \wedge \eta_p) (v_1, \ldots, v_{r+s})}
+		\\
+		& & 
+		:=
+		\frac{1}{r!s!} \sum_{\pi} \mathrm{sign} \, \pi \cdot
+		\omega_p(v_{\pi(1)}, \ldots, v_{\pi(r)}) \cdot
+		\eta_p(v_{\pi(r+1)}, \ldots, v_{\pi(r+s)})
+	\end{eqnarray*}
+	where $v_i \in T_p \mathscr{M}$ and $\pi$ is a permutation of $(1,2, \ldots, r+s)$.
+\end{definition}
+
+\begin{bem}
+	The antisymmetry of the wedge product implies 
+	$\D x^i \wedge \DD x^j = - \D x^j \wedge \DD x^i$
+	as well as 
+	$\D x^i \wedge \DD x^i = 0$.
+	\cite[307]{Teubner-Taschenbuch-1}
+\end{bem}
+
+\begin{beispiel}
+	\emph{(Classical differential forms in 3-dimensional vector analysis)}
+	\cite[169]{Jaenich-1992}
+	Let $\mathscr{M} \in \mathbb{R}^3$ be open. Then the vector-valued 1-form $\DD \fett{s}$ and the vector-valued 2-form $\DD \fett{S}$,
+	\begin{equation}
+		\DD \fett{s}
+		= \left(\begin{array}{@{\,}c@{\,}}
+			\DD x^1 \\ \DD x^2 \\ \DD x^3
+		\end{array}
+		\right),
+		\qquad
+		\DD \fett{S}
+		= \left(\begin{array}{@{\,}c@{\,}}
+			\DD x^2 \wedge \DD x^3 \\ \DD x^3 \wedge \DD x^1 \\ \DD x^1 \wedge \DD x^2
+		\end{array}
+		\right)
+	\end{equation}
+	are called the \emph{vector-valued line element}\index{line element} $\DD \fett{s} \in \Omega^1 \mathscr{M}$ and the \emph{vector-valued surface element}\index{surface element} $\DD \fett{S} \in \Omega^2 \mathscr{M}$; the real-valued 3-form
+	\begin{equation}
+		\DD V = \DD x^1 \wedge \DD x^2 \wedge \DD x^3
+		\label{eq:volume-element}
+	\end{equation}
+	is called the \emph{volume element}\index{volume element} of $\mathscr{M}$. Note that 
+	$\DD x^i$ $\in$ $\Omega^1 \mathscr{M}$, $\DD x^i$ $\wedge$ $\DD x^j$ $\in$ $\Omega^2 \mathscr{M}$, and $\DD V$ $\in$ $\Omega^3 \mathscr{M}$.
+	Note moreover that the “line element” $\DD s = \sqrt{\DD x^2 + \DD y^2 + \DD z^2}$, which is applied to compute the arc length of a curve in $\mathbb{R}^3$, is \emph{not} a 1-form. \cite[68]{Jaenich-1992}
+\end{beispiel}
+
+
+\begin{beispiel}
+	\emph{(Variable transformations)}
+	\cite[307-310]{Teubner-Taschenbuch-1}
+	For a coordinate transformation $x = x(u, v)$, $y = y(u,v)$ applied to a 2-form $\omega = a \D x \wedge \DD y$ with $a = a(x,y)$ we have
+	\begin{equation}
+		\omega = (\partial_u x \, \partial_v y - \partial_v x \, \partial_u y) \, a \D u \wedge \DD v
+		,
+		\label{eq:2-form-under-coordinate-transformation}
+	\end{equation}
+	since $\DD x = \partial_u x \D u + \partial_v x \D v$,
+	$\D y = \partial_u y \D u + \partial_v y \D v$, and thus
+	$\D \omega 
+	= (\partial_u x \D u + \partial_v x \D v) 
+	\wedge (\partial_u y \D u + \partial_v y \D v)$.
+	In terms of the Jacobian determinant
+	\[
+		\frac{\partial (x,y)}{\partial (u,v)} 
+		= \left|\begin{array}{cc}
+			\partial_u x & \partial_v x \\
+			\partial_u y & \partial_v y 
+		\end{array}\right|
+		= \partial_u x \, \partial_v y - \partial_v x \, \partial_u y
+	\]
+	Equation (\ref{eq:2-form-under-coordinate-transformation}) can be rewritten as
+	\begin{equation}
+		\omega = \frac{\partial (x,y)}{\partial (u,v)} \, a \D u \wedge \DD v
+		.
+		\label{eq:2-form-under-coordinate-transformation-with-Jacobian}
+	\end{equation}
+	Similarly, by the coordinate transformation
+	$x = x(u, v, w)$, $y = y(u,v,w), z = z(u,v,w)$
+	the three-dimensional 3-form $\omega = a \D x \wedge \DD y \wedge \DD z$
+	\begin{equation}
+		\omega = \frac{\partial (x,y,z)}{\partial (u,v,w)} \, a \D u \wedge \DD v \wedge \DD z
+		.
+		\label{eq:3-form-under-coordinate-transformation-with-Jacobian}
+	\end{equation}
+	with the Jacobian
+	\[
+		\frac{\partial (x,y,z)}{\partial (u,v,w)} 
+		= \left|\begin{array}{ccc}
+			\partial_u x & \partial_v x & \partial_w x \\
+			\partial_u y & \partial_v y & \partial_w y \\
+			\partial_u z & \partial_v z & \partial_w z 
+		\end{array}\right|
+		.
+	\]
+	Finally, the variable transformation
+	$x = x(u, v)$, $y = y(u,v), z = z(u,v)$
+	applied to a 2-form
+	\begin{equation*}
+		\omega
+		= a \D y \wedge \DD z + b \D z \wedge \DD x + c \D x \wedge \DD y 
+	\end{equation*}
+	gives the expression
+	\begin{equation}
+		\omega
+		= \left(
+			  a \, \frac{\partial (y,z)}{\partial (u,v)}
+			+ b \, \frac{\partial (z,x)}{\partial (u,v)}
+			+ c \, \frac{\partial (x,y)}{\partial (u,v)}
+		\right)
+		\D u \wedge \DD v
+		. 
+	\end{equation}	
+\end{beispiel}
+
+
+\begin{bem}
+	By the exterior product $\Omega^* := \bigoplus_{0}^{\infty} \Omega^k$ becomes a contravariant functor from the category of manifolds and differentiable mappings into the category of real graduated anticommutative algebras with a unit element.
+	\cite[139]{Jaenich-1992}
+\end{bem}
+
+
+\begin{satz}[\textbf{Cartan derivative}]
+	\cites[140]{Jaenich-1992}[246]{Jaenich-2002}
+	If $\mathscr{M}$ is a smooth manifold of dimension $n$, there is only one possibility to introduce a sequence of linear mappings
+	\begin{equation}
+		0 \longrightarrow
+		\Omega^0 \mathscr{M} \stackrel{\D}{\longrightarrow}
+		\Omega^1 \mathscr{M} \stackrel{\D}{\longrightarrow}
+		\Omega^2 \mathscr{M} \stackrel{\D}{\longrightarrow}
+		\cdots
+		\stackrel{\D}{\longrightarrow}
+		\Omega^{n-1} \mathscr{M} \stackrel{\D}{\longrightarrow}
+		\Omega^{n} \mathscr{M} 
+		\longrightarrow 
+		0
+		\label{eq:de-Rham-complex}
+	\end{equation}
+	such that the following three conditions are satisfied:
+	\begin{itemize}
+		\item[(1)]
+		Leibniz rule\index{Leibniz rule}:
+		For $f \in \Omega^0 \mathscr{M}$, $\D f \in \Omega^1 \mathscr{M}$ is the differential of $f$.
+		
+		\item[(2)]
+		Poincar\'e rule\index{Poincar\'e rule}% (“complex property”)
+		:
+		$\DD^2 = \DD \circ \DD = 0$
+		
+		\item[(3)]
+		Product rule\index{product rule}:
+		$\DD (\omega \wedge \eta) = \DD \omega \wedge \eta + (-1)^r \omega \wedge \DD \eta\,$
+		for $\omega \in \Omega^r \mathscr{M}$.
+	\end{itemize}
+	Then $\DD \omega$ is called the 
+	\emph{exterior}\index{exterior derivative} or 
+	\emph{Cartan derivative}\index{Cartan derivative}
+	of the differential form $\omega$, and the whole sequence $(\ref{eq:de-Rham-complex})$ is called the 
+	\emph{de Rham complex}\index{de Rham complex} of $\mathscr{M}$.
+	We have automatically the property:
+	\begin{itemize}
+		\item[(4)]
+		Naturalness:
+		For any differentiable mapping $f: \mathscr{M} \to N$ between smooth manifolds $\mathscr{M}$ and $N$ and all differential forms $\omega$ on $N$ we have 
+		$\DD (f^* \omega) = f^* (\DD \omega)$.
+	\end{itemize}
+\end{satz}
+
+
+\begin{bem}
+	For a differential form 
+	$\omega = \sum \omega_{j_1 \ldots j_r} \DD x^{j_1} \wedge \ldots \wedge \DD x^{j_r} \in \Omega^r \mathscr{M}$ we have the Cartan rule
+	\begin{equation}
+		\DD \omega 
+		= \sum \DD \omega_{j_1 \ldots j_r} \wedge \DD x^{j_1} \wedge \ldots \wedge \DD x^{j_r}
+		.
+	\end{equation}
+	\cite[307]{Teubner-Taschenbuch-1}
+\end{bem}
+
+\begin{beispiel}
+	\cite[307]{Teubner-Taschenbuch-1}
+	For $\omega = a \D x + b \D y$ we have
+	\begin{align}
+		\D \omega
+		& 
+		= \D a \wedge \DD x + \D b \wedge \DD y
+		= (\partial_x a \D x + \partial_y a \D y) \wedge \DD x
+		+ (\partial_x b \D x + \partial_y b \D y) \wedge \DD y
+		\nonumber \\
+		&
+		= (\partial_x b - \partial_y a) \D x \wedge \DD y,		
+	\end{align}
+	since $\DD x \wedge \DD x = \DD y\wedge \DD y = 0$ and $\DD y \wedge \DD x = - \D x \wedge \DD y$.
+\end{beispiel}
+
+
+
+\begin{beispiel}
+	\label{bsp:classical-vector-analysis}
+	\cite[254-262]{Jaenich-1992}
+	Let be $\mathscr{M} \subset \mathbb{R}^3$.
+	Then $\Omega^3 \mathscr{M} \cong \Omega^0 \mathscr{M} = C^\infty(\mathscr{M}, \mathbb{R}) =: \mathscr{F}(\mathscr{M})$ of real-value differential functions on $\mathscr{M}$ and 
+	$\Omega^1 \mathscr{M} \cong \Omega^2 \mathscr{M} \cong C^\infty(\mathscr{M}, \mathbb{R}^3) =: \mathscr{V}$
+	of differental vector fields on $\mathscr{M}$.
+	Then the classical differential operators from vector analysis are given by
+	\begin{align}
+		\mathrm{grad}: \mathscr{F}(\mathscr{M}) \to \mathscr{V}(\mathscr{M}),
+		& &
+		f 
+		&
+		\mapsto 
+		\left(\begin{array}{@{\ }c@{\ }}
+			\partial_x f \\ \partial_y f \\ \partial_z f
+		\end{array}\right),
+		\nonumber \\
+		\mathrm{curl}: \mathscr{V}(\mathscr{M}) \to \mathscr{V}(\mathscr{M}),
+		& &
+		\left(\begin{array}{@{\ }c@{\ }}
+			u \\ v \\ w
+		\end{array}\right)
+		&
+		\mapsto
+		\left(\begin{array}{@{\ }c@{\ }}
+			\partial_y w - \partial_z v \\ 
+			\partial_z u - \partial_x w \\
+			\partial_x y - \partial_y u
+		\end{array}\right),
+		\label{eq:classical-vector-analysis-opertaors-in-R^3}
+		\\
+		\mathrm{div}: \mathscr{V}(\mathscr{M}) \to \mathscr{F}(\mathscr{M}),
+		& &
+		\left(\begin{array}{@{\ }c@{\ }}
+			u \\ v \\ w
+		\end{array}\right)
+		&
+		\mapsto 
+		\partial_x u + \partial_y v + \partial_z w,
+		\nonumber
+	\end{align}
+%	we obtain the classical integral theorems for a 2-dimensional surface $S \subset \mathbb{R}^3$ and a 3-dimensional finite volume $V \subset \mathbb{R}$:
+%	\begin{align}
+%		\mbox{Stokes:} \qquad &
+%		\int_{S} \mathrm{curl}\, \fett{a} \cdot \DD \fett{S}
+%		= \int_{S} \DD \alpha = \int_{\partial S} \alpha
+%		= \int_{\partial S} \fett{a} \D \fett{s},
+%		\label{eq:Stokes-classical-theorem}
+%		\\[2ex]
+%		\mbox{Gauss:} \qquad &
+%		\int_{V} \mathrm{div}\, \fett{b} \cdot \DD V
+%		= \int_{V} \DD \eta = \int_{\partial V} \eta
+%		= \int_{\partial V} \fett{b} \cdot \DD \fett{S}
+%		.		
+%		\label{eq:Gauss-theorem}
+%	\end{align}
+	With the \emph{nabla operator}\index{nabla operator}
+	$\nabla \in \Omega^1 \mathscr{M}$,
+	\begin{equation}
+		\nabla := \left(\begin{array}{@{\ }c@{\ }}
+		\partial_x \\ \partial_y \\\partial_z
+	\end{array}\right),
+	\label{eq:nabla-operator}
+	\end{equation}
+	the operators (\ref{eq:classical-vector-analysis-opertaors-in-R^3}) can be compactly written as
+	\begin{equation}
+		\mathrm{grad}\, f = \nabla f,
+		\qquad
+		\mathrm{curl}\, \fett{v} = \nabla \times \fett{v}
+		\qquad
+		\mathrm{div}\, \fett{v} = \nabla \cdot \fett{v}
+		.
+	\end{equation}
+%	Moreover we get $\nabla \cdot \nabla = \Delta$ where 
+%	$\Delta = \partial_x^2 + \partial_y^2 + \partial_z^2$ is the \emph{Laplace operator}.
+%	If we suppose a 3-form $\fett{b} = f \nabla g - g \nabla f$, then by the product rule we get
+%	\begin{align}
+%		\nabla \cdot \fett{b}
+%		= \nabla \cdot (f \nabla g - g \nabla f)
+%		= \nabla f \nabla g + f \Delta g - \nabla g \nabla f - g \Delta f
+%		= f \Delta g - g \Delta f
+%		,
+%	\end{align}
+%	and thus the Gauss integral theorem (\ref{eq:Gauss-theorem}) implies \emph{Green's formula}\index{Green's formula}
+%	\begin{equation}
+%		\int_V (f \Delta g - g \Delta f) \D V
+%		= \int_{\partial V} (f \nabla g - g \nabla f) \cdot \fett{N} \D S
+%		= \int_{\partial V} \left(f \partial_n g - g \partial_n f \right) \D S
+%	\end{equation}
+%	with the surface element $\fett{N} \D S = \D \fett{S} \in \Omega^2 \mathscr{M}$
+%	being given by the outer normal of $\partial V$ and $\nabla f \cdot \fett{N} =: \partial_n f$ the normal derivative.
+\end{beispiel}
+
+
+\begin{definition}
+	\cites[222]{Jaenich-1992}[266]{Jaenich-2001}
+	Let $\mathscr{M}$ be a smooth $n$-dimensional manifold whose tangent spaces $T_p \mathscr{M}$ for $p \in \mathscr{M}$ are oriented and have a nondegenerate symmetric bilinear form $\langle \cdot,\cdot \rangle$.
+	(In more general contexts such as semi-Riemannian manifolds and Minkowski space, the bilinear form may not be positive.)
+	Then the \emph{Hodge star operator}\index{Hodge star operator}
+	\begin{equation}
+		\star: \Omega^k \mathscr{M} \stackrel{\simeq}{\longrightarrow} \Omega^{n-k} \mathscr{M}
+	\end{equation}
+	for differential forms is defined pointwise by $(\star \omega)_p = \star (\omega_p)$
+	for each $p \in \mathscr{M}$ where $\omega_p \in \Lambda^k (T_p \mathscr{M})$ is a multilinear mapping and $\star: \Lambda^k (T_p \mathscr{M}) \to \Lambda^{n-k} (T_p \mathscr{M})$ is defined by mapping the
+	oriented orthonormal basis $\{e_1, \ldots, e_k\} \in \Lambda^{k} (T_p \mathscr{M})$ to the oriented orthonormal basis $\{e_1, \ldots, e_{n-k}\} \in \Lambda^{n-k} (T_p \mathscr{M})$.
+	(Note that $\dim \Lambda^{k} (T_p \mathscr{M}) = \dim \Lambda^{n-k} (T_p \mathscr{M}) = \binom{n}{k}$.)
+\end{definition}
+
+
+\begin{beispiel}
+	Let be $\{e_x, e_y,e_z\}$ be the standard basis of the Euclidean space $\mathbb{R}^3$, with the usual orientation, and let be $\{\!\D x, \D y, \D z\}$ be the dual basis; note that they can be considered as differential 1-forms on $\mathbb{R}^3$. The Hodge star operator $\star: \Omega^1 \mathbb{R}^3 \to \Omega^2 \mathbb{R}^3$ then implies
+	\begin{equation}
+		\star \D x = \D y \wedge \DD z,
+		\qquad
+		\star \D y = \D z \wedge \DD x,
+		\qquad
+		\star \D z = \D x \wedge \DD y
+		.
+	\end{equation}
+\end{beispiel}
+
+The Hodge star operator transforms the Cartan derivative $\D$ to a \emph{codifferential}\index{codifferential} $\delta: \Omega^k \mathscr{M} \to \Omega^{k-1} \mathscr{M}$
+defined by $\delta = (-1)^k \star^{-1}\! \D \star$, i.e.,
+\begin{equation}
+	\begin{array}{ccc}
+		\Omega^k \mathscr{M} & \stackrel{\D\,}{\longrightarrow} & \Omega^{k+1} \mathscr{M}
+		\\ [.75ex]
+		{\scriptstyle \star} \big\downarrow & & {\scriptstyle \star} \big\downarrow
+		\\ [.25ex]
+		\Omega^{n-k} \mathscr{M} & \stackrel{(-1)^k \delta}{\longrightarrow} & \Omega^{n-k-1} \mathscr{M}
+	\end{array}
+	\label{eq:Cartan-derivative-and-codifferential}
+\end{equation}
+Therefore each $\Omega^k \mathscr{M}$ is flanked from two Cartan derivatives and two codifferentials:
+\begin{equation}
+	\Omega^{k-1} \mathscr{M}
+	\
+	\begin{array}{c}
+		{\scriptstyle \D\,} \\ [-1.25ex] 
+		\longrightarrow \\ [-1.9ex]
+		\longleftarrow  \\ [-1.25ex] 
+		{\scriptstyle \delta}
+	\end{array}
+	\
+	\Omega^{k} \mathscr{M}
+	\
+	\begin{array}{c}
+		{\scriptstyle \D\,} \\ [-1.25ex] 
+		\longrightarrow \\ [-1.9ex]
+		\longleftarrow  \\ [-1.25ex] 
+		{\scriptstyle \delta}
+	\end{array}
+	\
+	\Omega^{k+1} \mathscr{M}
+\end{equation}
+This defines the \emph{Laplace-Beltrami operator}\index{Laplace-Beltrami operator}
+$\Delta := \D \delta + \delta \!\D: \Omega^{k} \mathscr{M} \to \Omega^{k} \mathscr{M}$.
+Differential forms satisfying $\Delta \omega = 0$ are called \emph{harmonic}\index{harmonic differential form}.
+
+The Hodge star operator transforms the de Rham complex\index{de Rham complex}  (\ref{eq:de-Rham-complex}) into a dual complex of decreasing differential form degrees:
+\begin{equation}
+	\begin{array}{*{13}{c}}
+		0 & \longrightarrow &
+		\Omega^{0} \mathscr{M} & \stackrel{\D\,}{\longrightarrow} & 
+		\Omega^{1} \mathscr{M} & \stackrel{\D\,}{\longrightarrow} &
+		\cdots & \stackrel{\D\,}{\longrightarrow} &
+		\Omega^{n-1} \mathscr{M} & \stackrel{\D\,}{\longrightarrow} &
+		\Omega^{n} \mathscr{M} & \longrightarrow &
+		0
+		\\ [.75ex]
+		& & {\scriptstyle \star} \big\downarrow 
+		& & {\scriptstyle \star} \big\downarrow
+		& &
+		& & {\scriptstyle \star} \big\downarrow
+		& & {\scriptstyle \star} \big\downarrow
+		\\ [.25ex]
+		0 & \longrightarrow &
+		\Omega^{n} \mathscr{M} & \stackrel{\delta}{\longrightarrow} &
+		\Omega^{n-1} \mathscr{M} & \stackrel{-\delta}{\longrightarrow} &
+		\cdots & \hspace*{-2ex} \stackrel{(-1)^{n-2}\delta}{\longrightarrow} \hspace*{-2ex} &
+		\Omega^{1} \mathscr{M} & \hspace*{-2ex} \stackrel{(-1)^{n-1} \delta}{\longrightarrow} \hspace*{-2ex} &
+		\Omega^{0} \mathscr{M} & \longrightarrow &
+		0
+	\end{array}
+\end{equation}
+
+
+\begin{beispiel}
+	\label{bsp:Maxwell-equations}
+	\emph{(Maxwell equations)}
+	\cite[238]{Jaenich-1992}
+	Let be $\mathscr{M} \subset \mathbb{R}^3$.
+	Then $\Omega^3 \mathscr{M} \cong \Omega^0 \mathscr{M} = C^\infty(\mathscr{M}, \mathbb{R}) =: \mathscr{F}(\mathscr{M})$ of real-value differential functions on $\mathscr{M}$ and 
+	$\Omega^1 \mathscr{M} \cong \Omega^2 \mathscr{M} \cong C^\infty(\mathscr{M}, \mathbb{R}^3) =: \mathscr{V}$
+	of differental vector fields on $\mathscr{M}$.
+	Then with the classical differential operators from vector analysis (\ref{eq:classical-vector-analysis-opertaors-in-R^3})
+	the de Rham complex and its dual (\ref{eq:Cartan-derivative-and-codifferential}) 
+	are now given by
+	\begin{equation}
+		0
+		\begin{array}{c}
+			\longrightarrow \\ [-1.9ex]
+			\longleftarrow  \\
+		\end{array}
+		\mathscr{F}(\mathscr{M}) %\Omega^{0} \mathscr{M}
+		\
+		\begin{array}{c}
+			{\scriptstyle \mathrm{grad}} \\ [-1.25ex] 
+		\longrightarrow \\ [-1.9ex]
+			\longleftarrow  \\ [-1.25ex] 
+			{\scriptstyle \mathrm{div}}
+		\end{array}
+		\
+		\mathscr{V}(\mathscr{M}) % \Omega^{1} \mathscr{M}
+		\
+		\begin{array}{c}
+			{\scriptstyle \mathrm{curl}} \\ [-1.25ex] 
+		\longrightarrow \\ [-1.9ex]
+			\longleftarrow  \\ [-1.25ex] 
+			{\scriptstyle -\mathrm{curl}}
+		\end{array}
+		\
+		\mathscr{V}(\mathscr{M}) %\Omega^{2} \mathscr{M}
+		\
+		\begin{array}{c}
+			{\scriptstyle \mathrm{div}} \\ [-1.25ex] 
+		\longrightarrow \\ [-1.9ex]
+			\longleftarrow  \\ [-1.25ex] 
+			{\scriptstyle \mathrm{grad}}
+		\end{array}
+		\
+		\mathscr{F}(\mathscr{M}) % \Omega^{3} \mathscr{M}
+		\
+		\begin{array}{c}
+		\longrightarrow \\ [-1.9ex]
+			\longleftarrow  \\
+		\end{array}
+		\
+		0
+	\end{equation}
+	Then the Laplace-Beltrami operator for 0-forms and for 3-forms is given by
+	$$
+	\Delta = \mathrm{div} \, \mathrm{grad} : \mathscr{F}(\mathscr{M}) \to \mathscr{F}(\mathscr{M}),
+	$$
+	and for 1-forms and 2-forms by
+	$$
+	\Delta = \mathrm{grad} \, \mathrm{div} - \mathrm{curl} \, \mathrm{curl}: \mathscr{V}(\mathscr{M}) \to \mathscr{V}(\mathscr{M}).
+	$$
+	With the nabla operator (\ref{eq:nabla-operator})
+	Maxwell's equations\index{Maxwell equations}
+	are given by
+	\begin{align}
+		\nabla \cdot \fett{E} & = \frac{\rho}{\varepsilon_0},
+		&
+		\nabla \times \fett{E} & = - \dot{\fett{B}}
+		\nonumber \\
+		\nabla \cdot \fett{B} & = 0,
+		&
+		\nabla \times \fett{B} & = \mu_0 \, (\fett{J} + \varepsilon_0 \dot{\fett{E}})
+		\label{eq:Maxwell-equations-classical-version}
+	\end{align}
+	with $\fett{E}$ the electric field, $\fett{B}$ the magnetic field, $\rho$ the electric charge density, and $\fett{J}$ the current density; here $\varepsilon_{0}$ is the 
+	electric constant %vacuum permittivity 
+	and $\mu_{0}$ 
+	the magnetic constant. %the vacuum permeability.
+	Note that the speed of light $c$ is then given by
+	\begin{equation}
+		c = \sqrt{\frac{1}{\varepsilon_0 \mu_0}}
+		%c^2 = \frac{1}{\varepsilon_0 \mu_0}
+		.
+		\label{eq:speed-of-light}
+	\end{equation}
+	Let the Faraday tensor\index{Faraday tensor}
+	$F \in \Omega^2(\mathbb{R} \times \mathscr{M})$ denote the 2-form 
+	in four-dimensional spacetime given in coordinates by $F = F_{ij} \D x^i \wedge \D x^j$ with
+	\begin{equation}
+		F_{ij}
+		= \left(\begin{array}{cccc}
+			0      & E_x/c & E_y/c & E_z/c \\
+			-E_x/c &   0   & -B_z  &  B_y  \\
+			-E_y/c &  B_z  &   0   & -B_x  \\
+			-E_z/c & -B_y  &  B_x  &  0
+		\end{array}\right)
+		,
+		\label{eq:Maxwell-equations}
+	\end{equation}
+	where $\fett{E} = (E_x, E_y, E_z)$ and $\fett{B} = (B_x, B_y, B_z)$,
+	and the four-current density $j \in \Omega^3(\mathbb{R} \times \mathscr{M})$ the 3-form
+	$j = (c\rho,\fett{J})$. \cites[265]{Jaenich-1992}[73]{Landau-Lifschitz-1997}
+	Then the Maxwell equations (\ref{eq:Maxwell-equations-classical-version}) can be rewritten as 
+	\begin{equation}
+		\D F = 0 
+		\qquad \mbox{and} \qquad
+		\D \star F = j
+		.
+		\label{eq:Maxwell-equations-in-Cartan-calculus}
+	\end{equation}
+	The continuity equation $\D j = \D^2 \star F = 0$ follows automatically by the Cartan calculus, in terms of $\fett{J}$ and $\rho$ it reads
+	$\mathrm{div} \fett{J} + c\dot{\rho} = 0.$
+	%\cite[265]{Jaenich-1992}
+	The skew-symmetrical Faraday tensor can be derived as the differential of a four-potential $A_i = (\phi, -\fett{A})$ of a scalar potential $\phi  \in \Omega^0(\mathbb{R}^4)$ and a vector potential $\fett{A} \in \Omega^1(\mathbb{R} \times \mathscr{M})$ related to the electric field $\fett{E}$ and the magnetic field $\fett{B}$ by
+	\begin{equation}
+		\fett{E} = - \frac{1}{c} \frac{\partial \fett{A}}{\partial t} - 
+		\operatorname{grad} 
+		%\nabla 
+		\phi,
+		\qquad
+		\fett{B} = 
+		\operatorname{curl} 
+		%\nabla \times 
+		\fett{A}
+	\end{equation}
+	cf. \cite[53,57,73]{Landau-Lifschitz-1997}
+\end{beispiel}
+
+\begin{beispiel}
+	\label{bsp:cotangent-bundle}
+	\emph{(Cotangent bundle)}
+	\cite[138]{Choquet-Bruhat-et-al-1982}
+	Let $\mathscr{M}$ be a smooth manifold of dimension $n$. Then let $T^* \mathscr{M}$ be the space of pairs $(p, \omega_p)$ of all points $p \in \mathscr{M}$ and all differential forms $v_p \in T_p \mathscr{M}$.
+	Then the \emph{cotangent bundle}\index{cotangent bundle}
+	as given in the following profile is a fiber bundle.
+	
+	\medskip
+	\noindent
+	\begin{tabular}[b]{@{}|lp{50ex}|}
+		\hline
+		\multicolumn{2}{|l|}{\textbf{Profile}} \\ \hline
+		\textbf{Bundle space:} & $E = T^* \mathscr{M} = \bigcup_{p \in \mathscr{M}} \{(p, \omega_p) \mid \omega_p \in T^*_p \mathscr{M})\}$
+		\\
+		\textbf{Base space:} & $B = \mathscr{M}$
+		\\
+		\textbf{Fiber:} & $F = \mathbb{R}^n$, $F_p = \pi^{-1}(p) = T^*_p \mathscr{M}$
+		\\
+		%\textbf{Projection:} &  $\pi:E \to B$ \\
+		\textbf{Covering of \emph{B}:} &
+		$\{U_i \mid \{(U_i, \psi_i)\} \mbox{ is an atlas of } \mathscr{M}\}$
+		\\
+		\textbf{Transition function:} &
+		$f_{ij} = \psi'_{i,p} \circ {\psi'}_{j,p}^{\ -1}$ where $\psi'_{i,p}(\omega_p)$ is the representative of $\omega_p \in T^*_p \mathscr{M}$ in the chart $(U_i, \psi_i)$
+		\\
+		\textbf{Structure group:} &
+		$G = GL(n, \mathbb{R})$
+		\\ \hline
+	\end{tabular}
+	
+	\medskip
+	\noindent
+	Analogously to the discussion in Example \ref{bsp:tangent-bundle},
+	for each fixed $p \in \mathscr{M}$ we have $\{p\} \times T^*_p \mathscr{M} \subset T^*\mathscr{M}$,
+	the projection $\pi: T^* \mathscr{M} \to \mathscr{M}$ simply maps $(p, \omega_p) \mapsto p$, and the fiber at $p$ is $F_p = \pi^{-1}(p) = T^*_p \mathscr{M} \cong \mathbb{R}^n$, i.e., $F = \mathbb{R}^n$.
+	The coordinates of a point $y = (p, \omega_p) \in \pi^{-1}(U_i) \subset T\mathscr{M}$ are
+	\begin{equation}
+		(x^1, \ldots, x^n, \DD x^1, \ldots, \DD x^n)
+	\end{equation}
+	where $(x^1, \ldots, x^n)$ denote the coordinates of $p$ in $\mathscr{M}$.
+	A change of fiber coordinates on $T^* \mathscr{M}$ is therefore entirely determined by a change of coordinates on $\mathscr{M}$.
+	Hence the structure group is $GL(n, \mathbb{R})$. % of automorphisms of $\mathbb{R}^n$ whose matrix representation is given as the set of $n \times n$ matrices with non-vanishing determinant.
+	The cotangent bundle is a $2n$-dimensional real manifold. \cite[585]{Teubner-Taschenbuch-2}
+\end{beispiel}
+
+
+\begin{definition}
+	\cite[138]{Choquet-Bruhat-et-al-1982}
+	A \emph{covariant vector field}\index{covariant vector field}\index{vector field! covariant --} is a cross section $T\mathscr{M} \to \mathscr{M}$ of a cotangent bundle. It is often called a \emph{1-form}\index{differential form! -- on a manifold}.
+	The \emph{reciprocal image of a covariant vector field}\index{reciprocal image}
+	$\theta_{f(p)}$ under a differentiable mapping $f: \mathscr{M} \to \mathscr{N}$ between two differentiable manifolds is defined by the numerical equality
+	\begin{equation}
+		(f^* \theta)_p v_p = \theta_{f(p)} (f' v)_{f(p)}
+		%: \mathscr{M} \to T\mathscr{M}
+	\end{equation}
+	where $f': T\mathscr{M} \to T\mathscr{N}$ is the differential, defined pointwisely by $f'_p: T_p \mathscr{M} \to T_{f(p)} \mathscr{N}$.
+	\begin{center}
+		\begin{tabular}{c}
+		\includegraphics[scale=1.125]{pushforward}
+		\end{tabular}
+		\qquad
+		\begin{tabular}{c}
+		\includegraphics[scale=1.125]{pushforward_pointwise}
+		\end{tabular}
+	\end{center}
+	The \emph{reciprocal image of a 1-form} %\index{reciprocal image}
+	$\theta$ under a differentiable mapping $f: \mathscr{M} \to \mathscr{N}$ is defined by the function equality
+	\begin{equation}
+		(f^* \theta) v = \theta (f' v) \circ f
+		.
+		\label{eq:reciprocal-image-of-a-1-form}
+	\end{equation}
+	The mapping $f^* \theta$ is also called the \emph{pullback}\index{pullback $f^*$} of $\theta$ by $f$. In fact, $f^*: T^* \mathscr{N} \to T^* \mathscr{M}$,
+	\begin{center}
+		\begin{tabular}{c}
+		\includegraphics[scale=1.125]{pullback}
+		\end{tabular}
+		\qquad
+		\begin{tabular}{c}
+		\includegraphics[scale=1.125]{pullback_pointwise}
+		\end{tabular}
+	\end{center}
+	with $f^*_{f(p)}: T^*_{f(p)} \mathscr{N} \to T^*_p \mathscr{M}$ for each $p \in \mathscr{M}$.
+\end{definition}
+
+
+\begin{bem}
+	 For differentiable functions $f:\mathscr{M} \to \mathscr{N}$ and $\varphi:\mathscr{N} \to \mathbb{R}$, 
+	 i.e., $\varphi \circ f:  \mathscr{M} \to \mathbb{R}$,
+	 the expression for the image of a vector field reads $(f'v)_{f(p)} (\varphi) = v_p(\varphi \circ f)$, which can be rewritten
+	\begin{equation}
+		(f' v) (\varphi) = v (\varphi \circ f) \circ f^{-1}
+		\label{eq:image-of-a-1-vector-field}
+	\end{equation}
+	if $f:\mathscr{M} \to \mathscr{N}$ is invertible. 
+	\cites[121,134]{Choquet-Bruhat-et-al-1982}[39]{Jaenich-1992}
+	\begin{center}
+		\includegraphics[scale=1]{differential-TM-TN}
+	\end{center}
+%	\begin{center}
+%		\includegraphics[scale=1.2]{differential-TM-TN-manifold-part}
+%	\end{center}
+	Expressing the image of a vector field therefore involves $f^{-1}$.
+	The expression (\ref{eq:reciprocal-image-of-a-1-form}) of the reciprocal image of a covariant vector field, however, does not involve $f^{-1}$. In this respect a 1-form is more interesting than a vector field; $f^* \theta$ is always a differentiable 1-form if the mapping $f$ and the 1-form $\theta$ are differentiable.
+	 \cite[138]{Choquet-Bruhat-et-al-1982}
+\end{bem}
+
+
+\section{Semi-Riemannian manifolds}
+
+%\begin{bem}
+	So far we have considered smooth manifolds, i.e., manifolds having with a differential structure.
+	In case of a curved $n$-dimensional semi-Riemannian or manifold, a “metric” is added, and the de Rham complex (\ref{eq:de-Rham-complex}) generalizes to a vector-valued analogon
+	\begin{equation}
+		0 \longrightarrow
+		\Omega^0 (\mathscr{M}, T\mathscr{M}) \stackrel{\D^\nabla}{\longrightarrow}
+		\Omega^1 (\mathscr{M}, T\mathscr{M}) \stackrel{\D^\nabla}{\longrightarrow}
+%		\Omega^2 (\mathscr{M}, T\mathscr{M}) \stackrel{\D^\nabla}{\longrightarrow}
+		\cdots
+		\stackrel{\D^\nabla}{\longrightarrow}
+%		\Omega^{n-1} (\mathscr{M}, T\mathscr{M}) \stackrel{\D^\nabla}{\longrightarrow}
+		\Omega^{n} (\mathscr{M}, T\mathscr{M}) 
+		\longrightarrow 
+		0
+		\label{eq:de-Rham-complex-curved-manifolds}
+	\end{equation}
+	where now the forms are defined on the tangential bundle $T\mathscr{M}$ of $\mathscr{M}$ and the 
+	operator $\DD^\nabla$ depends on the curvature of the manifold and does not satisfy the Poicar\'e rule in general, i.e., $\DD^\nabla \circ \DD^\nabla \ne 0$.
+	\cite[252]{Jaenich-2002}
+	More precisely, the Cartan structure equations in semi-Riemannian manifold yield the relation
+	\begin{equation}
+		\DD \theta^i 
+		%= \theta^j \wedge \omega_j^i
+		= \theta^j \wedge \gamma^i_{kj} \theta^k
+	\end{equation}
+	where $\{\theta^i\}$ form a basis of the cotangential bundle $T^*\mathscr{M}$ (???)
+	and $\gamma^i_{kj}$ are the connection coefficients given by the unique torsion-free linear connection $\nabla$ through $\nabla e_i = \gamma^j_{kl} \theta^k \otimes e_j$ where $\{e_i\}$ and $\{\theta^i\}$ are dual frames.
+	\cite[301,310]{Choquet-Bruhat-et-al-1982}
+%\end{bem}
+
+\begin{definition}
+	Let $\mathscr{M}$ be a semi-Riemannian oriented manifold of dimension $n$ with the metric tensor $g_{ij}$ given in the local coordinates $(x^1, \ldots, x^n)$.
+	Then the \emph{canonical volume form}\index{volume form} $\omega_\mathscr{M} \in \Omega^n \mathscr{M}$ is defined as
+	\begin{equation}
+		\omega_\mathscr{M} = \sqrt{|g|} \D x^1 \wedge \ldots \wedge \DD x^n
+		\label{eq:semi-Riemannian-volume-form}
+	\end{equation}
+	where $g$ is the determinant of the metric tensor.
+	Moreover, the \emph{star operator}\index{star operator} $\star : \Omega^k \mathscr{M} \to \Omega^{n-k} \mathscr{M}$ is given by
+	\begin{equation}
+		(*\zeta)_{\tau_{k+1} \ldots \tau{n}}
+		= \operatorname{sgn} \tau \cdot \sqrt{|g|} \, \zeta^{\tau_1 \ldots \tau_k}
+		\label{eq:semi-Riemannian-star-operator}
+	\end{equation}
+	in local coordinates preserving the orientation, where $\tau$ is a permutation of $\{1, \ldots, n\}$.
+	\cite[253-254]{Jaenich-1992}
+\end{definition}
+
+The coderivative $\delta: \Omega^1 \mathscr{M} \to \Omega^0 \mathscr{M}$ is given in local coordinates by
+\begin{equation}
+	\delta \alpha 
+	= \alpha^i \partial_i
+	= \frac{1}{\sqrt{|g|}} \partial_i \left(\sqrt{|g|} \alpha^i \right)
+	.
+	\label{eq:semi-Riemannian-coderivative}
+\end{equation}
+The function $\delta \alpha$ the is called the \emph{divergence}\index{divergence} of the vector field $\alpha^i \partial_i$.
+Hence for functions or 0-forms the Laplace-Operator $\Delta : \Omega^0 \mathscr{M} \to \Omega^0 \mathscr{M}$ is defined by $\delta \DD$, i.e.,
+\begin{equation}
+	\Delta f
+	= \frac{1}{\sqrt{|g|}} \partial_i \left(\sqrt{|g|} \partial^i f \right)
+	= \frac{1}{\sqrt{|g|}} \sum_{i,j=1}^n 
+	\frac{\partial}{\partial x^i} \left(\sqrt{|g|} g^{ij} \frac{\partial}{\partial x^j} f \right)
+	.
+	\label{eq:semi-Riemannian-Laplacian}
+\end{equation}
+
+\begin{beispiel}
+	Let $\mathscr{M} = S^2 \subset \mathbb{R}^3$ be the sphere 
+	with spherical coordinates $(\vartheta, \varphi) \in (0,\pi) \times [0, 2\pi]$
+	as in Example \ref{example:spherical-coordinates}. 
+	Then the metric tensor induced by the Euclidean space $\mathbb{R}^3$ in these coordinates is given by
+	\begin{equation}
+		(g_{ij})
+		= \left(\begin{array}{cc}
+			1 & 0 \\ 0 & \sin^2 \vartheta 
+		\end{array}
+		\right),
+		\qquad
+		(g^{ij})
+		= \left(\begin{array}{cc}
+			1 & 0 \\ 0 & \frac{1}{\sin^2 \vartheta} 
+		\end{array}
+		\right)
+		.
+	\end{equation}
+	Therefore \cite[256]{Jaenich-1992}
+	\begin{equation}
+		\Delta_{S^2}
+		= \frac{1}{\sin \vartheta} 
+		\frac{\partial}{\partial \vartheta} \left(\sin \vartheta \frac{\partial}{\partial \vartheta} \right)
+		+ \frac{1}{\sin^2 \vartheta} \frac{\partial^2}{\partial^2 \varphi}
+		.
+		\label{eq:S^2-Laplacian}
+	\end{equation}
+\end{beispiel}
