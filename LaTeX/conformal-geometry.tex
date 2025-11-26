@@ -1,0 +1,420 @@
+\chapter{Conformal geometry}
+
+
+\section{The complex plane}
+
+
+\section{Holomorphic mappings}
+
+
+\section{Conformal mappings}
+
+
+\section{Singularities and infinities}
+%%--- Figure: ---------------------------------------------------
+\begin{figure}[htp]
+\centering
+	\includegraphics[scale=1.0]{conformal-diagram-legend}
+	\caption{\label{fig:conformal-diagram-legend}
+		Legend for reading Penrose diagrams\index{Penrose diagram}.
+	}
+\end{figure}
+%%--- Figure ----------------------------------------------------
+
+%%--- Figure: ---------------------------------------------------
+\begin{figure}[htp]
+\centering
+	\includegraphics[scale=1.0]{FLRW-universes-conformal}
+	\caption{\label{fig:FLRW-universes-conformal}
+		Penrose diagrams of the FLWR universes.
+		Cf. Figure \ref{fig:FLRW-universes}
+	}
+\end{figure}
+%%--- Figure ----------------------------------------------------
+
+
+\section{Conformal null infinity}
+
+In this section we consider null cones in General Relativity more precisely.
+Loosely speaking, the null cones in a space-time represent the sets of all photon trajectories, including closed photon orbits.
+A useful technique to study regions of infinity in time or space  is the conformal rescaling of the space-time leading to a compact manifold the finite boundary of which is the set of the spacetime points at infinity. In this way the analytical behavior null cones at infinity can be considered precisely.
+
+
+One of the most useful areas in general relativity has turned out to
+be the study of asymptotic questions, important examples of which are
+the definitions of
+the total energy-momentum contained in an asymptotically flat
+space-time and of gravitational radiation. For this the technique of
+conformal rescalings of the space-time $\mathscr{M}$ can be applied, replacing the
+original physical metric $\D s$ by a new (“unphysical”) metric
+$\D \hat{s}$, which is conformally related to it,
+\begin{equation}
+\label{eq:ds-conformal}
+	\D \hat{s} = \Omega \D s,
+\end{equation}
+$\Omega$ being a suitably smooth, everywhere positive function defined
+on $\mathscr{M}$. The metric tensor $g_{ij}$ and its inverse $g^{ij}$ 
+are accordingly rescaled by
+\begin{equation}
+\label{eq:conformal-metric-components}
+	g_{ij} \mapsto \hat{g}_{ij} = \Omega^2 g_{ij},
+	\quad
+	g^{ij} \mapsto \hat{g}^{ij} = \Omega^{-2} g^{ij}.
+\end{equation}
+Provided that the asymptotic structure of $\mathscr{M}$ is suitable
+and that $\Omega$ is chosen appropriately, it is possible to adjoin
+to $\mathscr{M}$ a certain boundary surface, denoted by 
+$\mathscr{I}$\index{$\mathscr{I}$}\index{scri}
+(pronounced `scri' --- a contraction of `script I'),
+in such a way that the “unphysical” metric $\hat{g}_{ij}$ extends
+non-degenerately and with some degree of smoothness to these new
+points. The function $\Omega$ may also be extended appropriately
+but becomes zero on $\scri$. This implies that the physical metric
+would have to be infinite on $\scri$, so it cannot be so extended.
+Thus, from the point of view of the physical metric, the points
+on $\scri$ are infinitely distant from their neighbors.
+Physically they represent `points at infinity'.
+
+The adjoining of $\scri$ to a space-time $\mathscr{M}$ provides
+us with a smooth manifold with boundary, denoted by 
+$\bar{\mathscr{M}}$, i.e.
+\begin{equation}
+\label{eq:I-M}
+	\scri = \partial \mathscr{M},
+	\qquad
+	\mathscr{M} = \mathrm{int}\ \bar{\mathscr{M}}
+\end{equation}
+($\partial$ $=$ boundary, int $=$ interior).
+The advantage is that the powerful \emph{local} techniques of 
+differential geometry can now be employed on $\bar{\mathscr{M}}$
+with implications for the asymptotics of $\mathscr{M}$.
+Indeed, the very definition of asymptotic flatness in general
+relativity can be given in a convenient and coordinate-free
+way. Conformal methods are particularly appropriate in
+general relativity because many of the important concepts
+are conformally invariant. Among these are the massless
+free-field equations,\index{massless free-field equation}
+the Weyl conformal tensor, null geodesics,
+null hypersurfaces, and relativistic causality.
+The technique is similar to that used in complex analysis,
+where the `point of infinity' is adjoint to the complex
+plane to obtain the Riemann sphere\index{Riemann sphere},
+and in projective geometry.
+
+\subsection{Minkowski space}
+Let us begin by examinig the construction of conformal
+infinity for Minkowski space $\mathbb{M}$. It is topologically equivalent to the four-dimensional space, $\mathbb{M} \cong \mathbb{R}^4$.
+The physical metric, in spherical polar coordinates, is
+\begin{equation}
+\label{eq:Minkowski-co}
+	\D s^2 = c^2 \D t^2 - \D r^2 
+	  - r^2 (\D \theta^2 + \sin^2 \theta \D\varphi^2).
+\end{equation}
+For convenience we introduce a 
+retarded time\index{retarded time} 
+parameter $u=ct-r$ and an advanced time\index{advanced time}
+parameter $v=ct+r$, to obtain
+\begin{equation}
+\label{eq:Minkowski-u-v}
+	\D s^2 = \D u \D v - \frac{1}{4}\, (v-u)^2 
+	 (\D \theta^2 + \sin^2 \theta \D\varphi^2).
+\end{equation}
+There is much freedom in the choice of a conformal factor $\Omega$.
+However, for `asymptotically flat' space-times it turns out
+from general considerations (in the context of the 
+`peeling theorem'\index{peeling theorem}) that the choice of
+$\Omega$ must be such that along any ray it approaches zero,
+both in the past and in the future, like the reciprocal
+of an affine parameter $\lambda$ on the ray, i.e.\
+$\Omega\lambda$ $\to$ constant as $\lambda\to\pm\infty$
+along the ray.
+Each $u$ $=$ constant hypersurface is a future light cone,
+generated by the light rays (null straight lines) for
+which $\theta$ and $\varphi$ remain constant.
+The coordinate $v$ serves as an affine parameter into the
+future on each of these radial rays.
+Similarly, the coordinate $u$ serves as an affine parameter
+into the past on these rays.
+Thus we shall require $\Omega v$ $\to$ constant as $v\to \infty$
+on $u,\theta,\varphi$ $=$ constant, and
+$\Omega u$ $\to$ constant as $u\to -\infty$
+on $v,\theta,\varphi$ $=$ constant.
+If we wish to keep $\Omega$ smooth over the finite parts of
+space-time, then the choice
+\begin{equation}
+\label{eq:Omega}
+	\Omega = \frac{2}{\sqrt{(1+u^2)(1+v^2)}}
+\end{equation}
+can be made (the factor 2 being for later convenience),
+and thus, by (\ref{eq:ds-conformal}),
+\begin{equation}
+\label{eq:conformal-metric-Minkowski-uv}
+	\D\hat s^2 = \frac{4 \D u\, \D v}{(1+u^2)(1+v^2)}
+	  - \frac{(v-u)^2(\D \theta^2 + \sin^2 \theta \D\varphi^2)}
+	  {(1+u^2)(1+v^2)}
+\end{equation}
+Many other choices of $\Omega$ are possible, of course,
+but this one is especially convenient. 
+
+In order that the `points at infinity' may be assigned
+finite coordinates, we replace $(u,v)$ by $(p,q)$, where
+\begin{equation}
+\label{eq:p-q}
+	u = \tan p, \quad v = \tan q.
+\end{equation}
+Then
+\begin{equation}
+\label{eq:conformal-Minkowski}
+	\D\hat s^2 = 4\, \D p \D q
+	  - \sin^2(q-p)\,(\D\theta^2 + \sin^2\theta \D \varphi^2). 
+\end{equation}
+The range of the variables $p$, $q$ is as indicated in Figure
+\ref{fig:scri}, in which each point represents a 2-sphere of
+radius $\sin(q-p)$.
+%%--- Figure: ---------------------------------------------------
+\begin{figure}[htp]
+\centering
+	\includegraphics[scale=0.85]{figScri}
+	\caption{\label{fig:scri}
+		Penrose diagram\index{Penrose diagram}
+		of Minkowski space-time $\mathbb{M}$.
+		The region of $(p,q)$-space which corresponds to 
+		$\mathbb{M}$ and the future (past) null infinity 
+		$\mathscr{I}^+$ 
+		($\mathscr{I}^-$), defined by
+		$q=\frac{\pi}{2}$ ($p=-\frac{\pi}{2}$). 
+		The line $q-p=0$ is an axis of spherical symmetry
+		(and so also $q-p=\pi$).
+		Each point in the diagram defines a 2-sphere
+		of radius $\sin(q-p)$.
+		Each line $p$ $=$ constant and $q$ $=$ constant 
+		represents a light ray.
+	}
+\end{figure}
+%%--- Figure ----------------------------------------------------
+The vertical line $q-p=0$ represents the spatial origin ($r=0$)
+and is just a coordinate singularity: the space-time is non-singular
+on this line. The sloping lines $p=-\frac{1}{2}\pi$,
+for $-\frac{1}{2}\pi<q<\frac{1}{2}\pi$, and $q=\frac{1}{2}\pi$,
+for $-\frac{1}{2}\pi<p<\frac{1}{2}\pi$, represent null infinity,
+denoted by $\scri^-$\index{$\mathscr{I}^-$}
+and $\scri^+$\index{$\mathscr{I}^+$}, respectively,
+for Minkowski space (corresponding to $u=-\infty$ and
+to $v=\infty$).
+There are indicated three exceptional points representing 2-spheres
+with vanishing radius $\sin(q-p)$, 
+the points $\I^\pm$ given by $p=q=\pm \pi/2$, and the point
+ $\I^0$ by $q=-p=\pi/2$. They are considered not to belong to
+$\scri^-$ or to $\scri^+$.
+
+Physically, we interpret  $\I^-$ as representing past temporal
+infinity, $\scri^-$ as past null infinity,  $\I^0$ as spatial
+infinity, $\scri^+$ as future null infinity, and  $\I^+$ as future
+temporal infinity. The reason for this terminology becomes
+clear when we examine the behavior of straight lines
+in Minkowski space (with metric $\D s$). A timelike straight
+line acquires a past end-point  $\I^-$ and a future end-point
+$\I^+$; a null straight line acquires a past end-point
+on $\scri^-$ and a future end-point on $\scri^+$;
+a spacelike straight line becomes a closed curve through $\I^0$.
+Since rays remain rays after conformal rescalings, the null
+straight lines become rays with respect to the
+$\D\hat s$ metric, whereas the timelike or spacelike
+straight lines are not, in general, geodesics
+with respect to $\D\hat s$.
+
+However, when we consider \emph{curved} lines in Minkowski space,
+the question of which end-points they acquire is more complicated.
+For example, the helix curve given by
+$\varphi=ct$, $r=1$, $\theta=\pi/2$, is a null curve, since $\D u = \D v = \D \varphi = c \D t$ and $\D r = \D \theta = 0$ in (\ref{eq:conformal-metric-Minkowski-uv}), but has
+a past end-point at  $\I^-$ and a future end-point at  $\I^+$,
+since $p = \arctan(ct - 1)$, $q = \arctan (ct + 1)$ and $p$, $q \to \pm \infty$ as $t \to \pm \infty$.
+At both points the completed curve is not smooth.
+On the other hand, the timelike curve $r=c\sqrt{1+t^2}$,
+$\theta=\pi/2$, $\varphi=0$, satisfying $\D r^2 = \frac{c^2 t^2 \D t^2}{1 + t^2}$, i.e., $\D s^2 = \frac{c^2}{t^2 + 1} \D t^2 > 0$ in (\ref{eq:Minkowski-co}), smoothly acquires a past-end point
+on $\scri^-$ and a future end-point on $\scri^+$, since $p = \arctan (ct - r) \to 0$ and $q = \arctan (ct + r) \to \pi/2$ as $t \to \infty$, and $p \to -\pi/2$ and $q \to 0$ as $t \to - \infty$. 
+The only thing one can prove is that two \emph{causal} curves
+have the same past-end point on $\scri^-$ iff they share the
+same future, and that they have the same future-end point
+iff they have the same past.
+In particular, a past-endless causal curve acquires a
+past end-point at  $\I^-$ or at $\scri^-$ according as
+its future is or is not the whole Minkowski space
+(since, e.g., the future of the time axis $t=0$ is the 
+whole of $\mathbb{M}$). In exactly the same way, a 
+future-endless causal curve reaches  $\I^+$ or a point of
+$\scri^+$ according as its past set is or is not the whole
+Minkowski space \cite[\S9.1]{Penrose-Rindler-1986}.
+
+The metric (\ref{eq:conformal-Minkowski})
+is perfectly regular on these regions at infinity,
+$\scri^\pm$, and the points  $\I^\pm$,  $\I^0$.
+Indeed, the space-time
+and its metric $\D\hat s$ can be extended beyond these regions in
+a non-singular fashion.
+The vertical line $q-p=\pi$ is again a coordinate singularity,
+precisely of the same type as that of $q-p=0$. The entire vertical 
+strip $0\leqq q-p<\pi$ may be used to define a space-time
+$\mathscr{E} \cong \mathbb{R} \times S^3$, the 
+\emph{Einstein static universe}\index{Einstein universe}.
+To see this, we choose new coordinates
+\begin{equation}
+	\tau = p+q, \quad \chi = q-p
+\end{equation}
+and obtain
+\begin{equation}
+\label{eq:Einstein-space}
+	\D s^2 = \D\tau^2
+	 - \left[\D\chi^2 
+	   + \sin^2\chi\,(\D\theta^2 + \sin^2\theta \D\varphi) \right].
+\end{equation}
+The part in the square bracket represents the metric of a unit
+3-sphere $S^3$. The portion of $\mathscr{E}$ which is conformal
+to the original Minkowski space may be described as that lying
+between the light cones of two points  $\I^-$ and  $\I^+$.
+This portion wraps around the Einstein space to meet at the
+`back' in the single point  $\I^0$.
+The situation is illustrated in Fig.~\ref{fig:EinsteinCylinder},
+under suppression of two dimensions.
+%%--- figure: ---------------------------------------------------
+\begin{figure}[htp]
+\centering
+	\includegraphics[scale=0.25]{EinsteinCylinder}
+	\caption{\label{fig:EinsteinCylinder}
+		The region of the Einstein cylinder $\mathscr{E}$ which
+		corresponds to Minkowski space $\mathbb{M}$.
+		Figure taken from \cite{Penrose-Rindler-1986}.
+	}
+\end{figure}
+%%--- figure ----------------------------------------------------
+Minkowski 2-space is conformal to the interior of a square,
+represented as tilted at 45$^\circ$. This square wraps around
+the cylinder which is the two-dimensional version of the
+Einstein universe.
+
+
+\subsection{Infinity in Schwarzschild space-time}
+\label{sec:Schwarzschild-conformal-null-infinity}
+We examine the conformal infinity of the Schwarzschild solution.
+The familiar form of the metric is
+\begin{eqnarray}
+	\D s^2 & \hspace*{-1.75ex} =  \hspace*{-1.75ex} &
+	 \left( 1 - \frac{2M}{r}\right) c^2 \D t^2 
+	 {}- \left( 1 - \frac{2M}{r}\right)^{-1} \D r^2
+	 %\nonumber \\* &  \hspace*{-1.75ex}  \hspace*{-1.75ex} &
+	 {}- r^2 (\D\theta^2 + \sin^2\theta \D\varphi^2). 
+\label{Schwarzschild-metric}
+\end{eqnarray}
+Rather than attempting to obtain $\scri^+$ and $\scri^-$ simultaneously,
+as was done for Minkowski space, it is more appropriate to introduce
+a retarded time coordinate 
+\begin{equation}
+\label{Schwarzschild-u}
+	u = ct - r - 2M \ln (r-2M)
+\end{equation}
+and an advanced time coordinate
+\begin{equation}
+\label{Schwarzschild-v}
+	v = ct + r + 2M \ln (r-2M)
+\end{equation}
+\emph{separately}. In the first case the metric form becomes
+\begin{eqnarray}
+	\D s^2 & \hspace*{-1.75ex} =  \hspace*{-1.75ex} &
+	 \left( 1 - \frac{2M}{r}\right) \D u^2 
+	 {}+ 2 \D u \D r
+	 %\nonumber \\* &  \hspace*{-1.75ex}  \hspace*{-1.75ex} &
+	 {}- r^2 (\D\theta^2 + \sin^2\theta \D\varphi^2),
+\label{Schwarzschild-metric-u-r}
+\end{eqnarray}
+and in the second one,
+\begin{eqnarray}
+	\D s^2 & \hspace*{-1.75ex} =  \hspace*{-1.75ex} &
+	 \left( 1 - \frac{2M}{r}\right) \D v^2 
+	 {}- 2 \D v \D r
+	 %\nonumber \\* &  \hspace*{-1.75ex}  \hspace*{-1.75ex} &
+	 {}- r^2 (\D\theta^2 + \sin^2\theta \D\varphi^2). 
+\label{Schwarzschild-metric-v-r}
+\end{eqnarray}
+In each case we can choose $\Omega = r^{-1} = w$, say. Then
+the “unphysical” metric is
+\begin{eqnarray}
+	\D \hat s^2 & \hspace*{-1.75ex} =  \hspace*{-1.75ex} &
+	 \Omega^2 \D s^2 =
+	 \left( w^2 - 2Mw^3\right) \D u^2 
+	 {}- 2 \D u \D w
+	 %\nonumber \\* &  \hspace*{-1.75ex}  \hspace*{-1.75ex} &
+	 {}- \D\theta^2 + \sin^2\theta \D\varphi^2 
+\label{Schwarzschild-metric-u-w}
+\end{eqnarray}
+in the first case, and
+\begin{eqnarray}
+	\D \hat s^2 & \hspace*{-1.75ex} =  \hspace*{-1.75ex} &
+	 \left( w^2 - 2Mw^3\right) \D v^2 
+	 {}+ 2 \D v \D w
+	 %\nonumber \\* &  \hspace*{-1.75ex}  \hspace*{-1.75ex} &
+	 {}- \D\theta^2 + \sin^2\theta \D\varphi^2 
+\label{Schwarzschild-metric-v-w}
+\end{eqnarray}
+in the second one. The metrics (\ref{Schwarzschild-metric-u-w}) and
+(\ref{Schwarzschild-metric-v-w}) are manifestly regular and analytic
+on their respective hypersurfaces $w=0$. (Clearly the determinants
+are non-zero at $w=0$.) The physical space-time is given when
+$w>0$ in (\ref{Schwarzschild-metric-u-w}) and we can extend the manifold
+to include the boundary hypersurface $\scri^+$, given when $w=0$.
+Similarly, in (\ref{Schwarzschild-metric-v-w}) the physical space-time
+corresponds to $w>0$ and can be extended to include $\scri^-$,
+given when $w=0$. In fact, we could extend the space-time
+across $w=0$ to negative values of $w$, but this will not be
+done here. Only the boundary $\scri$ $=$ $\scri^-$ $\cup$ $\scri^+$
+will be adjoined to the space-time.
+
+There is a difficulty if we try to identify $\scri^-$ with $\scri^+$.
+If we do extend the region of definition of 
+(\ref{Schwarzschild-metric-u-w}) to include negative values
+of $w$, and then make the replacement $w \mapsto -w$, we see that
+the metric has the form (\ref{Schwarzschild-metric-v-w})
+with $u$ in place of $v$, but with a negative mass $-M$ in place of $M$.
+Thus, the extension across $\scri$ involves a reversal of the sign
+of the mass. In fact, the derivative at $\scri$ of the conformal
+curvature contains the information of the mass. Therefore, if we
+attempt to identify $\scri^+$ with $\scri^-$, and want the \emph{same}
+sign of the non-zero mass $M$ to occur on the two sides, then there
+must be a discontinuity in the derivative of the curvature across
+$\scri$, so that the metric must fail to be $C^3$ at $\scri$.
+
+Accepting, then, that is is not reasonable to identify $\scri^+$ with
+$\scri^-$, we are led to a picture closely resembling that obtained
+for Minkowski space. The only essential difference occurs with the
+points $i^-$, $i^0$, $i^+$. It turns out that whenever mass is present,
+the point $i^0$, and normally also $i^\pm$, must, if adjoined to the
+manifold, be singular for the conformal geometry. It is therefore
+reasonable not to attempt to include these points, in the general
+case, as part of the conformal infinity. (Even in Minkowski space
+the boundary surface at $i^0$, $i^\pm$ is not smooth.)
+The picture, then, is as indicated in Fig.~\ref{fig:scriBlackHole}.
+%%--- figure: ---------------------------------------------------
+\begin{figure}[htp]
+\centering
+	\includegraphics[scale=1.4]{scriBlackHole}
+	\vspace*{-1ex}
+	\caption{\label{fig:scriBlackHole}
+		Null infinity for the Schwarzschild space-time. Note that
+		$w=0$ corresponds both to $\scri^+$ and to $\scri^-$.
+%		The points $i^\pm$, $i^0$ are singular (divergent Weyl
+%		curvature) and have been deleted. This picture serves as
+%		a model for asymptotically flat spaces generally.
+		Figure taken from \cite{Penrose-Rindler-1986}.
+	}
+\end{figure}
+%%--- figure ----------------------------------------------------
+We have two disjoint boundary hypersurfaces $\scri^-$ and $\scri^+$
+each of which is a “cylinder” with topology $S^2 \times \mathbb{R}$.
+It is clear from (\ref{Schwarzschild-metric-u-w}) and 
+(\ref{Schwarzschild-metric-v-w}) that each of $\scri^\pm$ is a 
+\emph{null} hypersurface, the induced metric at $w=0$ being degenerate.
+These null hypersurfaces are generated by rays, given by 
+$\theta$, $\varphi$ $=$ constant, $w=0$, whose tangents are
+\emph{normals} to the hypersurfaces. These rays may be taken to be the
+“$\mathbb{R}$s” of the topological product $S^2 \times \mathbb{R}$.
+
+The picture in Fig.~\ref{fig:scriBlackHole} serves as a model for asymptotically flat spaces generally.
