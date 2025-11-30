@@ -348,10 +348,9 @@ The first scenario $k = +1$ is the so-called “big crunch,” in which the univ
 \begin{figure}[htp]
 \centering
 \includegraphics[scale=1]{Friedmann-universes_Lambda=0}
-\hspace*{5ex}
-\includegraphics[scale=1]{Hubble-constant}
 \caption{\label{fig:Friedmann-Kosmen}
-	Expansions of the three FLRW cosmologies with $\Lambda=0$. The reciprocal of the Hubble constant $H_0$ represents an upper limit for the age of the universe, as can be seen from the tangent equation $h(t) = \dot{R}(t_0) (t-t_0) + R(t_0)$.}
+	Expansions of the three FLRW cosmologies with $\Lambda=0$.
+}
 \end{figure}
 %--- Figure ----------------------------------------------------------
 
@@ -363,29 +362,6 @@ cf. \cite[§26]{Stephani-1991},
 \cite[p.~347ff]{O-Neill-1983},
 \cite[§§111--113]{Landau-Lifschitz-1997}.
 
-If we form the quotient of the derivative $\dot{R}$ of the world radius 
-and $R$, we obtain the relative rate of change of the universe
-\begin {equation}
-    H(t) = \frac{\dot{R}(t)}{R(t)}
-    ,
-    \label{eq:Hubble-function}
-\end{equation}
-the \emph{Hubble function} $H$.
-For the time $t_0$ $=$ “now,” $H_0$ $:=$ $H(t_0)$ 
-is called the \emph{Hubble constant}\index{Hubble constant}.
-%
-Its reciprocal $1/H_0$ indicates the maximum 
-age of the universe\index{age of the universe} for a non-accelerating
-expanding universe
-\cite{Sexl-Urbantke-1987}, because the equation of the tangent
-of the graph of $R(t)$ at the point $t_0$ is
-$h(t)$ $=$ $\dot{R}(t_0) (t-t_0) + R(t_0)$, 
-and its zero point is given by
-\begin{equation}
-	t_0 - t = \frac{R(t_0)} {\dot{R}(t_0)} = \frac{1}{H_0}
-	,
-\end{equation}
-see Figure \ref{fig:Friedmann-Kosmen}.
 For a nonvanishing cosmological constant, $\Lambda > 0$, we have qualitatively the same results for $k = 0, +1$. For $k = -1$, however, the vacuum energy density prohibits the big crunch occurring for $\Lambda$ greater than a critical value $\Lambda_c$, i.e., $\Lambda > \Lambda_c \geqq 0$. In this case the universe instead expands forever.
 For the illustration of the six FLRW universes see  Figure \ref{fig:FLRW-universes}.
 
@@ -553,44 +529,54 @@ Nowadays, “the” de Sitter universe usually is referred to the flat geometry 
 \subsection{Matter-dominated universe}
 
 
-\subsection{The $\fettgr{\Lambda}$CDM model}
-
-The present-day density $\rho_{0}$, which according to the current state of knowledge suggest to give zero curvature $k$. Substituting these conditions to the Friedmann equation gives
-\begin{equation}
-	\rho_{\mathrm{crit}}
-	=
-	\frac{3H_{0}^{2}}{8\pi G}
-%	=
-%	1.878\;47(23) \times 10^{-26}\;h^{2}\;\mathrm{kg{\cdot}m^{-3}}
-	.
-\end{equation}
-%where $h = H_0/(100 \mathrm{km \, s \, Mpc}^{-1})$ is the reduced Hubble constant. 
-If the cosmological constant were actually zero, the critical density would also mark the dividing line between eventual recollapse of the universe to a Big Crunch, or unlimited expansion.
-
-
-The present-day density parameter $\Omega_{x}$ for various species is defined as the dimensionless ratio
-\begin{equation}
-	\Omega_{x} 
-	\equiv 
-	\frac{\rho _{x}(t_{0})}{\rho_{\mathrm{crit}}}
-	=
-	\frac{8\pi G\rho_{x}(t_{0})}{3H_{0}^{2}},
-\end{equation}
-where the subscript $x$ is one of b for baryons, c for cold dark matter, rad for radiation (photons plus relativistic neutrinos), and $\Lambda$ for dark energy.
-By construction we therefore have
-\begin{equation}
-	\Omega_{\mathrm{b}}
-	+ \Omega_{\mathrm{c}}
-	+ \Omega_{\mathrm{rad}}
-	+ \Omega_{\Lambda}
-	= 1.
-\end{equation}
-
-
 \subsection{The Gödel universe}
 
 
 \subsection{Astronomical evidence}
+
+In modern cosmology usually it is not $R$ that is considered, but the \emph{scale factor}\index{scale factor}
+\begin{equation}
+	a(t)
+	= \frac{R(t)}{R(t_0)}
+	\qquad\mbox{where $t_0$ $=$ “now”.}
+\end{equation}
+\cite[§1.1]{Dodelson-Schmidt-2025}
+%--- Figure: ---------------------------------------------------------
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=1]{Hubble-constant}
+\caption{\label{fig:Hubble-constant}
+	The reciprocal of the Hubble constant $H_0$ represents an upper limit for the age of the universe, as can be seen from the tangent equation $h(t) = \dot{R}(t_0) (t-t_0) + R(t_0)$.}
+\end{figure}
+%--- Figure ----------------------------------------------------------
+If we form the quotient of the derivative $\dot{R}$ of the world radius 
+and $R$, we obtain the relative rate of change of the universe
+\begin {equation}
+    H(t) 
+    %= \frac{\dot{R}(t)}{R(t)}
+    = \frac{\dot{a}(t)}{a(t)}
+    ,
+    \label{eq:Hubble-function}
+\end{equation}
+the \emph{Hubble function} $H$.
+For the time $t_0$ $=$ “now,” $H_0$ $:=$ $H(t_0)$ 
+is called the \emph{Hubble constant}\index{Hubble constant}.
+%
+Its reciprocal $1/H_0$ indicates the maximum 
+age of the universe\index{age of the universe} for a non-accelerating
+expanding universe
+\cite{Sexl-Urbantke-1987}, because the equation of the tangent
+of the graph of $a(t)$ at the point $t_0$ is
+$\tilde h(t)$ $=$ $\dot{a}(t_0) (t-t_0) + a(t_0)$, 
+and its zero point is given by
+\begin{equation}
+	t_0 - t = \frac{a(t_0)} {\dot{a}(t_0)} = \frac{1}{H_0}
+	,
+\end{equation}
+see Figure \ref{fig:Hubble-constant}.
+
+\cites{Ahlen-et-al-2025}{Camilleri-et-al-2024}{Seifert-et-al-2024}
+
 FLRW models of the universe and more modern
 modifications such as the “inflationary universe” in its
 initial phase have repeatedly been confirmed by 
@@ -613,9 +599,61 @@ Edwin Hubble in 1929 \cite{Hubble-1929}.
 Further confirming observations were
 the discovery of cosmic background radiation by
 Penzias and Wilson in 1965 and the discovery of the Higgs boson
-in 2012, cf.
+in 2012.
 \cite[§20.1]{Karttunen-et-al-2000},
 \cite[§13.3]{Unsoeld-Baschek-1999}
 
+In principle, the curvature arameter $k$ can be observed.
+The present-day density $\rho_{0}$ gives according to the current state of knowledge  gives zero curvature $k$. Substituting these conditions to the Friedmann equation gives
+\begin{equation}
+	\rho_{\mathrm{crit}}
+	=
+	\frac{3H_{0}^{2}}{8\pi G}
+	=
+	1.878\;47(23) \times 10^{-26}\;h^{2}\;\mathrm{kg{\cdot}m^{-3}}
+	.
+\end{equation}
+where $h = H_0/(100 \ \mathrm{km \, s \, Mpc}^{-1})$ is the reduced Hubble constant. \cite[Eqs. (1.4), (1.7)]{Dodelson-Schmidt-2025}
+If the cosmological constant were actually zero, the critical density would also mark the dividing line between eventual recollapse of the universe to a Big Crunch, or unlimited expansion.
 
 
+\subsection{The $\fettgr{\Lambda}$CDM model}
+
+The $\Lambda$CDM model is the standard model of  current cosmology. \cite[§1.6]{Dodelson-Schmidt-2025} 
+It describes a Euclidean universe that is dominated by nonbaryonic cold dark matter\index{cold dark matter}\index{CDM} (CDM) and a cosmological constant caused by a still not understood “dark energy”\index{dark energy}\index{energy, dark}, and whose initial perturbations has been generated by a phase of inflation in its early phase. 
+
+
+
+
+
+The present-day density parameter $\Omega_{x}$ for various species is defined as the dimensionless ratio
+\begin{equation}
+	\Omega_{x} 
+	\equiv 
+	\frac{\rho _{x}(t_{0})}{\rho_{\mathrm{crit}}}
+	=
+	\frac{8\pi G\rho_{x}(t_{0})}{3H_{0}^{2}},
+\end{equation}
+where the subscript $x$ is one of b for baryons, c for cold dark matter, rad for radiation (photons plus relativistic neutrinos), and $\Lambda$ for dark energy.
+By construction we therefore have
+\begin{equation}
+	\Omega_{\mathrm{b}}
+	+ \Omega_{\mathrm{c}}
+	+ \Omega_{\mathrm{rad}}
+	+ \Omega_{\Lambda}
+	= 1.
+\end{equation}
+According to the Planck collaboration \cite{Planck-Collaboration-2020} the results from the final full-mission \emph{Planck} measurements of the cosmic microwave background anisotropies yield the following values:
+\begin{align*}
+	\Omega_{\mathrm{c}} h^2 & = 0.120 \pm 0.001,
+	\\
+	\Omega_{\mathrm{b}} h^2 & = 0.0224 \pm 0.0001,
+	\\
+	%\Omega_{\mathrm{m}} & = 0.315 \pm 0.007, \mbox{ i.e., } &
+	\Omega_{\Lambda} & 
+	= 1 - \Omega_{\mathrm{m}}
+	% = 1 - 0.315 \mp 0.007
+	= 0.685 \pm 0.007	
+	\\
+	H_0 & = (67.4 \pm 0.5) \mbox{ km s$^{-1}$ Mpc$^{-1}$,}
+\end{align*}
