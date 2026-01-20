@@ -77,7 +77,7 @@ We then often write shortly $f : X \stackrel{\cong}{\to} Y$ and call the spaces 
 	The atlas is \emph{differentiable} if all coordinate changes are changing differentiably.
 \end{definition}
 
-The set $\mathscr{D}(\mathfrak{A})$ of all charts $(U, h)$ of $X$ changing differentiably is then an $n$-dimensional maximal atlas of $X$. \cite[2]{Jaenich-1992}
+The set $\mathscr{D}(\mathfrak{A})$ of all charts $(U, h)$ of $X$ changing differentiably then is an $n$-dimensional maximal atlas of $X$. \cite[2]{Jaenich-1992}
 
 \begin{definition}
 	An \emph{$n$-dimensional differential structure}\index{differential structure} of a topological space $X$ is a maximal differentiable atlas. 
@@ -112,8 +112,8 @@ Many approximations of complicated situations in physics are done by linearizati
 	is a vector space of dimension $n$, the \emph{tangent vector space}.
 \end{definition}
 
-This definition can be formulated more precisely by identifying functions which coincide on a neighborhood of $p$: two function $f$ and $g$ on $\mathscr{M}$ differentiable at $p$ have the same \emph{germ}\index{germ} at $p$ if there exists a neighborhood of $p$ where they coincide. The equivalence class of differentiable functions at $p$ whch have the same germ as a function $f$ is called a \emph{germ} of $f$. The disjoint equivalence classes are called the \emph{germs of differentiable functions} at $p$. Germs form an algebra.
-A \emph{tangent vector} then is derivation on the algebra of of germs of differentiable functions at $p$.
+This definition can be formulated more precisely by identifying functions which coincide on a neighborhood of $p$: two function $f$ and $g$ on $\mathscr{M}$ being differentiable at $p$ have the same \emph{germ}\index{germ} at $p$ if there exists a neighborhood of $p$ where they coincide. The equivalence class of differentiable functions at $p$ which have the same germ as a function $f$ is called a \emph{germ} of $f$. The disjoint equivalence classes are called the \emph{germs of differentiable functions} at $p$. Germs form an algebra.
+A \emph{tangent vector} then is a derivation on the algebra of of germs of differentiable functions at $p$.
 
 In a local chart $(U, h)$ with coordinates $(x^1, \ldots, x^n)$ a tangent vector $v \in T_p \mathscr{M}$ can be expressed as
 \begin{equation}
@@ -139,13 +139,13 @@ More intuitively a tangent vector can be described in terms of differentiable pa
 
 \begin{beispiel}
 	\label{example:spherical-coordinates}
-	An illustrative example of a two-dimensional manifold is the surface $S^2 (r)$ of a three-dimensional sphere of radius $r$ in $\mathrm{R}^3$,
+	An illustrative example of a two-dimensional manifold is the surface $S^2 (r)$ of a three-dimensional sphere of radius $r$ in $\mathbb{R}^3$,
 	\begin{equation}
 		S^2(r) = \{ (x, y, z) \in \mathbb{R}^3 : x^2 + y^2 + z^2 = r^2 \}
 		.
 	\end{equation}
 	Without its poles $\{z = \pm r\}$ it has the chart
-	$h: S^2(r) \setminus \{z = \pm r\} \to (0, \pi) \times (0, 2\pi)$,
+	$h: S^2(r) \setminus \{z = \pm r\} \to (0, \pi) \times [0, 2\pi)$,
 	\begin{equation}
 		\left(\begin{array}{l} 
 			\vartheta \\ \varphi
@@ -174,7 +174,7 @@ More intuitively a tangent vector can be described in terms of differentiable pa
 
 \begin{bem}
 	\label{rem:differentiable-fiber-bundle}
-	If $\mathscr{M}$ is a differentiable manifold of class $C k$, $T\mathscr{M}$ is a differentiable manifold of class $C^{k-1}$, and it is called a \emph{differentiable tangent bundle} of class $C^{k-1}$.
+	If $\mathscr{M}$ is a differentiable manifold of class $C^k$, $T\mathscr{M}$ is a differentiable manifold of class $C^{k-1}$, and it is called a \emph{differentiable tangent bundle} of class $C^{k-1}$.
 	However there is no canonical isomorphism between the fiber at a point and the typical fiber, and hence no canonical isomorphism between fibers at different points, unless the fiber bundle is given an additional structure. Such a structure may be for instance parallel displacement as considered in case of semi-Riemannian manifolds.
 \end{bem}
 
@@ -230,11 +230,11 @@ As a consequence, for each $x \in \pi^{-1}(U_i) \subset E$ the homeomorphisms ca
 $\hat{\varphi}_{i,p} := \hat{\varphi}_i|_{F_p}$.
 
 \item
-A topological group $G$ of homeomorphisms $F \to F$, called the \emph{structure group}, such that for any $p \in U_i \cap U_j \subset B$ the homeomorphism $\hat{\varphi}_{i,p} \circ \hat{\varphi}_{j,p}^{-1}: F \to F$ is an element of $G$.
-The mappings $f_{ij}: U_i \cap U_j \to G$ induced by $p \mapsto f_{ij}(p) = \hat{\varphi}_{i,p} \circ \hat{\varphi}_{j,p}^{-1}$ are called \emph{transition functions}\index{transition function of a fiber bundle}.
+A topological group $G$ of homeomorphisms $F \to F$, called the \emph{structure group}, consisting of the homeomorphisms $\hat{\varphi}_{i,p} \circ \hat{\varphi}_{j,p}^{-1}: F \to F$ for any $p \in U_i \cap U_j \subset B$.
+The mappings $f_{ij}: U_i \cap U_j \to G$ induced by $p \mapsto f_{ij}(p) = \hat{\varphi}_{i,p} \circ \hat{\varphi}_{j,p}^{-1}$ are called its \emph{transition functions}\index{transition function of a fiber bundle}.
 
 \end{itemize}
-Often, a fiber bundle is shortly written as the short sequence 
+Often, a fiber bundle is simply written as the short sequence 
 $F \to E \stackrel{\pi}{\to} B$.
 If $F$ and $G$ are isomorphic, $F \cong G$, and $G$ acts on $F$ by left translation, the bundle is called a \emph{principal fiber bundle}\index{principal fiber bundle}.
 \end{definition}
@@ -478,7 +478,7 @@ cf. \cite[61]{Jaenich-1992}.
 \begin{beispiel}
 	\emph{(Classical differential forms in 3-dimensional vector analysis)}
 	\cite[169]{Jaenich-1992}
-	Let $\mathscr{M} \in \mathbb{R}^3$ be open. Then the vector-valued 1-form $\DD \fett{s}$ and the vector-valued 2-form $\DD \fett{S}$,
+	Let $\mathscr{M} \subseteq \mathbb{R}^3$ be open. Then the vector-valued 1-form $\DD \fett{s}$ and the vector-valued 2-form $\DD \fett{S}$,
 	\begin{equation}
 		\DD \fett{s}
 		= \left(\begin{array}{@{\,}c@{\,}}
@@ -499,7 +499,7 @@ cf. \cite[61]{Jaenich-1992}.
 	\end{equation}
 	is called the \emph{volume element}\index{volume element} of $\mathscr{M}$. Note that 
 	$\DD x^i$ $\in$ $\Omega^1 \mathscr{M}$, $\DD x^i$ $\wedge$ $\DD x^j$ $\in$ $\Omega^2 \mathscr{M}$, and $\DD V$ $\in$ $\Omega^3 \mathscr{M}$.
-	Note moreover that the “line element” $\DD s = \sqrt{\DD x^2 + \DD y^2 + \DD z^2}$, which is applied to compute the arc length of a curve in $\mathbb{R}^3$, is \emph{not} a 1-form. \cite[68]{Jaenich-1992}
+	Note moreover that the line element $\DD s = \sqrt{\DD x^2 + \DD y^2 + \DD z^2}$, which is applied to compute the arc length of a curve in $\mathbb{R}^3$ and is used, in a more general form, in differential geometry, is \emph{not} a 1-form. \cite[68]{Jaenich-1992}  
 \end{beispiel}
 
 
@@ -656,7 +656,7 @@ cf. \cite[61]{Jaenich-1992}.
 \begin{beispiel}
 	\label{bsp:classical-vector-analysis}
 	\cite[254-262]{Jaenich-1992}
-	Let be $\mathscr{M} \subset \mathbb{R}^3$.
+	Let be $\mathscr{M} \subseteq \mathbb{R}^3$.
 	Then $\Omega^3 \mathscr{M} \cong \Omega^0 \mathscr{M} = C^\infty(\mathscr{M}, \mathbb{R}) =: \mathscr{F}(\mathscr{M})$ of real-value differential functions on $\mathscr{M}$ and 
 	$\Omega^1 \mathscr{M} \cong \Omega^2 \mathscr{M} \cong C^\infty(\mathscr{M}, \mathbb{R}^3) =: \mathscr{V}$
 	of differental vector fields on $\mathscr{M}$.
@@ -845,7 +845,7 @@ The Hodge star operator transforms the de Rham complex\index{de Rham complex}  (
 	\label{bsp:Maxwell-equations}
 	\emph{(Maxwell equations)}
 	\cite[238]{Jaenich-1992}
-	Let be $\mathscr{M} \subset \mathbb{R}^3$.
+	Let be $\mathscr{M} \subseteq \mathbb{R}^3$.
 	Then $\Omega^3 \mathscr{M} \cong \Omega^0 \mathscr{M} = C^\infty(\mathscr{M}, \mathbb{R}) =: \mathscr{F}(\mathscr{M})$ of real-value differential functions on $\mathscr{M}$ and 
 	$\Omega^1 \mathscr{M} \cong \Omega^2 \mathscr{M} \cong C^\infty(\mathscr{M}, \mathbb{R}^3) =: \mathscr{V}$
 	of differental vector fields on $\mathscr{M}$.
@@ -919,7 +919,7 @@ The Hodge star operator transforms the de Rham complex\index{de Rham complex}  (
 	electric constant %vacuum permittivity 
 	and $\mu_{0}$ 
 	the magnetic constant. %the vacuum permeability.
-	Note that the speed of light $c$ is then given by
+	Note that the speed of light $c$ then is given by
 	\begin{equation}
 		c = \sqrt{\frac{1}{\varepsilon_0 \mu_0}}
 		%c^2 = \frac{1}{\varepsilon_0 \mu_0}
@@ -1097,16 +1097,16 @@ The Hodge star operator transforms the de Rham complex\index{de Rham complex}  (
 		\label{eq:de-Rham-complex-curved-manifolds}
 	\end{equation}
 	where now the forms are defined on the tangential bundle $T\mathscr{M}$ of $\mathscr{M}$ and the 
-	operator $\DD^\nabla$ depends on the curvature of the manifold and does not satisfy the Poicar\'e rule in general, i.e., $\DD^\nabla \circ \DD^\nabla \ne 0$.
+	operator $\DD^\nabla$ depends on the curvature of the manifold, but does not satisfy the Poincar\'e rule in general, i.e., we may have $\DD^\nabla \circ \DD^\nabla \ne 0$.
 	\cite[252]{Jaenich-2002}
-	More precisely, the Cartan structure equations in semi-Riemannian manifold yield the relation
+	More precisely, the Cartan structure equations in a semi-Riemannian manifold yield the relation
 	\begin{equation}
-		\DD \theta^i 
+		\DD^\nabla \theta^i 
 		%= \theta^j \wedge \omega_j^i
 		= \theta^j \wedge \gamma^i_{kj} \theta^k
 	\end{equation}
-	where $\{\theta^i\}$ form a basis of the cotangential bundle $T^*\mathscr{M}$ (???)
-	and $\gamma^i_{kj}$ are the connection coefficients given by the unique torsion-free linear connection $\nabla$ through $\nabla e_i = \gamma^j_{kl} \theta^k \otimes e_j$ where $\{e_i\}$ and $\{\theta^i\}$ are dual frames.
+	where $\{\theta^i\}$ form a basis of the cotangential bundle $T^*\mathscr{M}$ %(???)
+	and $\gamma^i_{kj}$ are the connection coefficients given by the unique torsion-free linear connection $\nabla$ through the covariant derivation\index{covariant derivation} of $e_i$, $\nabla e_i = \gamma^j_{ki} \theta^k \otimes e_j$, where $\{e_i\}$ and $\{\theta^i\}$ are dual frames.
 	\cite[301,310]{Choquet-Bruhat-et-al-1982}
 %\end{bem}
 
