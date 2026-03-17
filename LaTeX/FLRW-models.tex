@@ -1,8 +1,8 @@
 \chapter{Cosmological models}
 
-In this chapter we will shortly review the standard models of cosmology. In essence they follow from the classes of geometry that are determined by the cosmological principle. In turn, the geometry and its symmetries prescribe the physical form and distribution of matter and energy in the universe, due to the Einstein field equations (\ref{eq:Feldgleichungen}).
+In this chapter we will shortly review various models of cosmology. In essence they follow from the classes of geometry that are determined by the cosmological principle. In turn, the geometry and its symmetries prescribe the physical form and distribution of matter and energy in the universe, due to the Einstein field equations (\ref{eq:Feldgleichungen}).
 
-The standard models of cosmology are essentially the three geometries of the Friedmann-Lemaître-Robertson-Walker metrics, each of which has variants with or without a cosmological constant, i.e., $\Lambda \ne 0$ or $\Lambda = 0$, respectively. The all rely on the cosmological principle, which in essence fixes the possible geometries and therefore prescribe the overall distribution of energy and matter in the cosmos.
+The standard models of cosmology are essentially the three geometries of the Fried\-mann-Le\-maît\-re-Ro\-bert\-son-Walk\-er metrics, each of which has variants with or without a cosmological constant, i.e., $\Lambda \ne 0$ or $\Lambda = 0$, respectively. The all rely on the cosmological principle, which fixes the possible geometries and therefore prescribes the overall distribution of energy and matter in the cosmos.
 
 The standard models of the universe all go back to Alexander Friedmann. They and more modern modifications such as the “inflationary universe” in its initial phase have repeatedly been confirmed by physical observations. The first important confirmation was the discovery of the expansion of the universe by the Belgian priest and astrophysicist Georges Lemaître in 1927 \cite{Lemaitre-1927} and the US astronomer Edwin Hubble in 1929 \cite{Hubble-1929}. Further confirming observations were the discovery of cosmic background radiation by Penzias and Wilson in 1965 and the discovery of the Higgs boson in 2012, cf.
 \cite[§20.1]{Karttunen-et-al-2000},
@@ -15,7 +15,7 @@ The cosmological principle summarizes two basic assumptions of cosmology that un
 \begin{axiom}[\textbf{Cosmological principle}]
 	\label{axiom:cosmological-principle}
 	Viewed on a sufficiently large scale, the properties of the universe are the same for all observers.
-	Especially the universe is homogeneous and isotropic.
+	In particular, the universe is homogeneous and isotropic.
 	Homogeneity means that the universe appears the same to all observers regardless to their locations in space, isotropy means that the universe always appears the same to observers regardless of their direction of observation in space.
 \end{axiom}
 
@@ -133,12 +133,14 @@ be a function depending on $t$, and let $f_k$: $I_k \to J_k$ denote the function
 \end{equation}
 %We often simply write $f$ instead of $f_k$.
 The parameter $t$ is called \emph{cosmic time}\index{cosmic time},
-and $R$ the \emph{scale factor} of the universe. 
+and $R$ the \emph{size parameter}\index{size parameter}
+%often also called the \emph{radius of curvature}\index{radius of curvature} 
+of the universe. 
 Defining the covariant %and contravariant 
 components of the metric tensor by
 \begin{eqnarray*}
 	(g_{ij}) & \hspace*{-1.5ex} = \hspace{-1.5ex} & 
-	\mathrm{diag}\,(1, -R^2, -R^2 f_k^2, - R^2 f_k^2 \sin^2\theta)
+	\mathrm{diag}\,(c^2, -R^2, -R^2 f_k^2, - R^2 f_k^2 \sin^2\theta)
 %	\\
 %	(g^{ij}) & \hspace*{-1.5ex} = \hspace{-1.5ex} & 
 %	\frac{1}{a^2}\ \mathrm{diag} \left(1, -1, -\frac{1}{f_k^2}- \frac{1}{f_k^2 \sin^2\theta}\right)
@@ -152,21 +154,26 @@ the line element reads
 	\label{eq:FLRW-line-element-in-polar-coordinates} %{(3.26)}
 \end{equation}
 cf. \cite[(112,2)]{Landau-Lifschitz-1997}. 
+%Equation (\ref{eq:FLRW-line-element}) describes 
+This line element is called the \emph{Fried\-mann-Lemaître-Robertson-Walker (FLRW) metric}\index{FLRW metric}.
 We have
 $ %\begin{equation}
-	\sqrt{g} = R^3(t) \, f_k^2(\chi) \sin \theta.
+	\sqrt{g} = c R^3(t) \, f_k^2(\chi) \sin \theta.
 %	\label{(3.27)}
 $ %\end{equation}
-We see that the parameter $k$ determines the curvature radius $k R$.
-For $k=1$, the spatial part of(\ref{eq:FLRW-line-element-in-polar-coordinates}), i.e.,
-$R^2(t)\, (\!\D \chi^2 + \sin^2 \chi \D\theta^2 + \sin^2\chi\sin^2 \theta \D\varphi^2 )$, 
-is exactly the three-dimensional line element of a hypersphere with radius $R(t)$ embedded in Euclidian space $\mathbb{R}^4$. Therefore, the scale factor $R$ is sometimes also called the \emph{world radius}\index{world radius}.
+Therefore the parameter $k$ is related to the curvature\index{curvature} of the space-time $\mathscr{M}_k$:
+For $k=-1$ the space has constant negative curvature, i.e., it is open, or hyperbolic, space, and $R$ is its radius of curvature\index{radius of curvature}.
+For $k=0$ the space is Euclidean, or flat, and $R$ simply is a metric factor scaling the distances.
+For $k=1$, 
+%the spatial part of (\ref{eq:FLRW-line-element-in-polar-coordinates}), i.e.,$R^2(t)\, (\!\D \chi^2 + \sin^2 \chi \D\theta^2 + \sin^2\chi\sin^2 \theta \D\varphi^2 )$, is exactly the three-dimensional line element of 
+the space has constant positive curvature and is closed, or elliptic, and has a radius of curvature $R$. Embedded in Euclidian space $\mathbb{R}^4$, it is a hypersphere of radius $R$, and so $R$ is sometimes also called the \emph{world radius}\index{world radius}.
 \cite[pp.~149]{Sexl-Urbantke-1987}
-Especially, for $k=1$ the universe has a finite volume. In general, the volume of a 3-space with coordinates $(x_1, x_2, x_3)$ and a metric with determinant $g$ is defined as $V$ $=$ $\iiint \! \sqrt{g} \D x_1\D x_2 \D x_3$, cf. (\ref{eq:volume-element}). For the line element (\ref{eq:FLRW-line-element-in-polar-coordinates}) we therefore have
+
+Especially, for $k=1$ the universe has a finite volume. In general, the volume of a 3-space with coordinates $(x_1, x_2, x_3)$ and a metric with determinant $\hat g$ is defined as $V$ $=$ $\iiint \! \sqrt{\hat g} \D x_1\D x_2 \D x_3$, cf. (\ref{eq:volume-element}). For spatial slice $\DD t = 0$ of the line element (\ref{eq:FLRW-line-element-in-polar-coordinates}) we have $\hat g = g / c^2$, and therefore
 \begin{align}
 	V 
 	& = 
-	\int\limits_0^\pi \! \int\limits_0^\pi \! \int\limits_0^{2\pi} \! \sqrt{g} \D \varphi \D \theta \D r
+	\int\limits_0^\pi \! \int\limits_0^\pi \! \int\limits_0^{2\pi} \! \sqrt{\hat g} \D \varphi \D \theta \D \chi
 	=
 	R^3(t)  \int\limits_0^\pi \! \sin^2 \chi  \D \chi \cdot \int\limits_0^\pi \! \sin \theta   \D \theta \cdot \int\limits_0^{2\pi} \! \D \varphi
 %	\nonumber \\ & =
@@ -181,9 +188,12 @@ Especially, for $k=1$ the universe has a finite volume. In general, the volume o
 \end{align}
 
 \begin{bem}
+The curvature parameter $k$ in Equation (\ref{eq:FLRW-line-element-in-polar-coordinates}) represents the three possible metrics of a space-time that is obtained from the {cosmological principle} of space-like isotropy at each fixed cosmic time $t = \mathrm{const}$. \cite{Hawking-Ellis-1973}, \cite[718-722]{Penrose-2004}\cite[41]{Ryden-2017}, \cite[150]{Sexl-Urbantke-1987}
+\end{bem}
+
+\begin{bem}
 \label{Bemerkung 3.7}%
-In cosmology it is more familiar to consider another coordinate than $\chi$, namely the parameter
-$r \in J_k$, with $J_k = I_k$ for $k=0,-1$ and $J_1 = (0,1)$ for $k=1$, given by
+In cosmology it is more familiar to consider another coordinate than $\chi$, namely the dimensionless radial parameter $r \in J_k$, with $J_k = I_k$ for $k=0,-1$ and $J_1 = (0,1)$ for $k=1$, given by
 \begin{equation}
 	\chi \mapsto r = f_k(\chi),
 	\label{eq:FLRW-r} % {eq:FLRW-coordinate-cosmic-time} %{(3.29)}
@@ -203,31 +213,32 @@ where $	\chi = f_k^{-1}(r) \in (0, \frac{\pi}{2})$.
 %	\end{array}\right.
 %	\label{(3.30)}
 %\end{equation}
-Thus the metric (\ref{eq:FLRW-line-element-in-polar-coordinates}) transforms to
+The metric (\ref{eq:FLRW-line-element-in-polar-coordinates}) then equivalently transforms to
 \begin{equation}
 	\D s^2 = c^2 \D t^2 - R^2(t) 
 	\left( \frac{\D r^2}{1 - kr^2} + r^2 \D \theta^2 + r^2 \sin^2 \theta \D \varphi^2 \right)
 	,
 	\label{eq:FLRW-line-element} %{(3.33)}
 \end{equation}
-and the determinant of the metric is $\sqrt{g} = R^3(t) \frac{r^2}{\sqrt{1 - r^2}}$.
-This is the line element of the \emph{Fried\-mann-Lemaître-Robertson-Walker (FLRW) models}.
-It is a metric of a space-time that is obtained from the {cosmological principle} of space-like isotropy at each fixed cosmic time $t = \mathrm{const}$. \cite{Hawking-Ellis-1973}, \cite{Sexl-Urbantke-1987}
+and the square root of the metric determinant reads $\sqrt{g} = c R^3(t) \frac{r^2}{\sqrt{1 - r^2}}$. 
+%Equation (\ref{eq:FLRW-line-element}) describes the line element of the \emph{Fried\-mann-Lemaître-Robertson-Walker (FLRW) models}.
+\end{bem}
 
+\begin{bem}
 For $k=1$, i.e., a three-dimensional hypersphere $S^3(R)$ with world radius $R$, the metric gets singular at $r=1$. However, this is not a physical singularity, but a pure coordinate singularity. An analogy in two dimensions may illustrate this, see Fig. \ref{fig:S2-coordinate-change-analogy-to-FLRW-metric}. 
 %--- Figure: ---------------------------------------------------------
 \begin{figure}[htp]
 \centering
 \includegraphics[scale=1]{S2-coordinate-change-analogy-to-FLRW-metric}
 \caption[The FLRW cosmological models]{\label{fig:S2-coordinate-change-analogy-to-FLRW-metric}
-	The coordinate change $(\chi, \varphi) \mapsto (r, \varphi)$ on the sphere $S^2(R)$ embedded in three-space $\mathbb{R}^3$, as an analog to the coordinate change (\ref{eq:FLRW-r}) on $S^3(R)$.
+	The coordinate change $(\chi, \varphi) \mapsto (r, \varphi)$ on the sphere $S^2(R)$ with radius $R$, embedded in three-space $\mathbb{R}^3$, as an analog to the coordinate change (\ref{eq:FLRW-r}) on $S^3(R)$.
 	Graphics modified from \cite[151]{Sexl-Urbantke-1987}
 }	
 \end{figure}
 %--- Figure^ ---------------------------------------------------------
 We have $r = \sin \chi$, but there is no singularity at the equator $\chi = \frac{\pi}{2}$.
-Moreover, this analogy illustrates the role of the cosmological scale factor $R$.
-A sphere $S^2$ is a two-dimensional surface embedded in a 3-dimensional space. Its radius lives in the third dimension, it is not part of the surface. However, the value of this radius affects distances measured on the two-dimensional surface. Similarly, the cosmological scale factor is not a distance in our 3-dimensional space, but its value affects the measurement of distances.
+Moreover, this analogy illustrates the role of the cosmological radius of curvature $R$.
+A sphere $S^2$ is a two-dimensional surface embedded in a 3-dimensional space. Its radius lives in the third dimension, it is not part of the surface. However, the value of this radius affects distances measured on the two-dimensional surface. Similarly, the radius of curvature is not a distance in our 3-dimensional space, but its value affects the measurement of distances.
 %
 %%The coordinates $(\tau, \chi, \theta, \varphi)$ are also called  \emph{chronometrical comoving}.
 %%%\cite{Villalba-Percoco-1991} or 
@@ -243,7 +254,7 @@ A sphere $S^2$ is a two-dimensional surface embedded in a 3-dimensional space. I
 \end{bem}
 
 
-\section{Solving the field equations by FLRW geometries}
+\section{Fluids in FLRW universes}
 
 So far, we only derived the \emph{geometry} of a universe satisfying the cosmological principle. To solve the Einstein field equations (\ref{eq:Feldgleichungen}), however, we have to find suitable distributions of energy and matter in the spacetime, determined by $T_{ij}$. In other words, a physical model of the universe is derived, if (\ref{eq:FLRW-line-element}) is inserted in the Einstein field equations.
 By the strong spatial symmetries implied by the cosmological principle they only can determine the evolution of the universe in time, i.e., its dynamics.
@@ -264,7 +275,7 @@ If the space is perfectly homogeneous, there is no bulk flow of heat $T \D S$ in
 	\label{eq:adiabatic-process}
 \end{equation}
 Processes with $\DD S = 0$ are called \emph{adiabatic}\index{adiabatic process}\index{adiabatic process}. \cite[58]{Ryden-2017}
-The energy density\index{energy density} $c^2\varrho = E/V$ then is defined as the specific mass of the system multiplied by $c^2$. \cite[434]{Landau-Lifschitz-1997}, \cite[55]{Ryden-2017}
+The energy density\index{energy} $c^2\varrho = E/V$ then is defined as the specific mass of the system multiplied by $c^2$. \cite[434]{Landau-Lifschitz-1997}, \cite[55]{Ryden-2017}
 If the space is assumed to be homogeneous, the number $N$ of particles in a given volume is a function of $V$, i.e., $N = N(V)$.
 The energy density then differs from the particle 
 density $n=N/V$ and the average mass $m$ of a single particle by the \emph{specific internal energy}\index{specific internal energy}\index{internal energy}\index{energy, specific internal}
@@ -307,7 +318,7 @@ Defining the chemical potential\index{chemical potential} of the particles by $\
 	.
 	\label{eq:FLRW-p-rho-mu}
 \end{equation}
-Therefore, if the equation of state
+Therefore, if the equation of state\index{equation of state}
 \begin{equation}
 	p = p(\varrho)
 	\label{eq:general-equation-of-state}
@@ -321,6 +332,11 @@ is known, we can integrate (\ref{eq:FLRW-p-rho-mu}),
 \end{equation}
 and we also know $n(\varrho)$.
 \cite[137]{Sexl-Urbantke-1987}
+With the equation of state (\ref{eq:general-equation-of-state}) we also know the \emph{speed of sound}\index{speed of sound} \cite[193]{Dodelson-Schmidt-2025}, \cite[210]{Ryden-2017}
+\begin{equation}
+	c_s^2 = \frac{\DD p}{\DD \varrho}.
+	\label{eq:speed-of-sound}
+\end{equation}
 In general, equations of state can be very complicated. For instance, in condensed matter physics, for certain substances the pressure $p(\varrho)$ is a nonlinear function of the energy density $\varrho$. However, cosmology usually deals with dilute gases, for which the equation of state can be written in a simple linear form
 \begin{equation}
 	\fbox{$\displaystyle
@@ -328,7 +344,7 @@ In general, equations of state can be very complicated. For instance, in condens
 	$}
 	\label{eq:FLRW-equation-of-state}
 \end{equation}
-for a dimensionless constant $w$.
+for a dimensionless constant $w$, the \emph{equation-of-state parameter} of the fluid.
 To be more precise, the energy-momentum tensor of an ideal gas is given by \cite[103]{Landau-Lifschitz-1997}, \cite[134]{Sexl-Urbantke-1987}
 \begin{equation}
 	T_{ij}
@@ -345,6 +361,14 @@ In the rest system of the fluid, we have
 		0   &  0  &  p  &  0 \\
 		0   &  0  &  0  &  p \\
 	\end{array}\right)
+	= 
+	c^2\varrho
+	\left(\begin{array}{@{}cccc}
+		1  &  0  &  0  &  0 \\
+		0   &  w  &  0  &  0 \\
+		0   &  0  &  w  &  0 \\
+		0   &  0  &  0  &  w \\
+	\end{array}\right)
 	\label{eq:fluid-energy-momentum-tensor-in-rest-system}
 \end{equation}
 Since $T^i_j = (c^2 \varrho + p) u^i u_j - p \delta^i_j$, its trace is given by
@@ -360,7 +384,7 @@ $
 	.
 $
 \cite[104]{Landau-Lifschitz-1997}
-Therefore $c^2\varrho - 3 p \geqq 0$, i.e.,
+Thus for free non-interacting particles we have $c^2\varrho - 3 p \geqq 0$, and therefore
 \begin{equation}
 	p \leqq c^2\varrho / 3
 	,
@@ -369,7 +393,42 @@ Therefore $c^2\varrho - 3 p \geqq 0$, i.e.,
 	,
 	\label{eq:FLRW-p-vs-rho}
 \end{equation}
-where equality holds for massless particles with $v_\alpha = c$, such as photons. A gas made of baryonic matter has a positive pressure $p$, i.e., $w>0$, resulting from the random thermal motions of the molecules, atoms, or ions of which the gas consists. A gas of photons also has a positive pressure, as does a gas of neutrinos or WIMPs, hypothetical particles that are one of the proposed candidates for dark matter. \cite[60]{Ryden-2017}
+where equality holds in the limit for massless, or \emph{ultrarelativistic}, particles with $v_\alpha = c$, e.g., photons. A gas made of baryonic matter has a positive pressure $p$, i.e., $w>0$, resulting from the random thermal motions of the molecules, atoms, or ions of which the gas consists. Afluid with vanishing pressure, $w=0$, is also called \emph{dust}\index{dust}. A gas of photons also has a positive pressure, as does a gas of neutrinos or WIMPs, hypothetical particles that are one of the proposed candidates for dark matter. \cite[60]{Ryden-2017}
+However, Zeldovich \cite{Zeldovich-1962} showed that particles interacting via a field at ultrahigh densities can obey the equation of state
+\begin{equation}
+	p = c^2 \varrho,
+	\qquad
+	\mbox{i.e.,} \qquad
+	w = 1
+	.
+\end{equation}
+Such fluids are sometimes called “stiff matter”\index{stiff matter}. They can be realized, e.g., by a free scalar field\index{scalar field} $\phi$ with energy density $c \varrho_\phi = \frac{1}{2\hbar c^3} \dot{\phi}^2 + V(\phi)$ and pressure $p_\phi = \frac{1}{2\hbar c^3} \dot{\phi}^2 - V(\phi)$ where the potential energy density vanishes, $V(\phi) = 0$: \cite[167]{Dodelson-Schmidt-2025}, \cite[198]{Ryden-2017}
+\begin{equation}
+	w_\phi
+	= \frac{p_\phi}{c^2 \varrho_\phi}
+	%= \frac{\frac{1}{2\hbar c^3}\dot{\phi}^2 - V(\phi)}{\frac{1}{2\hbar c^3}\dot{\phi}^2 + V(\phi)}
+	= \frac{\frac{1}{2}\dot{\phi}^2 - \hbar c^3 V(\phi)}{\frac{1}{2}\dot{\phi}^2 + \hbar c^3 V(\phi)}
+	.
+	\label{eq:scalar-field-equation-of-state-parameter}
+\end{equation}
+Fluids with equation-of-state parameter $\frac{1}{3} < w \leqq 1$ are also called “ultralight”\index{ultralight energy}. \cite{Nemiroff-Patla-2008}
+As the other extreme, a scalar field with a potential $V(\phi) > 0$ and vanishing derivative $\dot{\phi} = 0$ has an equation-of-state parameter $w = -1$.
+All forms of matter that are currently known to exist obey the \emph{null energy condition}\index{null energy condition}
+\begin{equation}
+	c^2 \varrho + p \geqq 0
+	.
+	\label{eq:null-energy-condition}
+\end{equation}
+For (\ref{eq:FLRW-equation-of-state}) this means 
+%$(1 + w) c^2 \geqq 0$ or
+$w \geqq -1$.
+Since the speed of sound cannot be greater than the speed of light, $c_s < c$, Equation (\ref{eq:speed-of-sound}) implies $w \leqq 1$. 
+For negative pressure, $w<0$, no particle interaction takes place such that sound waves cannot propagate.
+To sum up, we have the bounds
+\begin{equation}
+	-1 \leqq w \leqq 1
+\end{equation}
+for physically reasonable fluids, described above with their different manifestations.
 
 The entropy density\index{entropy density} of the fluid is given by \cite[39]{Dodelson-Schmidt-2025}
 \begin{equation}
@@ -379,7 +438,8 @@ The entropy density\index{entropy density} of the fluid is given by \cite[39]{Do
 	\label{eq:entropy-density}
 \end{equation}
 
-\subsection{Fluids in FLRW universes}
+
+\subsection{Friedmann's equations}
 %It turns out that, given the FLRW geometry, the energy-momentum tensor must represent an ideal fluid with pressure $p$ and energy density $\varrho$, i.e., must be of the form 
 %\begin{equation}
 %	T_{ij}
@@ -426,7 +486,7 @@ Here $\dot{R}$ denotes the derivative with respect to the cosmic time, i.e., $\d
 For $p=0$, these equations have been derived first by Friedmann in 1922. \cite[(4) \& (5)]{Friedmann-1922}
 %%Rearranging (\ref{eq:FLRW-dynamics-2}) for $\frac{\dot{R}^2}{R^2}$ and inserting this in (\ref{eq:FLRW-dynamics-1}) gives
 %Subtracting $\frac{1}{6}$ times (\ref{eq:FLRW-dynamics-2}) from $\frac{1}{2}$ times (\ref{eq:FLRW-dynamics-1}) gives
-As will be proved in Theorem \ref{satz:Friedmann-equation-equivalences}, these equations imply
+As will be proved in Theorem \ref{theo:Friedmann-equation-equivalences}, these equations imply
 \begin{equation}
 	\frac{\ddot{R}}{R}
 	= \frac{c^2\Lambda}{3}
@@ -434,7 +494,7 @@ As will be proved in Theorem \ref{satz:Friedmann-equation-equivalences}, these e
 	,
 	\label{eq:FLRW-dynamics-1'}
 \end{equation}
-called the \emph{acceleration equation}\index{acceleration equation}. \cite[60]{Ryden-2017}, \cite[485]{Unsoeld-Baschek-2002}
+called the \emph{acceleration equation}\index{acceleration equation}. \cite[60]{Ryden-2017}, \cite[485]{Unsoeld-Baschek-1999}
 Hence the system of the two equations (\ref{eq:FLRW-dynamics-1}) and (\ref{eq:FLRW-dynamics-2}) is equivalent to the system of (\ref{eq:FLRW-dynamics-1'}) and (\ref{eq:FLRW-dynamics-2}). Nowadays, (\ref{eq:FLRW-dynamics-2}) and (\ref{eq:FLRW-dynamics-1'}) are called the \emph{Friedmann equations}\index{Friedmann equations}.
 
 \begin{bem}
@@ -448,7 +508,7 @@ Equation (\ref{eq:FLRW-dynamics-1'}) expresses the dynamics of the FLRW models. 
 Under the assumption that the total mass of the universe is constant, i.e., $\varrho R^3 = \mathrm{const}$, Equation (\ref{eq:FLRW-dynamics-1}) on the other hand expresses the energy conservation of the universe. \cite[155]{Sexl-Urbantke-1987}
 
 Another important identity can be deduced from the Friedmann equations,
-as is done in the proof of Theorem \ref{satz:Friedmann-equation-equivalences},
+as is done in the proof of Theorem \ref{theo:Friedmann-equation-equivalences},
 %assuming that all the terms $R$, $\dot{R}$, and $(c^2 \varrho + p)$ do nat vanish: Deriving first (\ref{eq:FLRW-dynamics-2}) times $R^2$ with respect to $t$, rearranging the resulting equation for $\ddot{R}/R$, and inserting this into (\ref{eq:FLRW-dynamics-1'}), we obtain
 \begin{equation}
 	% \frac{\dot{\varrho}}{\varrho + p/c^2} = - \frac{3 \dot{R}}{R}
@@ -466,7 +526,7 @@ Equation (\ref{eq:FLRW-fluid-equation}) can be rewritten equivalently as
 	.
 	\label{eq:FLRW-dynamics-4}
 \end{equation}
-cf. Theorem \ref{satz:Friedmann-equation-equivalences} below.
+cf. Theorem \ref{theo:Friedmann-equation-equivalences} below.
 Moreover, assuming a conservation law for the particles, we have
 \begin{equation}
 	\frac{\DD}{\DD t} \, (n R^3) = 0,
@@ -477,7 +537,7 @@ Moreover, assuming a conservation law for the particles, we have
 \end{equation}
 
 \begin{satz}
-	\label{satz:Friedmann-equation-equivalences}
+	\label{theo:Friedmann-equation-equivalences}
 	Given the Friedmann equation (\ref{eq:FLRW-dynamics-2}) for a FLRW universe (\ref{eq:FLRW-line-element}) and assuming $R \ne 0$,
 	Friedmann's original equation (\ref{eq:FLRW-dynamics-1}),
 	the acceleration equation (\ref{eq:FLRW-dynamics-1'}),
@@ -529,7 +589,7 @@ Moreover, assuming a conservation law for the particles, we have
 	and 
 	%the adiabatic equation
 	(\ref{eq:adiabatic-process})
-	given in Theorem \ref{satz:Friedmann-equation-equivalences},
+	given in Theorem \ref{theo:Friedmann-equation-equivalences},
 	depending on the geometric parameter $k$ and on the cosmological constant $\Lambda$.
 	In cosmology usually the set of the three independent equations
 	(\ref{eq:FLRW-equation-of-state}), (\ref{eq:FLRW-dynamics-2}), and 	 
@@ -762,17 +822,17 @@ In fact, multiplying the first equation by $R^2$ and deriving it, gives exactly 
 	= \left\{\begin{array}{ll} \displaystyle
 		\frac{1}{A} \cosh A c t & \mbox{for $k = +1$,}
 		\\ [1.25ex] \displaystyle
-		R_0 \E^{Act} & \mbox{for $k = 0$,}
+		B \E^{Act} & \mbox{for $k = 0$,}
 		\\ [.5	ex] \displaystyle
 		\frac{1}{A} \sinh A c t & \mbox{for $k = -1$,}
 	\end{array}\right.
 	\qquad
-	\mbox{with $A = \sqrt{\Lambda / 3}$, \ $R_0 \in \mathbb{R}^+.$}
+	\mbox{with $A = \sqrt{\Lambda / 3}$, \ $B \in \mathbb{R}^+.$}
 	\label{eq:de-Sitter-universes-Lambda>0}
 \end{equation}
-In any case, the scale factor thus grows exponentially in time.
+In any case, the radius of curvature thus grows exponentially in time.
 Remarkably, de Sitter universes with a spherical geometry, $k=1$, 
-or a flat geometry, $k=0$, do not initiate with a big bang, but with a positive scale factor $R(0)$, i.e., with $1/\sqrt{\Lambda/3}$ or $R_0$, respectively.
+or a flat geometry, $k=0$, do not initiate with a big bang, but with a positive radius of curvature $R(0)$, i.e., with $1/\sqrt{\Lambda/3}$ or $B$, respectively.
 Moreover, for a negative cosmological constant we have another solution,
 \begin{equation}
 	R(t) = \frac{1}{A} \sin Act
@@ -782,13 +842,13 @@ Moreover, for a negative cosmological constant we have another solution,
 	\mbox{with \ $A = \sqrt{-\Lambda/3}$, \ $k = -1$.}
 	\label{eq:de-Sitter-universe-Lambda<0}
 \end{equation}
-Therefore the only solution to representing an isotropic vacuum universe with a negative cosmological constant has a hyperbolic geometry, may start either with a big bang, $R(0)=0$, or with a finite scale factor $R(0)=1/\sqrt{-\Lambda/3}>0$, and eventually terminates with a big crunch in any case. 
+Therefore the only solution to representing an isotropic vacuum universe with a negative cosmological constant has a hyperbolic geometry, may start either with a big bang, $R(0)=0$, or with a finite radius of curvature $R(0)=1/\sqrt{-\Lambda/3}>0$, and eventually terminates with a big crunch in any case. 
 %--- Figure: ---------------------------------------------------------
 \begin{figure}[htp]
 \centering
 \includegraphics[scale=1]{de-Sitter-universes}
 \caption{\label{fig:de-Sitter-universes}
-	Scale factor $R(t)$ of the de Sitter universes according to equations (\ref{eq:de-Sitter-universes-Lambda>0}) and (\ref{eq:de-Sitter-universe-Lambda<0}).
+	Radius of curvature $R(t)$ of the de Sitter universes according to equations (\ref{eq:de-Sitter-universes-Lambda>0}) and (\ref{eq:de-Sitter-universe-Lambda<0}).
 	The dashed lines show the two cases, both with $k=-1$, starting with a big bang.
 }
 \end{figure}
@@ -796,12 +856,13 @@ Therefore the only solution to representing an isotropic vacuum universe with a 
 However, a negative cosmological constant expressing negative vacuum energy seems unprobable according to the astronomical observations.
 
 \begin{satz}
-	If the energy density and the pressure are negligibly small compared to the cosmological constant, i.e., $c^2 \varrho$, $p$ $\ll$ $\Lambda$,
-	all solutions of the Friedmann equations (\ref{eq:FLRW-dynamics-2}) and (\ref{eq:FLRW-dynamics-1'}) are approximately given by (\ref{eq:de-Sitter-universes-Lambda>0}).
-	Especially, the scaling factor $R$ of the universe then grows exponentially with respect to the cosmological time $t$.
+	\label{theo:equivalent-sets-of-Friedmann-equations}
+	If the energy density and the pressure are negligibly small compared to the cosmological constant, i.e., $c^2 \varrho$, $p$ $\ll$ $\Lambda / \kappa$,
+	all solutions of the Friedmann equations (\ref{eq:FLRW-dynamics-2}) and (\ref{eq:FLRW-dynamics-1'}) are given by (\ref{eq:de-Sitter-universes-Lambda>0}).
+	Especially, the radius of curvature $R$ of the universe then grows exponentially with respect to the cosmological time $t$.
 \end{satz}
 
-The exponential expansion of the scale factor means that the physical distance between any two non-accelerating observers will eventually be growing faster than the speed of light. At this point they will no longer be able to communicate with each other.
+The exponential expansion of the radius of curvature means that the physical distance between any two non-accelerating observers will eventually be growing faster than the speed of light. At this point they will no longer be able to communicate with each other.
 
 Nowadays, “the” de Sitter universe usually is referred to the flat geometry case $k=0$ with $\Lambda > 0$ in (\ref{eq:de-Sitter-universes-Lambda>0}).
 
@@ -855,7 +916,7 @@ Thus the energy density is given as a function of $R$, and assuming that $w_i$ i
 	= \varrho_{i, 0} / R^{3 (1 + w_i)},
 	\label{eq:FLRW-different-components-universe-energy-density-solution}
 \end{equation}
-with $\varrho_{i, 0} = \varrho_i (R_0)$ denoting the initial value for $R_0$.
+with $\varrho_{i, 0} = \varrho_i (R_0)$ denoting the current value.
 The constituents' energy density fraction of the total energy density is given by the \emph{density parameter}\index{density parameter} \cite[57]{Ryden-2017}
 \begin{equation}
 	\Omega_i
@@ -863,19 +924,22 @@ The constituents' energy density fraction of the total energy density is given b
 	.
 	\label{eq:FLRW-Omega-fraction}
 \end{equation}
-In the current standard model of cosmology, the $\Lambda$CDM model considered below, the fraction is defined slightly different with respect to the critical energy density $\varrho_{\mathrm{crit}}$.
+In the current standard model of cosmology, the $\Lambda$CDM model considered below, the fraction is defined slightly different with respect to the critical energy density $\varrho_{\mathrm{crit}}$, cf. Eq. (\ref{eq:FLRW-rho-crit}); this definition is more convenient to discuss the curvature of the universe. \cite[57]{Ryden-2017}
 The following table lists the different components, their equation-of-state parameters, and the resulting energy densities.
 \cite[§2.4, p. 470]{Dodelson-Schmidt-2025}
 \begin{equation}
-	\begin{tabular}{|l@{}cccc|}
+	\begin{tabular}{|l@{\!}cccc|}
 		\hline
 		\textbf{Component} & \textbf{Typical Constituents} & $\fett{w_i}$ & $\fettgr{\varrho_i}$ & $\fettgr{\Omega_i}$
 		\\ \hline  & & & & \\[-2.25ex]
+		free scalar field$^{*}$ & Higgs field, inflaton (?) & 1 & $\varrho_{\mathrm{f}, 0} / R^{6}$
+		& --
+		\\ [0.5ex]
 		radiation & photons, relativistic neutrinos & $1/3$ & $\varrho_{\mathrm{r}, 0} / R^{4}$ & $9 \times 10^{-5}$
 		\\ [0.5ex]
 		baryons & stars, planets, living organisms & 0 & $\varrho_{\mathrm{b}, 0} / R^{3}$ & 0.05
 		\\ [0.5ex]
-		cold dark matter & 
+		dark matter & 
 			\begin{tabular}{@{}c@{}}
 				neutrinos, black holes,
 				\\
@@ -885,15 +949,18 @@ The following table lists the different components, their equation-of-state para
 		\\ [0.5ex]
 		dark energy & unknown & $-1$ & $\varrho_{\Lambda, 0}$ & 0.69
 		\\ [0.5ex]
-		spatial curvature$^*$\!\! & none & \!$-1/3$\! & $\varrho_{K,0}/R^2$ & $-0.044$
+		spatial curvature$^{**}$\!\! & none & \!$-1/3$\! & $\varrho_{K,0}/R^2$ & $-0.044$
 		\\ \hline
-		\multicolumn{4}{l}{\footnotesize $^*$ \cite[Eq. (46b)]{Planck-Collaboration-2020}}
+		\multicolumn{4}{l}{\footnotesize
+			$^{*}$ hypothetical \qquad
+			$^{**}$ \cite[Eq. (46b)]{Planck-Collaboration-2020}
+		}
 	\end{tabular}
 	\label{eq:FLRW-different-components-universe-energy-densities}
 \end{equation}
-Notably, about 95 \% of the constituents of the universe are not known to date. Nonbaryonic dark matter, for instance, is any massive component of the universe which does not emit, absorb, or scatter light at all. Observational astronomers often refer to dark matter more generally as any massive component of the universe that is too dim to be detected readily using current technology, be it baryonic or not. \cite[23]{Ryden-2017} Astronomical observations suggest that about 80 \% of the total matter of the universe is nonbaryonic dark matter. \cite[43]{Dodelson-Schmidt-2025}
-Candidates for dark matter constituents are neutrinos and black holes, the physics of which is well-known; however their total energy densities are less than 3 \% of the dark matter. \cite[140]{Ryden-2017}, cf. \cites{Ahlen-et-al-2025}, \cite[46]{Dodelson-Schmidt-2025}
-There have also been proposed primordial black holes or hypothetical particles such as weakly interacting massive particles (WIMPs) or axions, which however have been never observed to date.
+Notably, about 95 \% of the constituents of the universe are not known to date. Nonbaryonic dark matter\index{dark matter}, for instance, is any massive component of the universe which does not emit, absorb, or scatter light at all. Astronomers often refer to dark matter more generally as any massive component of the universe that is too dim to be detected readily using current technology, be it baryonic or not. \cite[23]{Ryden-2017}  Depending on the thermal velocity of its particles, dark matter is referred to as “cold” or “hot.” \cite[221]{Ryden-2017} Astronomical observations suggest that about 80 \% of the total matter of the universe is nonbaryonic dark matter. \cite[43]{Dodelson-Schmidt-2025}
+Candidates for dark matter constituents are neutrinos\index{neutrino} and black holes\index{black hole}, the physics of which is well-known; however their total energy densities are less than 3 \% of the dark matter. \cite[140]{Ryden-2017}, cf. \cites{Ahlen-et-al-2025}, \cite[46]{Dodelson-Schmidt-2025}
+There have also been proposed primordial black holes or hypothetical particles such as weakly interacting massive particles (WIMPs\index{WIMP}) or axions\index{axion}, which however have been never observed to date and are not understood at a fundamental level. \cite{Planck-Collaboration-2020}
 
 Still more mysterious is the physics of the dark energy\index{dark energy}. All we now know is that it is a substance whose equation of state parameter $w$ is neither 0, as it would be if the substance was nonrelativistic, or $1/3$, but rather close to $-1$, i.e., $p = -c^2 \varrho_\Lambda$ by (\ref{eq:FLRW-equation-of-state}).
 The simplest explanation is a positive cosmological constant, since by (\ref{eq:FLRW-dynamics-2}) and (\ref{eq:FLRW-dynamics-1'}) adding a new component with energy density $\varrho$ and pressure $p = -c^2 \varrho$ to the universe has the same effect as modifying the cosmological constant by $\Lambda = \kappa \varrho = - \kappa p / c^2$. \cite[64]{Ryden-2017}
@@ -988,17 +1055,33 @@ in 2012.
 
 
 \section{Astronomical observability}
-Both the beauty and the success of modern cosmology are implied by the interplay between an elegant mathematical theory and elaborated technologies to test it against astronomical observations. The most important source of observational data are the redshift measurements of distant supernovae, galaxies, or other bright objects. To connect the redshift data with the quantities it turned out to be convenient to introduce the dimensionless scale factor $a$ and the Hubble rate $H(t)$, instead of the curvature radius $R$ originally used by Friedmann.
+Both the beauty and the success of modern cosmology are implied by the interplay between an elegant mathematical theory and elaborated technologies to test it against astronomical observations. 
+The central quantity in the current theory of the universe is the function $R(t)$ representing the radius of curvature in dependence from the cosmological time, determined by one of the pairs of equations equivalen to Friedmann's original equations described in Theorem \ref{theo:equivalent-sets-of-Friedmann-equations}.
 
-\subsection{The Hubble rate}
-The \emph{scale factor}\index{scale factor} is defined by
+How can we determine the radius of curvature $R(t)$ by observations?
+The only data from the universe and its history we can detect by an observational window constrained to electromagnetic and, since 2017, gravitational waves.
+
+In principle we could determine $R$ by measuring the angles of big triangles of light rays. If the sum of the angles is exactly $\pi$, the curvature is zero ($k=0$) and the universe is flat; if it is less then $\pi$, the universe is open with negative curvature ($k=-1$), and if it is greater than $\pi$, the universe is closed with positive curvature ($k=1$). For $k \ne 0$ we therefore could deduce the radius of curvature $R$ by measuring the length of the base and sides of the triangle. The main problem, however, is to consider triangles on a scale large enough such that the cosmological principle\index{cosmological principle} of homogeneity and isotropy is valid. Otherwise we would measure, at best, only a local radius of curvature.
+In fact, measuring such large triangles has been done with measuring baryonic acoustic oscillations (BAO\index{BAO}), oscillations in the plasma of the early universe, the size of which we know rather exactly and which are observable today in the cosmic microwave background\index{cosmic microwave background}.\footnote{
+	Matthias Bartelmann, “Cosmic Sound: Curvature and the cosmic background radiation” in: \emph{Einstein Online} Band 02 (2006), 02-1014,
+	\url{https://www.einstein-online.info/en/spotlight/cosmic_sound/}
+}
+
+The most important source of observational data, however, are the redshift measurements of distant supernovae, galaxies, or other bright objects. To connect the redshift data with the quantities it turns out to be convenient to introduce the dimensionless scale factor $a(t)$ and the Hubble rate $H(t)$, instead of the radius of curvature $R(t)$ originally used by Friedmann.
+A cornerstone of observational cosmology are the redshifts $z$ of standard candles whose distances are derivable from their measured luminosity. To determine the dynamics of the universe, we can compare standard candles over different distances away from us, and thus over different times. From this we can estimate the relative change of $\dot{R}/R$ which is to first order approximated by the Hubble constant $H_0$, and to the second order by the deceleration parameter $q_0$, see (\ref{eq:FLRW-scale-factor-Tayler-expansion}) below. The three quantities, $z$, $H_0$, and $q_0$, therefore play a central role. It turns out that they are easily related to the \emph{scale factor}\index{scale factor}
 \begin{equation}
 	a(t)
 	= \frac{R(t)}{R_0}
 	%\qquad\mbox{where $t_0$ $=$ “now”, and $R_0 = R(t_0)$.}
 	\label{eq:FLRW-scale-factor}
 \end{equation}
-where $t_0$ $=$ “now”, and $R_0 = R(t_0)$. \cite[§1.1]{Dodelson-Schmidt-2025}
+where $t_0$ $=$ “now” denotes the present, and $R_0 = R(t_0)$. 
+\cite[§1.1]{Dodelson-Schmidt-2025}
+%It is thus the scale factor $a$ which is usually considered in cosmology, instead of the radius of curvature $R$.
+In combination with the density parameters $\Omega_i$ for the different matter or energy components of the universe, the equivalent sets of pairs of equations in Theorem \ref{theo:Friedmann-equation-equivalences} can be expressed by the two equations (\ref{eq:FLRW-deceleration-rate-and-density-parameters}) and (\ref{eq:FLRW-dynamics-2-with-H-and-Omegas-2}) below, containing only quantities being observable.
+
+
+\subsection{The Hubble rate}
 If we form the quotient of the derivative $\dot{a}$ and $a$, we obtain the relative rate of change of the universe
 \begin {equation}
     H(t) 
@@ -1008,8 +1091,9 @@ If we form the quotient of the derivative $\dot{a}$ and $a$, we obtain the relat
     \label{eq:Hubble-function}
 \end{equation}
 the \emph{Hubble rate}\index{Hubble rate} $H$.
-The current Hubble rate $H_0$ $:=$ $H(t_0)$ 
-is called the \emph{Hubble constant}\index{Hubble constant}.
+The current value of the Hubble rate $H_0$ $:=$ $H(t_0)$ 
+is called the \emph{Hubble constant}\index{Hubble constant},
+whose current value is given in Equation (\ref{eq:Hubble-contant-current-value}) below. 
 %--- Figure: ---------------------------------------------------------
 \begin{figure}[htp]
 \centering
@@ -1019,8 +1103,8 @@ is called the \emph{Hubble constant}\index{Hubble constant}.
 }
 \end{figure}
 %--- Figure ----------------------------------------------------------
-Its reciprocal $1/H_0$ indicates the maximum 
-age of the universe\index{age of the universe} for a non-accelerating
+Its reciprocal $1/H_0$ indicates the 
+age of the universe\index{age of the universe} for a constantly 
 expanding universe
 \cite{Sexl-Urbantke-1987},
 because the equation of the tangent
@@ -1032,9 +1116,75 @@ and its zero point is given by
 	,
 \end{equation}
 or $t_* = t_0 - 1/H_0$, see Figure \ref{fig:Hubble-constant}.
-Note that if $\ddot{a}(t) = 0$ for all $t$ we have $a(t) = \tilde h(t)$, i.e., the universe has the age\index{ageof the universe} $1/H_0$.
-Since a decelerating universe with $\ddot{a} < 0$ implies $t_* < 0$, its age is younger than $1/H_0$, whereas an accelerating universe, $\ddot{a} > 0$, i.e., $t_* > 0$, is older than $1/H_0$.
- 
+Since a decelerating universe, $\ddot{a} < 0$, implies $t_* < 0$, its age is younger than $1/H_0$, whereas an accelerating universe, $\ddot{a} > 0$, is older than $1/H_0$, since we have $t_* > 0$.
+
+To derive from observational data whether the universe is expanding or shrinking, the 
+scale factor is expanded by its Taylor series around $t_0$ whose first three factors are given by
+$
+	a(t) \approx a(t_0) + \dot{a}(t_0) \, (t-t_0) + \frac{1}{2} \ddot{a}(t_0) \,(t-t_0)^2
+$,
+i.e., by $a(t_0) = 1$ and $H_0 = \dot{a}(t_0)$,
+\begin{equation}
+	%a(t) \approx 1 + H_0 \,(t-t_0) - \frac{1}{2} \, q_0 H_0^2 \, (t-t_0)^2
+	a(t) \approx 1 + H_0 \,\Delta t - \frac{1}{2} \, q_0 H_0^2 \, (\Delta t)^2
+	%+ O((t-t_0)^3)
+	\qquad
+	\mbox{where}
+	\qquad
+	\Delta t = t - t_0
+%	,
+%	\quad
+%	q_0 
+%%	= - \left. \frac{\ddot{a}a}{\dot{a}^2} \right|_{t_0} 
+%%	= - \left. \frac{\ddot{a}}{a H^2} \right|_{t_0} 
+%%	= - \frac{\ddot{a}(t_0) a(t_0)}{\dot{a}(t_0)}^2} 
+%	= - \frac{\ddot{a}(t_0)}{H_0^2}
+	.
+	\label{eq:FLRW-scale-factor-Tayler-expansion}
+\end{equation}
+Here the dimensionless number $q_0 = q(t_0)$ is called the \emph{deceleration parameter}\index{deceleration parameter} and is given by the \emph{deceleration rate}\index{deceleration rate}
+\begin{equation}
+	q(t) 
+	= - \frac{\ddot{a}(t) \, a(t)}{\dot{a}^2(t)} 
+	= - \frac{\ddot{a}(t)}{a(t) \, H^2(t)}
+	\label{eq:FLRW-deceleration-parameter}
+\end{equation}
+\cite[101]{Ryden-2017}
+Its sign is determined historically in the 1950s when the available informations favored a matter-dominated universe with $\ddot{a} < 0$. So if $q(t) > 0$, the universe is decelerating,
+if $q(t) < 0$ it is accelerating, and if $q(t) = 0$ it has a constant expansion rate, i.e., expands linearly. 
+
+\begin{bem}
+	By the Taylor expansion (\ref{eq:FLRW-scale-factor-Tayler-expansion}) of the scale factor $a$, the determination of the two constants $H_0$ and $q_0$ would enable us to describe the recent past and near future development of the universe.
+	In principle, determining $H_0$ is possible by measuring the redshift of galaxies with the help of standard candles \cite[104]{Ryden-2017}, whereas the deceleration parameter cannot be measured directly. However, in a universe consisting of $N$ components with equation-of-state parameters $w_i$ and under the assumption of %that $\rho = \sum_i \rho_i$ according to 
+	(\ref{eq:FLRW-different-components-universe-total-energy-and-pressure}), we have $\rho_i(t) = \rho_{i,0} / (R_0 a(t))^{3(1+w_i)}$ according to (\ref{eq:FLRW-different-components-universe-energy-density-solution}).
+	Applying (\ref{eq:FLRW-Omega-fraction}), we can therefore rewrite 
+	\begin{equation}
+		\frac{\rho_i(a)}{\rho(a)}
+		= \frac{\Omega_{i}}{a^{3 \, (1+w_i)}}
+		.
+	\end{equation}
+	Thus the acceleration equation (\ref{eq:FLRW-dynamics-1'}) can be expressed by the density parameters $\Omega_i$ as \cite[104]{Ryden-2017}
+	\begin{equation}
+		\fbox{$ \displaystyle
+		q(t)
+		= \frac{1}{2} \sum_{i=1}^{N} \frac{(1 + 3w_i) \, \Omega_{i}}{a(t)^{3 \, (1+w_i)}} 
+		%q_0
+		%= \frac{1}{2} \sum_{i=1}^{N} (1 + 3w_i) \, \Omega_{i}
+		$} % fbox
+		\label{eq:FLRW-deceleration-rate-and-density-parameters}
+	\end{equation}
+	%and can therefore be derived directly determining the density parameters %$\Omega_i$.
+	%This equation is derived by expressing the acceleration equation %(\ref{eq:FLRW-dynamics-1'}) by the density parameters $\Omega_i$. 
+	%\cite[104]{Ryden-2017}
+	Especially for $t=t_0$ we have
+	\begin{equation}
+		q_0
+		= \frac{1}{2} \sum_{i=1}^{N} (1 + 3w_i) \, \Omega_{i}
+		\label{eq:FLRW-deceleration-parameter-and-density-parameters}
+	\end{equation}
+	since $a(t_0)= 1$.
+\end{bem}
+
 It has become customary in cosmology to consider the dimensionless \emph{Hubble parameter}\index{Hubble parameter $h$} $h$ instead of the Hubble constant, defined as
 \begin{equation}
 	h 
@@ -1045,10 +1195,10 @@ It has become customary in cosmology to consider the dimensionless \emph{Hubble 
 where one megaparsec (Mpc)\index{Mpc}\index{parsec} is equal to $3.085 \times 10^{22}$ m $=$ $3.26156$ million lightyears.
 Current measurements yield $h = 0.6736$, i.e., $H_0 = 67.36$ km s$^{-1}$ Mpc$^{-1}$. \cite[Eq. (14)]{Planck-Collaboration-2020}
 %Accordingly $h^{-1}$ Mpc is used as the unit of length in cosmology. \cite[5]{Dodelson-Schmidt-2025}
-Since $H = \dot{R}/R$, the Friedmann equation (\ref{eq:FLRW-dynamics-1'}) can be written in the form
+Since $H = \dot{R}/R$, the Friedmann equation (\ref{eq:FLRW-dynamics-2}) can be written in the form
 \begin{equation}
 	H^2 (t)
-	= \frac{c^2 \kappa}{3} \, \varrho(t) - \frac{c^2 k}{R_0^2 \, a^2(t)}
+	= \frac{c^4 \kappa}{3} \, \varrho(t) - \frac{c^2 k}{R_0^2 \, a^2(t)}
 	\label{eq:FLRW-dynamics-2-with-H}
 \end{equation}
 where now $\varrho$ denotes the total energy density contributed by all components of the universe, including the cosmological constant.
@@ -1060,6 +1210,7 @@ In principle, the curvature parameter $k$ can therefore be observed. Since in a 
 	=
 	\frac{3H^{2}(t)}{c^2 \kappa}
 	.
+	\label{eq:FLRW-rho-crit}
 \end{equation}
 The best estimate for the present day value currently known is
 $ %\begin{equation}
@@ -1082,20 +1233,20 @@ To discuss the curvature of the universe, it is useful to introduce the dimensio
 	\Omega(t)
 	= \frac{\varrho(t)}{\varrho_{\mathrm{crit}}(t)}
 \end{equation}
-Its current value, determined from a combination of observational data, lies in the range 0.995 $<$ $\Omega_0$ $<$ 1.005. Written in terms of $\Omega$, the Friedmann equation (\ref{eq:FLRW-dynamics-2-with-H}) becomes
+Its current value, determined from a combination of observational data, lies in the range 0.995 $<$ $\Omega_0$ $<$ 1.005. Written in terms of $\Omega$, the Friedmann equation in the form (\ref{eq:FLRW-dynamics-2-with-H}) becomes
 \begin{equation}
 	1 - \Omega(t)
 	= - \frac{c^2 k}{R_0^2 \, a^2(t) \, H^2(t)}
 	.
 \end{equation}
-This is remarkable. Since the right-hand side cannot change sign as the universe evolves, neither can do the left-hand side. For the present moment we especially have
+This is remarkable. Since the right-hand side cannot change sign as the universe evolves, neither can do the left-hand side. For the present, $t=t_0$, we especially have
 \begin{equation}
 	\frac{k}{R_0^2}
-	= \frac{H_0}{c^2} \, (\Omega(t) - 1)
+	= \frac{H_0}{c^2} \, (\Omega_0 - 1)
 	.
 \end{equation}
-Thus if you know $\Omega_0$, you know the sign of the curvature $k$ of the universe. If in addition you know the Hubble distance, $c/H_0$, you can compute the radius $R_0$ of curvature. %This is breathtaking.
-Consequently, we can rewrite the Friedmann equation without explicitly including the curvature, and dividing it by $H_0^2$ we obtain
+Thus if we know $\Omega_0$, we know the sign of the curvature $k$ of the universe. If in addition we know the Hubble distance, $c/H_0$, we can compute the radius of curvature, $R_0$. %This is breathtaking.
+Consequently, we can rewrite the original Friedmann equation (\ref{eq:FLRW-dynamics-2}), in the form (\ref{eq:FLRW-dynamics-2-with-H}), without explicitly including the curvature, and dividing it by $H_0^2$ we obtain
 \begin{equation}
 	\frac{H^2(t)}{H_0^2}
 	= \frac{\varrho(t)}{\varrho_{\mathrm{crit}, 0}} + 
@@ -1107,14 +1258,16 @@ Consequently, we can rewrite the Friedmann equation without explicitly including
 %where $\Omega_{K} := 1 - \Omega_0$ is the present-day effective energy density of curvature, which behaves similar to a constituent with an equation-of-state parameter $w_{K} = -1/3$.
 As listed in Table (\ref{eq:FLRW-different-components-universe-energy-densities}), our universe contains matter (baryonic and nonbaryonic, $w=0$) and radiation ($w=1/3$), and current evidence indicates the presence of a positive cosmological constant ($w=-1$).
 Assuming %that $\rho = \sum_i \rho_i$ according to 
-(\ref{eq:FLRW-different-components-universe-total-energy-and-pressure}), noting that $\rho_i(t) = \rho_{i,0} / (R_0 a(t))^{3(1+w_i)}$ according to (\ref{eq:FLRW-different-components-universe-energy-density-solution}), and applying (\ref{eq:FLRW-Omega-fraction}), we can therefore rewrite (\ref{eq:FLRW-dynamics-2-with-H-and-Omegas}) \cite[85]{Ryden-2017}
+(\ref{eq:FLRW-different-components-universe-total-energy-and-pressure}), noting that $\rho_i(t) = \rho_{i,0} / (R_0 a(t))^{3(1+w_i)}$ according to (\ref{eq:FLRW-different-components-universe-energy-density-solution}), and applying (\ref{eq:FLRW-Omega-fraction}), we can therefore rewrite (\ref{eq:FLRW-dynamics-2-with-H-and-Omegas}) as
 \begin{equation}
 	\fbox{$\displaystyle
 	\frac{H^2(t)}{H_0^2}
-	= \frac{\Omega_{\mathrm{rad}}}{a^4(t)}
+	= 
+	\frac{\Omega_{\mathrm{f}}}{a^6(t)}  % Lehners (2010)
+	+ \frac{\Omega_{\mathrm{r}}}{a^4(t)}
 	%+ \frac{\Omega_{\mathrm{b}}}{a^3(t)}
 	+ \frac{\Omega_{\mathrm{m}}}{a^3(t)}
-	%+ \frac{\Omega_{K}}{a^2(t)}
+	%- \frac{\Omega_{K}}{a^2(t)}
 	+ \frac{1-\Omega_0}{a^2(t)}
 	+ \Omega_{\Lambda}
 	,
@@ -1122,22 +1275,22 @@ Assuming %that $\rho = \sum_i \rho_i$ according to
 	\label{eq:FLRW-dynamics-2-with-H-and-Omegas-2}
 \end{equation}
 where we have $\Omega_{i} = \varrho_{i}(t_0)/\varrho_{\mathrm{crit},0}$ for each component $i$,
-and $\Omega_0 = \Omega(t_0)$, and where $\Omega_{\mathrm{m}} = \Omega_{\mathrm{b}} + \Omega_{\mathrm{c}}$ denotes the density parameter of baryons and of cold dark matter.
+and $\Omega_0 = \Omega(t_0)$, and where moreover $\Omega_{\mathrm{m}} = \Omega_{\mathrm{b}} + \Omega_{\mathrm{c}}$ denotes the density parameter of baryons and of dark matter. \cite[85]{Ryden-2017}
 Note that for $t=t_0$ we have $a(t_0) = 1$ and $H(t_0) = H_0$, i.e.,
 \begin{equation}
 	\Omega_0
 	=
-	{\Omega_{\mathrm{rad}}}
+	\Omega_{\mathrm{f}}  % Lehners (2010)
+	+ {\Omega_{\mathrm{r}}}
 	+ {\Omega_{\mathrm{m}}}
-	%+ \Omega_{K}
 	+ \Omega_{\Lambda}
 	%= 1
 	.
 	\label{eq:FLRW-dynamics-2-Omegas-now}
 \end{equation}
-If we therefore derive three of the present-day density parameters from astronomical observations, we automatically have the fourth parameter.
+If we therefore derive three of the present-day density parameters from astronomical observations, we automatically have the fourth one.
 
-According to the Planck collaboration \cite{Planck-Collaboration-2020} the results from the final full-mission \emph{Planck} measurements of the cosmic microwave background anisotropies yield the values listed in the table in (\ref{eq:FLRW-different-components-universe-energy-densities}).
+According to the Planck Collaboration \cite{Planck-Collaboration-2020} the results from the final full-mission \emph{Planck} measurements of the cosmic microwave background anisotropies yield the values listed in the table in (\ref{eq:FLRW-different-components-universe-energy-densities}).
 %following values:
 %\begin{align*}
 %	\Omega_{\mathrm{c}} h^2 & = 0.120 \pm 0.001,
@@ -1228,15 +1381,78 @@ Therefore the redshift (\ref{eq:redshift}) is directly related to the scale fact
 	.
 \end{equation}
 Intuitively this result is immediately clear, because the wavelength of light, or any other radiation, is stretched out by the scale factor.
-If we observe the light at present time $t_{\mathrm{ob}} = t_0$, emitted at a time, $t_{\mathrm{em}} = t < t_{\mathrm{ob}}$, we have $a(t_{\mathrm{ob}}) = 1$ and thus simply
+If we observe the light at present time $t_{\mathrm{ob}} = t_0$, emitted at a time $t_{\mathrm{em}} = t < t_{\mathrm{ob}}$, we have $a(t_{\mathrm{ob}}) = 1$ and thus simply
 \begin{equation}
 	\fbox{$\displaystyle
 	1 + z 
 	= \frac{1}{a(t)}
+	%= \frac{1}{a(t_{\mathrm{em}})}
 	.
 	$} % fbox
+	\label{eq:FLRW-redshift-scale-factor}
 \end{equation}
+Regarding $z$ as a function of $t = t_{\mathrm{em}}$, its Taylor expansion up to the second order gives\footnote{
+	For $z = \frac{1}{a}$ we have $\dot{z} = - \frac{\dot{a}}{a^2}$ and $\ddot{z} = \frac{2 \dot{a}^2 - a \ddot{a}}{a^4}$, i.e.,
+	$z(t_0) = 1$, $\dot{z}(t_0) = - H_0$ and $\ddot{z}(t_0) = 2 H_0^2 + q_0 H_0^2$.
+}
+\begin{equation}
+	z
+	\approx
+	H_0 \, (t_0 - t_{\mathrm{em}}) + \left( 1 + \frac{q_0}{2} \right) H_0^2 \, (t_0 - t_{\mathrm{em}})^2
+	%- H_0 \, \Delta t + \left( 1 + \frac{q_0}{2} \right) H_0^2 \, (\Delta t)^2
+	\label{eq:z-H0-q0}
+\end{equation}
+This equation is quadratic in terms of the \emph{lookback time}\index{lookback time} \cite[98]{Ryden-2017} $(t_0 - t_{\mathrm{em}})$, yielding the only positive solution
+\begin{equation}
+	t_0 - t_{\mathrm{em}}
+	\approx
+	%\frac{1}{H_0 (2+q_0)} (\sqrt{1 + 2(2+q_0) \, z} - 1)
+	%=
+	\frac{\sqrt{1 + 2(2+q_0) \, z} - 1}{H_0 (2+q_0)}
+	\qquad
+	\Big(q_0 \ne -2, \quad q_0 > -2 - \frac{1}{2z} \Big)
+	.
+\end{equation}
+(For $q_0 = -2$ Equation (\ref{eq:FLRW-redshift-scale-factor}) is linear and we have $t_0 - t_{\mathrm{em}} \approx z/H_0$.)
+If we observe at time $t_0$ light that was emitted by a distant galaxy at time $t_{\mathrm{em}}$, the current proper distance\index{proper distance}\index{distance} to that galaxy is
+$
+	d_p (t_0)
+	= c \int_{t_{\mathrm{em}}}^{t_0}\frac{\D t}{a(t)}.
+$
+\cite[105]{Ryden-2017}
+Combined with (\ref{eq:z-H0-q0}) this gives approximately
+\begin{equation}
+	d_p(t_0)
+	\approx
+	\frac{c z}{H_0} \left( 1 - \frac{1+q_0}{2} \, z \right)
+	.
+	\label{eq:dp-z-H0-q0}
+\end{equation}
+In the limit of small $z \ll 2/(1+q_0)$, we have the linear Hubble relation $d_p = cz/ H_0$. \cite[106]{Ryden-2017}
 
+
+%\subsection{Estimating \textit{a(t)} by astronomical observations}
+
+
+%%\subsection{Can we decide the far future of the universe by observation?}
+%\subsection{The uncertainty to deduce the future of the universe}
+%
+%%--- Figure: ---------------------------------------------------------
+%\begin{figure}[htp]
+%\centering
+%\includegraphics{scale-factor-vs-time-in-flat-universes-with-matter-and-dark-energy}
+%\caption{%
+%	Scale factor versus time for flat universes containing matter and dark energy. Solid line: %$a(t)$ for a universe with 
+%	$\Omega_{\mathrm{m}} = 1$, $\Omega_{\Lambda} = 0$.
+%	Dashed line: %$a(t)$ for a universe with 
+%	$\Omega_{\mathrm{m}} = 0.9$, $\Omega_{\Lambda} = 0.1$.
+%	Dotted line: %$a(t)$ for a universe with 
+%	$\Omega_{\mathrm{m}} = 1.1$, $\Omega_{\Lambda} = -0.1$.
+%	The right panel is a blow-up of the small rectangle near the lower left corner of the left panel.
+%	Graphics from \cite[91]{Ryden-2017}
+%}
+%\end{figure}
+%%--- Figure ----------------------------------------------------------
 
 \subsection{Epochs of equality}
 \label{sec:epochs-of-equality}
@@ -1286,7 +1502,7 @@ Special cases are the epochs of equality $a_{i,K}$ of one of the constituents wi
 	\frac{\varrho_{i}(a)}{(1-\Omega_0) \, \varrho_{\mathrm{crit}, 0} \, a^{-2}}
 	= \frac{\Omega_i \, a^{-3(1+w_i)}}{(1-\Omega_0) \, a^{-2}}
 	= \frac{\Omega_i}{1-\Omega_0} \,  a^{- 1 - 3w_i} 
-	= - \frac{\Omega_i}{\Omega_{K}} \,  a^{- 1 - 3w_i} 
+%	= - \frac{\Omega_i}{\Omega_{K}} \,  a^{- 1 - 3w_i} 
 \end{equation}
 where $\Omega_{K} := \Omega_0 - 1$ is the density parameter of curvature.
 If  $\Omega_{K} < 0$, i.e., if $k = -1$,
@@ -1297,34 +1513,603 @@ In this case,
 	= \left(-\frac{\Omega_{i}}{\Omega_{K}}\right)^{-1/(1-3w_i)}
 	.
 \end{equation}
-With the currently known values for $\Omega_i$ given in (\ref{eq:FLRW-different-components-universe-energy-densities}), this yields the values $a_{i,j}$ and the respective redshifts $z_{i,j}$ given in the following table:
+With the currently known values for $\Omega_i$ given in (\ref{eq:FLRW-different-components-universe-energy-densities}), this yields the values $a_{i,j}$ and the respective redshifts $z_{i,j}$ given in the following table: \cite[cf.][96]{Ryden-2017}
 \begin{equation}
-\begin{tabular}{lcccr}
+\begin{tabular}{l@{\ }c@{\ }c@{\,}c@{\ }cc}
 	\textbf{Epoch of equality} & \textbf{(\textit{i, j})} & 
 	$\fett{3(w_i - w_j)}$ & $\fett{a_{i,j}}$ 
 	& \multicolumn{1}{c}{$\fett{z_{i,j}}$}
+	& $\fett{t_{i,j}}^{**}$
 	\\ \hline
 	\\ [-2.5ex]
-	radiation--matter & (r, m) & 1 & $2.90 \times 10^{-4}$ 
-	& \multicolumn{1}{c}{3443} % 3444
+	scalar-field--radiation$^{*}$ & (f, r) & 2 & $6 \times 10^{-18}$ 
+	& {$1.6 \times 10^{17}$}
+	& $10^{-34}$ s
 	\\
-	radiation--curvature$^*$ & (r, $K$) & 2 & 0.045 & 21.111
-	\\
-	radiation--Lambda & (r, $\Lambda$) & 4 & 0.107 & 8.357 % & 9.357
-	\\
-	Lambda--curvature$^*$ & ($\Lambda$, $K$) & $-2$ \hspace*{1.0ex} & 0.253 & 2.960
+	radiation--matter & (r, m) & 1 & $2.9 \times 10^{-4}$ 
+	& {3443} % 3444
+	& 0.05 Myr
+%	\\
+%	radiation--curvature$^{***}$ & (r, $K$) & 2 & 0.045 & 21.111
+%	& --
+%	\\
+%	radiation--Lambda & (r, $\Lambda$) & 4 & 0.107 & 8.357 % & 9.357
+%	& 
+%	\\
+%	Lambda--curvature$^{***}$ & ($\Lambda$, $K$) & $-2$ \hspace*{1.0ex} & 0.253 & 2.960
+%	& --
 	\\
 	matter--Lambda & (m, $\Lambda$) & 3 & 0.766 & 0.306 % & 1.306
-	\\
-	matter--curvature$^*$ & (m, $K$) & 1 & 7.045 & $-0.858$
-	\\ \hline
-	\multicolumn{4}{l}{\footnotesize $^*$ only defined for $\Omega_{K} < 0$}
+	& 10.27 Gyr
+%	\\
+%	matter--curvature$^{***}$ & (m, $K$) & 1 & 7.045 & $-0.858$
+%	& --
+	\\ \cline{1-5}
+	\multicolumn{6}{l}{\footnotesize 
+		$^{*}$hypothetical
+		\quad
+		$^{**}$according to the $\Lambda$CDM model \cite[92,95,195]{Ryden-2017}
+%		\quad
+%		$^{***}$only defined for $\Omega_{K} < 0$
+	}
 \end{tabular}
+\label{eq:epochs-of-equality}
 \end{equation}
 The epochs are ordered by their respective scale factors. If we assume that $a(t)$ is expanding with respect to the cosmic time $t$, i.e., $\dot{a}(t) > 0$, this reflects the epochs' order of occurrence during the history of the universe.
+Since by (\ref{eq:FLRW-dynamics-2-with-H-and-Omegas-2}) according to the current known observational data, the radiation-dominated era ends already with the epoch of radiation-matter equality and is then superseded by the matter-dominated era, the later epochs of equality of radiation with other components are physically irrelevant. The matter-dominated era, in turn, is superseded by the Lambda-dominated era, such that the epoch of matter-curvature equality, occurring in the future, if it at all, will be irrelevant, too.
+
+The time $t_{\mathrm{r,m}}$ of radiation-matter equality is
+\begin{equation}
+	t_{\mathrm{r,m}}
+	= \frac{4}{3} \left( 1 - \frac{1}{\sqrt{2}} \right) 
+	\frac{a_{\mathrm{r,m}}^2}{\sqrt{\Omega_{\mathrm{r}}}} \ H_0^{-1}
+	= 3.47 \times 10^{-6} \, H_0^{-1}
+	\approx 50\,370 \mbox{ yr}
+	= 1.6 \times 10^{12} \mbox{ s}
+	\label{eq:time-of-radiation-matter-equality}
+\end{equation}
+as can be shown mathematically by the assumption of a universe consisting only of radiation and matter, which is a good approximation at that time \cite[95]{Ryden-2017}.
+Similarly, the time $t_{\mathrm{m,\Lambda}}$ of matter-Lambda equality is
+\begin{equation}
+	t_{\mathrm{m,\Lambda}}
+	= \frac{2}{3 \sqrt{\Omega_{\mathrm{\Lambda}}}} \ln \left( 1 + \sqrt{2} \right) H_0^{-1}
+	= 0.707 \, H_0^{-1}
+	\approx 10.27 \mbox{ Gyr}
+	= 3.24 \times 10^{17} \mbox{ s}
+	\label{eq:time-of-matter-Lambda-equality}
+\end{equation}
+for a universe consisting only of matter and dark energy, which seems a good approximation at that time and thereafter \cite[92]{Ryden-2017}.
+
+
+Considering the eras separated by the epochs of equality in (\ref{eq:epochs-of-equality}), the solution $a$ of the Friedmann equation in the form (\ref{eq:FLRW-dynamics-2-with-H-and-Omegas}) is dominated successively by a different component: After a phase dominated by a scalar-field with $w = 1$ we have the radiation-dominated era with $w=\frac{1}{3}$, the matter-dominated era with $w=0$, and the Lambda-dominated era with $w=-1$. The approximate solutions $a(t)$ of the Friedmann equation in each era are given as follows: \cite[80-83,91]{Ryden-2017}
+\begin{equation}
+	\begin{array}{llr@{\ =\ }l}
+	\mbox{scalar-field dominated era:} & w=1, & a(t) & ({t}/{t_0})^{1/3}
+	\\ [.5ex]
+	\mbox{radiation-dominated era:} & w = \frac{1}{3}, & a(t) & ({t}/{t_0})^{1/2}
+	\\ [.5ex]
+	\mbox{matter-dominated era:} & w = 0, & a(t) & ({t}/{t_0})^{2/3}
+	\\ [.5ex]
+	\mbox{Lambda-dominated era:} & w = -1, & a(t) & a_{\mathrm{m,\Lambda}} \E^{\sqrt{\Omega_{\mathrm{\Lambda}}} H_0 t}	
+	\end{array}
+	\label{eq:scale-factor-in-different-eras}
+\end{equation}
+These eras are separated by the respective epochs of equality in (\ref{eq:epochs-of-equality}), as shown in Figure \ref{fig:Lambda-CDM-model_scale-factor-vs-time}.
+Note that the transitions from one era to the next one do not occur abruptly. Moreover we have to mention that, up to now, there is neither a physical theory, nor any clear observational hint concerning a scalar-field, so that it only is a highly hypothetical possibility so far.
 
 
 \section{The $\fettgr{\Lambda}$CDM model}
 
-The $\Lambda$CDM model is the standard model of  current cosmology. \cite[§1.6]{Dodelson-Schmidt-2025} 
+The $\Lambda$CDM model is the standard model of current cosmology. \cite[§1.6]{Dodelson-Schmidt-2025} 
 It describes a Euclidean universe that is dominated by nonbaryonic cold dark matter\index{cold dark matter}\index{CDM} (CDM) and a cosmological constant caused by a still not well understood \emph{dark energy}\index{dark energy}\index{energy, dark}, and whose initial perturbations has been generated by a phase of inflation in its early phase. 
+
+%--- Figure: ---------------------------------------------------------
+\begin{figure}[htp]
+\centering
+\includegraphics{Lambda-CDM-model_scale-factor-vs-time}
+\caption{\label{fig:Lambda-CDM-model_scale-factor-vs-time}
+	Scale factor versus time for the $\Lambda$CDM model.
+	The dotted lines indicate the time of radiation-matter equality, $a_{\mathrm{r,m}} = 2.9 \times 10^{-4}$ at $t_{\mathrm{r,m}} = 50$ kyr, the time of matter-Lambda equality, $a_{\mathrm{m},\Lambda} = 0.766$ at $t_{\mathrm{m},\Lambda} = 10.2$ Gyr, and the present moment $a(t_0)=1$ at $t_0 = 13.7$ Gyr.
+	Graphics from \cite[97]{Ryden-2017}
+}
+\end{figure}
+%--- Figure ----------------------------------------------------------
+The currently best fitted values for the Hubble constant and the deceleration parameter are: \cite[Eq. (14)]{Planck-Collaboration-2020}, \cite[104]{Ryden-2017}
+\begin{equation}
+	H_0 = 67.36 \mbox{ km s$^{-1}$ Mpc$^{-1}$},
+	\qquad
+	q_0 = - 0.53
+	.
+	\label{eq:Hubble-contant-current-value}
+\end{equation}
+Accordingly, $H_0^{-1} = 14.52 \mbox{ Gyr}$.
+Since with the value of $\Omega_{\mathrm{m}} = 0.31$, according to (\ref{eq:FLRW-different-components-universe-energy-densities}) for baryons and dark matter, the age of the universe\index{age of the universe} is given by \cite[92]{Ryden-2017}
+\begin{equation}
+	t_0
+	= \frac{2 \, H_0^{-1}}{3 \sqrt{1 - \Omega_{\mathrm{m}}}}
+	\ln \left( \frac{1 + \sqrt{1 - \Omega_{\mathrm{m}}}}{\sqrt{\Omega_{\mathrm{m}}}} \right)
+	= 0.995 \, H_0^{-1}
+	= 13.87 \mbox{ Gyr}
+	= 4.58 \times 10^{17} \mbox{ s}
+	.
+	\label{eq:age-of-the-universe}
+\end{equation}
+
+
+
+\subsection{The cosmic microwave background (CMB)}
+As first discovered in 1965, a sea of massless photons permeates the universe, forming a perfect black-body radiation with a very well-measured temperature of $T_0 = 2.726$ K. \cite[4]{Dodelson-Schmidt-2025}
+%Black-body radiation of temperature $T$ in general has a specific intensity given by Planck's law
+%\begin{equation}
+%	I_\nu
+%	= \frac{4 \pi \hbar \nu^3 / c^2}{\exp(2 \pi \hbar / k_B T) - 1}
+%	.
+%	\label{eq:Planck-law}
+%\end{equation}
+Photons forming a black-body radiation with temperature $T_0$ have frequencies in the microwave regime, thus resulting in a \emph{cosmic microwave background (CMB)}\index{cosmic microwave background}\index{CMB}. Since by the redshift relations (\ref{eq:redshift}) and (\ref{eq:FLRW-redshift-scale-factor}) their wavelengths obey $\lambda = c/\nu \propto a$, so the temperature of the cosmic backround evolves with the history of the universe as
+\begin{equation}
+	T(t)
+	= \frac{T_0}{a(t)}
+	.
+	\label{eq:FLRW-temperature-scale-factor}
+\end{equation}
+At early times, then, the temperature was higher than it is today.
+What was the origin of the CMB?
+
+When the temperature of the radiation was of order $10^4$ K, free electrons and protons combined to form neutral hydrogen. Before then, any hydrogen produced was quickly ionized by high-energetic photons. Thus, until this time the universe was filled with an ionized plasma. The binding energy of the simplest atom, hydrogen, is $Q$ = 13.6~eV, i.e., a photon with an energy $hf > Q$ is capable of photoionizing a hydrogen atom. Only if a negligible part of photons in the universe has this high energy, a proton $p$ and an electron $e^-$ can undergo \emph{recombination}\index{recombination},
+forming a bound hydrogen atom H while the photon $\gamma$ carries away the excess energy,
+\begin{equation*}
+	p + e^- \to \mathrm{H} + \gamma
+	.
+	\label{eq:photoionization-reaction}
+\end{equation*}
+To determine the temperature $T_{\mathrm{rec}}$ of recombination, i.e., the temperature of the photonic black body radiation at which the fractional ionization $X$ of the number $n_p$ of free protons and the number $n_{\mathrm{H}}$ of hydrogen atoms,
+\begin{equation}
+	X 
+	= \frac{n_p}{n_p + n_{\mathrm{H}}}
+	= \frac{n_p}{n_{\mathrm{bary}}}
+	,
+\end{equation}
+equals one half, $X = \frac{1}{2}$. Taking into account that the Planck distribution of photons of a black body radiation, as well as charge neutrality of the universe, $n_e = n_p$, the Saha equation can be used to deduce from $X=\frac12$ the value
+\begin{equation}
+	kT_{\mathrm{rec}}
+	= \frac{Q}{42}
+	= 0.324 \mbox{eV}
+	\qquad \mbox{or} \qquad
+	T_{\mathrm{rec}}
+	= 3760 \mbox{ K}
+	. 
+\end{equation}
+By (\ref{eq:FLRW-temperature-scale-factor}) this gives $a_{\mathrm{rec}} = 7.25 \times 10^{-4}$, i.e., $z_{\mathrm{rec}} = 1380$ by (\ref{eq:FLRW-redshift-scale-factor}).
+Although recombination was not an instantaneous process, it did proceed fairly rapidly at a redshift from $X=0.9$ at $z=1480$ to $X=0.1$ at $z=1260$ in a time of about $\Delta t \approx 70\,000$ yr at $t_{\mathrm{rec}}$ $=$ 250\,000~yr according to the $\Lambda$CDM model.
+After the period of recombination, in the range of $z = 1140$ and $z = 1040$, the last scattering of a typical CMB photon occurred after the photoionization reaction (\ref{eq:photoionization-reaction}) fell out of equilibrium. Hence we can state that the last scattering occurred about the time of photon decoupling, at about $z_{\mathrm{sl}} \approx z_{\mathrm{dec}} \approx 1090$.
+At $a = 10^{-4}$ or $z = 1100$, the photons that comprise the CMB therefore ceased interacting with any particles and traveled freely through space.
+\cite[9]{Dodelson-Schmidt-2025},
+\cite[§8.3]{Ryden-2017}
+
+
+\subsubsection{Temperature fluctuations}
+The CMB is the most perfect black body spectrum that has ever been measured. A perfect black body spectrum would confirm the perfect isotropy\index{isotropy} of the universe and therefore also the cosmological principle\index{cosmological principle}.
+Of course, we now see that the universe is not perfectly isotropic, and therefore we should expect anisotropies in the CMB. In fact, the measurements of the  space-based satellites COBE, WMAP, and Planck, launched in 1989, 2001, and 2009, respectively, showed that there exist square temperature fluctuations,
+\begin{equation}
+	\frac{\Delta T}{T}
+	= 1.1 \times 10^{-5}
+	.
+\end{equation}
+Hence the universe was not perfectly homogeneous at the time of last scattering. The angular size of the temperature fluctuations reflects essentially the physically size of the density and velocity fluctuations at that time.
+To deduce this fluctuations from the observations on the celestial sphere, the most important statistical property to regard is the correlation function $C(\theta)$ defined by
+\begin{equation}
+	C(\theta)
+	= \left\langle 
+		\frac{\Delta T}{T} \,(\hat n) \cdot
+		\frac{\Delta T}{T} \,(\hat n')
+	\right\rangle_{\hat n \cdot \hat n' = \cos \theta}
+\end{equation}
+where $\frac{\Delta T}{T} \,(\hat n)$ and $\frac{\Delta T}{T} \,(\hat n')$
+are the temperature fluctuations in the directions $\hat n$ and $\hat n'$, respectively, which are by the angle $\theta$, and where $\langle \cdots \rangle_{\ldots}$ denotes the average product over all points on the celestial sphere separated by $\theta$.
+Using the expansion of $\delta T/T$ in spherical harmonics, the correlation function in turn can be expanded by Legendre polynomials whose coefficients $C_l$ are called the \emph{multipole moments}\index{multipole moment}. The $l=0$ term, $C_0$, is called the monopole and vanishes if we defined the mean temperature correctly. The dipole term, $l=1$, results primarily from the Doppler effect\index{Doppler effect} to the peculiar motion of our galaxy through space relative to a frame of reference in which the CMB is isotropic (to an accuracy of $10^{-4}$). 
+For larger values of $l$, the term $C_l$ is a measure of temperature fluctuations on an angular scale 
+%$\theta \approx 180^\circ / l$. 
+$\theta \approx \pi / l$. 
+Thus the multipole moment $l$ is interchangeable, for all practical purposes, with the angular scale $\theta$. The moments with $l \geqq 2$ are most interests since they are imprinted by fluctuations present at the time of last scattering.
+It is customary to plot the results of CMB observations by the function
+\begin{equation}
+	\Delta_T
+	= \Big( \frac{l (l+1)}{2 \pi} \, C_l \Big)^{1/2} \langle T \rangle,
+\end{equation}
+since it describes the contribution per logarithmic interval in $l$ to the total temperature fluctuation $\Delta T$ of the CMB.
+
+The angular size $\Delta \theta$ of a temperature fluctuation in the CMB is related to a physical size $\ell$ on the surface of last scattering by the relation
+\begin{equation}
+	d_A
+	= \ell / \Delta \theta,
+\end{equation}
+where $d_A$ is the angular-diameter distance to the surface of last scattering. Since for this we have $z= 1090$, a good approximation to $d_A$ is given by
+$d_A \approx d_{\mathrm{hor}} / z_{\mathrm{ls}}$.
+%--- Figure: ---------------------------------------------------------
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=1.3]{history-of-the-universe}
+\caption{\label{fig:history-of-the-universe}
+	History of the universe according to the $\Lambda$CDM model.
+	Graphics from \cite[18]{Dodelson-Schmidt-2025}
+}
+\end{figure}
+%--- Figure ----------------------------------------------------------
+
+
+\subsection{Big Bang nucleosynthesis (BBN)}
+As the universe cooled well below typical nuclear binding energies	, light elements began to form in the process of the \emph{Big Bang nucleosynthesis (BBN)}\index{Big Bang nucleosynthesis}\index{BBN}. \cite[8]{Dodelson-Schmidt-2025}
+
+Traces of the BBN can be observed today as anisotropies of the CMB. These measurements, combined with BBN calculations, give us a way of determining the baryon density in the universe, constraining baryonic matter to contribute at most 5 \% of the critical density. \cite[§1.3]{Dodelson-Schmidt-2025}
+Since the total matter density today is significantly larger, nucleosynthesis provides a compelling argument for matter that is comprised of neither protons nor neutrons, that is, for dark matter\index{dark matter}. \cite[§4.2]{Dodelson-Schmidt-2025}, \cite[§9.2]{Ryden-2017}
+
+
+\subsection{Inflation}
+The energy density of the universe as we know it today locally is not homogeneous but has structure\index{structure}, for instance planets, stars, galaxies, up to galaxy clusters and filaments at scale between 30 and 1000 Mpc. The greatest structure known today is the Giant Arc with a diameter of 1000 Mpc = 3.3 billion lightyears. \cite{Lopez-et-al-2022}
+The observed properties of these structures all refer to small redshifts, $z < 10$, that is, they tell us about the universe at times $t > 0.5$ Gyr. The properties of the cosmic microwave background tell us about the universe at the time of last scattering\index{time of last scattering}\index{scattering, time of last --}, $z_{\mathrm{ls}} = 1090$, $t_{\mathrm{ls}} = 0.37$~Myr. By the abundances of light elements such as deuterium and helium at the time of the BBN we get information of the universe at the time $t_{\mathrm{nuc}}$~$\approx$~3~min, or $z_{\mathrm{nuc}} \approx 3 \times 10^{8}$, and the observation that primordial gas clouds are about one-fourth helium by mass, rather than being all helium or all hydrogen, gives us a fair understanding of what happened at the time of neutron-proton freezeout at $t_{\mathrm{freeze}} \approx 1$~s, or $z_{\mathrm{freeze}} \approx 4 \times 10^{9}$.
+\cite[185]{Ryden-2017}
+
+This standard Hot Big Bang scenario thus leads to very impressive and far-reaching explanations of the early stages of the universe after it was one second old, and its evolution thereafter. However, if radiation were the dominant component of the cosmos in its earliest phases before $t = 1$~s back to the Big Bang, the currently available observational data imply several severe problems. Predominantly this is the horizon problem, but also to mention are the flatness and the monopole problem. \cite[186-192]{Ryden-2017}
+
+\begin{satz}
+	[\textbf{Horizon problem}]
+	\label{theo:horizon-problem}
+	Suppose that 
+	(a) the geometry of the universe is well described by the FLRW metric (\ref{eq:FLRW-line-element});
+	(b) the scale factor is monotonically increasing, i.e., $\dot{a} > 0$;
+	(c) the universe only consists of radiation and matter;
+	and (d) the only physical mechanism to establish the same temperature over a spatial region is thermalization requiring that the pasts of all its points overlapped at some time before.
+	Then the current observational data in (\ref{eq:FLRW-different-components-universe-energy-densities}),
+	together with the equations (\ref{eq:scale-factor-in-different-eras}), 
+	imply that for the CMB no thermalization could have occurred.
+	This contradiction is called the “horizon problem.”
+\end{satz}
+
+%\begin{proof}
+%	Supposing
+%	\(
+%		a(t) = (t/t_0)^x
+%	\)
+%	we have $\dot{a} = x t^{x-1} t_0^{-x}$, as well as $t = a^{1/x} t_0$. Inserting the latter equation into the former one gives 
+%	$ %\begin{equation}
+%		\dot{a}
+%		%= x a^{(x-1)/x} t_0^{x-1} t_0^{-x}
+%		= x a^{1 - 1/x} / t_0
+%		.
+%%		\label{eq:scale-factor-derivative-in-different-eras}
+%	$ %\end{equation}
+%	Since by (\ref{eq:Hubble-function}) we have $\dot{a} = aH$, the equations (\ref{eq:scale-factor-in-different-eras}) then imply
+%	\begin{equation}
+%		\begin{array}{lccc}
+%		\mbox{\textbf{Era}} & \fett{x} & \fett{\dot{a} = aH} & \fett{a^2H}
+%		%\multicolumn{1}{c}{\fett{aH}}
+%		\\ \hline \\ [-2.0ex]
+%		\mbox{scalar-field dominated} & \frac{1}{3} & \frac{1}{3 t_0 a^2} & \frac{1}{3 t_0 a}
+%		\\ [1.ex]
+%		\mbox{radiation-dominated} & \frac{1}{2} & \frac{1}{2 t_0 a} & \frac{1}{2 t_0}
+%		\\ [1.ex]
+%		\mbox{matter-dominated} & \frac{2}{3} & \frac{2}{3t_0 a^{1/2}} & \frac{2a^{1/2}}{3 t_0}
+%		\end{array}
+%		\label{eq:comoving-Hubble-radius-in-different-eras}
+%	\end{equation}
+%	Since radiation dominates before the epoch of radiation-matter equality and matter dominates thereafter, (\ref{eq:epochs-of-equality}), the comoving horizon $\eta(a) = c \int_0^a \frac{\DD a}{a^2H}$ in a universe consisting only of radiation and matter is given by
+%	\begin{equation}
+%		\eta(a)
+%		= 2 t_0 c \int_0^a \D a
+%		\qquad \mbox{for $a \leqq a_{\mathrm{r,m}}$,}
+%	\end{equation}
+%	and
+%	\begin{equation}
+%		\eta(a)
+%		= 2 t_0 c \int_0^{a_{\mathrm{r,m}}} \D a
+%		+ \frac{3 t_0 c}{2} \int_{a_{\mathrm{r,m}}}^a a^{-1/2} \D a
+%		\qquad \mbox{for $a > a_{\mathrm{r,m}}$,}
+%	\end{equation}
+%	i.e.,
+%	\begin{equation}
+%		\eta(a)
+%		=
+%		\left\{\begin{array}{cl}
+%			\displaystyle
+%			2 t_0 c a & \mbox{if $a \leqq a_{\mathrm{r,m}}$,}
+%			\\ [2.0ex]
+%			\displaystyle
+%			2 t_0 c a_{\mathrm{r,m}}
+%			+ {3 t_0 c } \, \big(a^{1/2} - a_{\mathrm{r,m}}^{1/2} \big)
+%			& \mbox{if $a > a_{\mathrm{r,m}}$.}
+%		\end{array} \right.
+%	\end{equation}
+%	Especially, $
+%		\eta(a_{\mathrm{r,m}}) 
+%		= 2 t_0 c a_{\mathrm{r,m}}.
+%	$
+%	According to the current observational data with $t_0$ as in (\ref{eq:age-of-the-universe}) we have $\eta(a_{\mathrm{r,m}}) \approx 2.6$~Mpc
+%	and
+%	$\eta(a_{\mathrm{sl}}) \approx 180$~Mpc.
+%	Moreover, the current proper distance of the sphere of last scattering is given by $d_P(_{\mathrm{ls}}) = c \int_{a_{\mathrm{ls}}}^1 \frac{\DD a}{a^2H}$. \cite[Eq. (2.34)]{Dodelson-Schmidt-2025}
+%%	is the difference between the comoving horizons now and at the time $t_{\mathrm{ls}} = 0.37$~Myr, or $a_{\mathrm{ls}} = 9.18 \times 10^{-4}$, \cite[157]{Ryden-2017}.
+%%	Since then, the universe was matter-dominated, according to the assumption,and therefore
+%%	\begin{equation}
+%%		d_P(a_{\mathrm{ls}})
+%%		= \frac{3 t_0 c }{2} \, \big(1 - a_{\mathrm{ls}}^{1/2} \big)
+%%		\approx 12.95 \mbox{ Gpc}
+%%		.
+%%	\end{equation}
+%	Since the difference between our comoving horizon $\eta_0$ and the proper distance $d_P(a_{\mathrm{ls}})$ is exactly the comoving horizon $\eta(a_{\mathrm{ls}})$ of the sphere of last scattering, 
+%	\begin{equation}
+%		\eta_0 - d_P(a_{\mathrm{ls}})
+%		= 
+%		\eta(a_{\mathrm{ls}})
+%		\approx 180 \mbox{ Mpc}
+%		,
+%	\end{equation}
+%	we see the CMB sphere at a distance 
+%	$
+%		d_P(a_{\mathrm{ls}}) 
+%		= (1 - \eta(a_{\mathrm{ls}})/\eta_0) \, \eta_0
+%		= 0.986 \, \eta_0
+%		.
+%	$
+%	Thus two antipodal points on the last scattering surface, separated by 180$^\circ$ as seen by an observer on Earth, are currently separated by 1.97\,$\eta_0$. Hence, being farther apart than the comoving horizon, they are causally disconnected. \cite[Cf.][188]{Ryden-2017}
+%	But the CMB at both points has the same temperature to within one part in $10^5$. This is a contradiction, since parts of the universe that never had causal contact during their history cannot coincide by random.
+%\end{proof}
+
+% --- Proof 2: -----------------------------------------------------------------
+\begin{proof}
+	Under the assumption $\dot{a} > 0$ we can transform the time coordinate in the FLRW metric (\ref{eq:FLRW-line-element-in-polar-coordinates}) to the conformal time coordinate $\eta = \frac{c}{R_0} \! \int_{0}^{t} \! \frac{\DD t}{a(t)}$, i.e., $c \D t = R_0 \, a \D \eta$, such that the FLRW metric (\ref{eq:FLRW-line-element-in-polar-coordinates}) reads \cite[45-46]{de-Vries-1994}, \cite[242-243]{de-Vries-1995}
+	\begin{equation}
+		\DD s^2
+		= R_0^2 \, a^2 (\eta) \ \big(\DD \tau^2 - \DD \chi^2 - f_k^2(\chi) \D \theta^2 - f_k^2(\chi) \sin^2 \theta \D \varphi^2 \big)
+		.
+	\end{equation}
+	(Note that here the big bang $a = 0$, being point-like in the $(t, \chi)$-frame is stretched out in the $(\eta, \chi)$ coordinates.)
+	In this metric null geodesics moving radially ($\DD \theta = \DD \varphi = 0$) from an arbitrary point in the space-time are simply determined by $\DD s^2 = R_0^2 \, a^2 \, (\DD \eta^2 - \DD \chi^2) = 0$, i.e., they are straight lines $\DD \chi = \pm \D \eta$ in this coordinate frame \cite[172]{Sexl-Urbantke-1987}, as depicted in Figure \ref{fig:horizon-problem}:
+	% --- Figure: --------------------------------------------------------------
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[scale=1]{horizon-problem}
+		\vspace*{-1ex}
+		\caption[The horizon problem]{\label{fig:horizon-problem}
+			Conformal diagram\index{conformal diagram} depicting causal dependencies in the early universe.
+			Here $p$ denotes us as observers detecting light signals from two antipodal points $q$ and $r$ on the celestial sphere of the CMB, representing events at the time of decoupling $\eta_{\mathrm{CMB}}$, referring to the time $t=10^{13}$\,s $=$ 0.37\,Myr.
+%			Also shown is the spatial slice $\eta = \eta_{\mathrm{ew}}$ at the time of electroweak symmetry breaking at $t=10^{-12}$\,s.
+%%			If $\Sigma$ denotes the space at the time of decoupling, $u$ and $v$ then had completely disjoint pasts are thus causally independent; especially they could not have equalized by thermalization.
+			%Graphics from \cite[744]{Penrose-2004}
+		}
+	\end{figure}
+	% --- Figure ---------------------------------------------------------------
+	If at spacetime point $p$ the two events $q$ and $r$ antipodal on the sphere of last scattering, i.e., at the time of decoupling, $\eta_{\mathrm{CMB}}$.
+	We now have to consider whether this time is long enough such that the past light cones of $q$ and $r$ overlap.
+	To do this it is convenient to write the conformal time in terms of $a$ and $H$, using the relation $\dot{a} = aH$ given (\ref{eq:Hubble-function}), to apply the substitution  $\DD t = \DD a/aH$ to the integral
+	\begin{equation}
+		\eta
+		= c \int_0^t \frac{\DD t}{a}
+		= c \int_0^a \frac{\DD a}{a^2 H}
+		.
+	\end{equation}
+	If now the universe only consists of radiation and matter, the scale function reads
+	$a(t) = (t/t_0)^x$ for $x = \frac{1}{2}$ and $\frac{2}{3}$,
+	i.e., $\dot{a} = x t^{x-1} t_0^{-x}$, as well as $t = a^{1/x} t_0$. Inserting the latter equation into the former one gives
+	$ %\begin{equation}
+		\dot{a}
+		%= x a^{(x-1)/x} t_0^{x-1} t_0^{-x}
+		= x a^{1 - 1/x} / t_0
+		.
+%		\label{eq:scale-factor-derivative-in-different-eras}
+	$ %\end{equation}	
+	The equations in (\ref{eq:scale-factor-in-different-eras}) then imply
+	\begin{equation}
+		\begin{array}{lccc}
+		\mbox{\textbf{Era}} & \fett{x} & \fett{\dot{a} = aH} & \fett{a^2H}
+		%\multicolumn{1}{c}{\fett{aH}}
+		\\ \hline \\ [-2.0ex]
+		% --- irrelevant for the proof!! v-------------------------------------
+		\mbox{free-scalar-field dominated} & \frac{1}{3} & \frac{1}{3 t_0 a^2} & \frac{1}{3 t_0 a}
+		\\ [1.ex]
+		% --- irrelevant for the proof!! ^--------------------------------------
+		\mbox{radiation-dominated} & \frac{1}{2} & \frac{1}{2 t_0 a} & \frac{1}{2 t_0}
+		\\ [1.ex]
+		\mbox{matter-dominated} & \frac{2}{3} & \frac{2}{3t_0 a^{1/2}} & \frac{2a^{1/2}}{3 t_0}
+		\end{array}
+		\label{eq:comoving-Hubble-radius-in-different-eras}
+	\end{equation}
+	Since radiation dominates before the epoch of radiation-matter equality, and matter thereafter, cf. (\ref{eq:epochs-of-equality}), the conformal time 
+	%$\eta(a) = c \int_0^a \frac{\DD a}{a^2H}$ %in a universe consisting only of radiation and matter 
+	is given by
+	\begin{equation}
+		\eta(a)
+		= 2 t_0 c \int_0^a \D a
+		\qquad \mbox{for $a \leqq a_{\mathrm{r,m}}$,}
+	\end{equation}
+	especially $
+		\eta(a_{\mathrm{r,m}}) 
+		= 2 t_0 c a_{\mathrm{r,m}}
+	$,
+	and
+	\begin{align}
+		\eta(a)
+		& = 2 t_0 c \int_0^{a_{\mathrm{r,m}}} \D a
+		+ \frac{3 t_0 c}{2} \int_{a_{\mathrm{r,m}}}^a a^{-1/2} \D a
+		\qquad \mbox{for $a > a_{\mathrm{r,m}}$,}
+		\nonumber \\
+		& = 2 t_0 c a_{\mathrm{r,m}}
+		+ {3 t_0 c } \, \big(a^{1/2} - a_{\mathrm{r,m}}^{1/2} \big)
+		\qquad \mbox{for $a > a_{\mathrm{r,m}}$,}
+	\end{align}
+	According to the current observational data with $t_0$ as in (\ref{eq:age-of-the-universe}) we have 
+	%$\eta(a_{\mathrm{r,m}}) \approx 2.6$~Mpc
+	%and
+	$\eta_{\mathrm{CMB}} = \eta(a_{\mathrm{sl}}) \approx 180$~Mpc.
+	Our conformal time at present is $\eta_0 \approx 9590\, h^{-1} \approx 14\,240$ Mpc \cite[160]{Dodelson-Schmidt-2025}.
+	Since in general the conformal time $\eta$ for a spacetime point equals exactly the spacelike radius $\chi$ of the its lightcone at the time of the Big Bang, due to the symmetry of the coordinates, the spacelike distance $\chi_{q,r}$ between $q$ and $r$ is $\chi_{q,r} = 2 \, (\eta_0 - \eta_{\mathrm{CMB}}) \approx 28$ Gpc, i.e., $\chi_{q,r} = 1.97 \, \eta_0$. \cite[188]{Ryden-2017}
+	Thus the complete pasts of $q$ and $r$ are disjoint, i.e., their temperature cannot be equalized by thermalization.
+%	
+%	, $q$ and $r$ had completely disjoint pasts and thus are causally independent; especially they could not have equalized by thermalization.
+%		
+%	If the universe consisted only of radiation and matter, we had $a(t) = (t/t_0)^{1/2}$, and thus 
+%	$\dot{a} = \frac{1}{2} (t_0 t)^{-1/2} > 0$ 
+%	and $\ddot{a} = - \frac{1}{4} t_0^{-1/2} t^{-3/2} < 0$
+%	for $t < t_{\mathrm{r,m}}$, and $a(t) = (t/t_0)^{2/3}$, i.e., 
+%	$\dot{a} = \frac{2}{3} t_0^{-2/3} t^{-1/3} > 0$ 
+%	and $\ddot{a} = - \frac{2}{9} t_0^{-2/3} t^{-5/2} < 0$
+%	for $t > t_{\mathrm{r,m}}$, where the age of the universe is given by (\ref{eq:age-of-the-universe})
+%	and 
+%	the time $t_{\mathrm{r,m}}$ of radiation-matter equality (\ref{eq:time-of-radiation-matter-equality}).
+%	
+%	$\tau = c t_0^{1/2} \! \int^t \! t^{-1/2} \D t = 2 c (t_0 t)^{1/2}$ for $t < t_{\mathrm{r,m}}$, 
+%
+%%
+%	Generell:
+%	$\tau = c t_0^{x} \! \int^t \! t^{-x} \DD t = \frac{1}{1 - x} c t_0^{x} t^{1-x}$.
+%	$ x = 1/3$:
+%	$\tau = c t_0^{1/3} \! \int^t \! t^{-1/3} \DD t = \frac{3}{2} c t_0^{1/3} t^{2/3}$.
+%	$a = (t/t_0)^x$,
+%	$\dot{a} = x t_0^x t^{x-1}$,
+%	$\ddot{a} = x \, (x-1) \, t_0^x t^{x-2}$.
+%	$a = A_0 \E^{A t}$,
+%	$\dot{a} = A a > 0$,
+%	$\ddot{a} = A^2 a > 0$.
+\end{proof}
+% --- Proof 2 ------------------------------------------------------------------
+
+
+%\begin{bem}
+%	The reason for the horizon problem is due to the fact that the speed of expansion $\dot{R}$ of the universe is faster than the speed of light \cite[173]{Sexl-Urbantke-1987}:
+%	\begin{equation}
+%		\dot{R}
+%		= R_0 \, \dot{a}
+%		= R_0 \, a H
+%		> c
+%		.
+%	\end{equation}
+%	One idea is to assume that in the early phase of the universe there was a mechanism contributing an energy density which temporarily dominated the energy density of the radiation. For instance, if we assume that there existed a free scalar field with equation-of-state parameter $w = 1$, according to (\ref{eq:epochs-of-equality}) at the time of about $t_{\mathrm{f,r}} = 10^{-34}$~s, or $a_{\mathrm{f,r}} = 6 \times 10^{-18}$, we have
+%	\begin{equation}
+%		\eta(a_{\mathrm{f,r}})
+%		= 3 t_0 c \int_0^{a_{\mathrm{f,r}}} a \D a
+%		= \frac{3}{2} \, t_0 c \, a_{\mathrm{f,r}}^2
+%		= 2.5 \times 10^{-31} \mbox{ Mpc}
+%		= 7.7 \mbox{ nm}
+%		.
+%	\end{equation}
+%	Analogous to the discussion before (\ref{eq:comoving-Hubble-radius-in-different-eras}) above we can complement the table:
+%	\begin{equation}
+%		\begin{array}{lccc}
+%		\mbox{\textbf{Era}} & \fett{x} & \fett{\dot{a} = aH} & \fett{a^2H}
+%		%\multicolumn{1}{c}{\fett{aH}}
+%		\\ \hline \\ [-2.0ex]
+%		\mbox{free-scalar-field dominated} & \frac{1}{3} & \frac{1}{3 t_0 a^2} & \frac{1}{3 t_0 a}
+%%		\\ [1.ex]
+%%		\mbox{radiation-dominated} & \frac{1}{2} & \frac{1}{2 t_0 a} & \frac{1}{2 t_0}
+%%		\\ [1.ex]
+%%		\mbox{matter-dominated} & \frac{2}{3} & \frac{2}{3t_0 a^{1/2}} & \frac{2a^{1/2}}{3 t_0}
+%		\end{array}
+%		\label{eq:comoving-Hubble-radius-in-different-eras-x=1/3}
+%	\end{equation}
+%	Therefore 
+%	$\eta = c t_0^{1/3} \! \int_0^t \! t^{-1/3} \DD t = \frac{3}{2} c t_0^{1/3} t^{2/3}$ for $t < t_{\mathrm{f,r}}$.
+%
+%%	$a = A_0 \E^{A t}$,
+%%	$\dot{a} = A a > 0$,
+%%	$\ddot{a} = A^2 a > 0$.
+%	(???)
+%\end{bem}
+
+%\begin{bem}
+	How could the horizon problem be solved?
+	Since in essence it is a logical contradiction of its four assumptions, listed from  (a) to (d) in Theorem \ref{theo:horizon-problem}, at least one of them must be abandoned.
+	The idea of cosmic inflation is to drop (b) and (c) and to assert a scalar field, the inflaton\index{inflaton}. Although this is the most popular resolution of the horizon problem, there are notable alternative explanations and scenarios.
+	For instance, Penrose \cite{Penrose-2004} questions condition (d) that the isotropy of the CMB, and thus of the early universe, requires thermalization, and proposes instead his “Weyl curvature hypothesis”. “Ekpyrotic models”\index{ekpyrosis}, on the other hand, drop the assumptions (a) of validness of the FLRW metric near the Big Bang (applying string theory, for instance), and (b) of $\dot{a} > 0$ and conjecture a phase of a shrinking universe prior to the Big Bang, called “ekpyrosis”
+	\cites{Ijjas-Steinhardt-2016,Lehners-2010}.
+%\end{bem}
+
+
+Cosmic inflation\index{inflation} is the hypothesis that there was a period early in the history of the universe, when the expansion was accelerating exponentially outward.
+% --- Figure: --------------------------------------------------------------
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=1]{horizon-problem_resolution-by-inflation}
+	\vspace*{-1ex}
+	\caption[The horizon problem]{\label{fig:horizon-problem_resolution-by-inflation}
+		Conformal diagram\index{conformal diagram} of the resolution of the horizon problem by inflation.
+		The Big Bang here is pushed back so that the pasts of $q$ and $r$ now overlap.
+	}
+\end{figure}
+% --- Figure ---------------------------------------------------------------
+Its effect is that the very early universe expanded exponentially fast for a certain period, thereby pushing the Big Bang back from the time of recombination such that all point of the sphere of last scattering have overlaps in their pasts.
+
+Suppose the inflation began at time $t_i > 0$ and stopped at time $t_f$. Before and after inflation we assume radiation-dominated expansion:
+\begin{equation}
+	a(t)
+	= \left\{ \begin{array}{ll}
+		a_i \, (t/t_i)^{1/2} & \mbox{if $t \leqq t_i$,} \\
+		a_i \, \E^{H_{\mathrm{inf}} \, (t - t_i)} & \mbox{if $t_i < t < t_f$,} \\
+		a_i \, \E^{H_{\mathrm{inf}} \, (t_f - t_i)} (t/t_f)^{1/2} & \mbox{if $t_f \leqq t$,}
+	\end{array} \right.
+\end{equation}
+with a positive constant $a_i$ and a constant Hubble rate $H_i$. Note with (\ref{eq:de-Sitter-universes-Lambda>0}) the phase of inflation is a flat de Sitter universe ($k=0$) with a positive cosmological constant $\Lambda_{\mathrm{inf}} = 3 \, H_{\mathrm{inf}}^2 / c^2$.
+The initial time $t_i$ of inflation usually is set to be $t_i = 10^{-36}$\,s ($T_i = 10^{28}$K), $t_f = 65\,t_i \approx 10^{-34}$s ($T_f = 10^{26}$K), and $H_{\mathrm{inf}} = 10^{36}$\,s$^{36}$.
+%\cite[193-194]{Ryden-2017}
+By the exponential growth distances between points doubled every $10^{-36}$ seconds; the expansion lasted at least $10^{-34}$ seconds, but its full duration is not certain. All of the mass-energy in all of the galaxies currently visible started in a sphere with a radius around $4 \times 10^{-29}$~m then grew to a sphere with a radius around 0.9~m by the end of inflation. \cite[§7.2]{Dodelson-Schmidt-2025}, \cite[§10.4]{Ryden-2017}
+In this way, inflation resolves the horizon problem, as depicted in Figure \ref{fig:horizon-problem_resolution-by-inflation}, and by the way other important problems such as the flatness problem and the monopole problem.
+
+%% ---Table: --------------------------------------------------------------------
+%\begin{table}[ht]
+%	\begin{tabular}{l}
+%		test
+%	\end{tabular}
+%\end{table}
+%% ---Table ---------------------------------------------------------------------
+
+What physical mechanism could have triggered inflation at the time $t_i$? Based on a hypothesis of \textcite{Guth-1981} and elaborations of \textcite{Linde-1982} and \textcite{Albrecht-Steinhard-1982}, a scalar field $\phi$, now usually called \emph{inflaton}\index{inflaton}, with an associated potential $V(\phi)$ could drive inflation 
+during an epoch when it is changing only very slowly with respect to time, $\dot{\phi} \approx 0$, or $\dot{\phi}^2 \ll \hbar c^3 V(\phi)$. According to (\ref{eq:scalar-field-equation-of-state-parameter}) it then has an equation-of-state parameter $w=-1$. Thus an inflaton field in this phase acts like a cosmological constant
+\begin{equation}
+	\Lambda_\phi = \kappa c^2 \varrho_\phi = \kappa V(\phi)
+	.
+\end{equation}
+If moreover $k/(R_0 a^2) \ll \kappa c^2 \varrho_\phi$, it drives exponential inflation with a Hubble parameter
+\begin{equation}
+	H_{\mathrm{inf}}
+	= \left( \frac{c^4 \kappa \varrho_\phi}{3} - \frac{c^2 k}{R_0 a^2} \right)^{1/2}
+	%= \left( \frac{c^2 \kappa V(\phi)}{3} - \frac{c^2 k}{R_0 a^2} \right)^{1/2}
+	\approx \left( \frac{8 \pi G \, V(\phi)}{3 c^2} - \frac{c^2 k}{R_0 a^2} \right)^{1/2}
+	\label{eq:inflation-Hubble-parameter}
+\end{equation}
+due to (\ref{eq:FLRW-dynamics-2-with-H}) and $\kappa = 8 \pi G/c^4$.
+To determine the condition $\dot{\phi}^2 \ll \hbar c^3 V(\phi)$ in the early universe, we start with the fluid equation (\ref{eq:FLRW-fluid-equation}),
+$ %\begin{equation}
+	c \dot{\varrho}_\phi + 3 H \, (c \varrho_\phi + p_\phi) = 0,
+$ %\end{equation}
+or
+\begin{equation}
+	\ddot{\phi} + 3 H \, \dot{\phi} = - \hbar c^3 \, \frac{\DD V}{\DD \phi}.
+\end{equation}
+Since the maximum value of $\dot{\phi}$ is reached when $\ddot{\phi} = 0$, we have
+$\dot{\phi} = - \frac{\hbar c^3}{3 H} \frac{\DD V}{\DD \phi}$, and thus $\dot{\phi}^2 \ll \hbar c^3 V$ implies
+\begin{equation}
+	\left( \frac{\DD V}{\DD \phi} \right)^2
+	\ll
+	\frac{9 H^2 V}{\hbar c^3} 
+	= \frac{24 \pi G \, V^2}{\hbar c^5}
+	= \frac{V^2}{E_{\mathrm{P}}^2}
+	\label{eq:inflation-scalar-field-condition}
+\end{equation}
+where $E_{\mathrm{P}} = (\hbar c^5 / G) = 1.96 \times 10^9$\,J is the Planck energy\index{Planck energy}.
+A potential which can give rise to a phase of inflation is the one of the types proposed by \textcite{Albrecht-Steinhard-1982}, depicted in Figure \ref{fig:scalar-field-potential}.
+% ---Figure: --------------------------------------------------------------------
+\begin{figure}[ht]
+	\centering
+	\includegraphics{scalar-field-potential}
+	\caption{\label{fig:scalar-field-potential}
+		A potential of the type proposed by \textcite{Albrecht-Steinhard-1982} underlying an inflationary epoch, starting at time $t_i$ with $\phi = 0$ and $V(0) =V_0$ and with a true vacuum at $\phi = \phi_0$.
+	}
+\end{figure}
+% ---Figure ---------------------------------------------------------------------
+Here the inflaton starts at $\phi \approx 0$ on the plateau $V \approx V_0$ as long as (\ref{eq:inflation-scalar-field-condition}) holds. It slowly “rolls” down during the inflationary epoch and finally reaches the true vacuum state $V=0$ at $\phi_0$.
+Formore etails see \cite[§10.5]{Ryden-2017}
+
+
+\begin{bem}
+	\emph{(Weyl curvature hypothesis)}\index{Weyl curvature hypothesis}
+	Roger Penrose\index{Penrose, Roger (*1931)} \cite{Penrose-1979}, \cite[755,768]{Penrose-2004} objects to the inflation scenario that thermalization causes an increase of entropy\index{entropy}, transforming a special state of the universe into a more probable one, since in this way the inflation hypothesis introduces an initial state of lower entropy prior to the phase of inflation and argues with an application of the Second Law of thermodynamics. Assuming a Big Bang which forms an equally thermalized space, without resorting to a more special initial state, “explains” the peculiarity of the universe neither less nor more than cosmic inflation, but it does not require an additional adhoc state of lower entropy. In consequence, Penrose proposes the Weyl curvature hypothesis that “past singularities” such as the Big Bang had a vanishing Weyl tensor. This implies that the spacetime point in the state of lowest entropy of the universe was the Big Bang\index{Big Bang and entropy}. \cite[703]{Penrose-2004} With this hypothesis both the isotropy of the universe and the physical origin of the Second Law of thermodynamics would have been explained. 
+\end{bem}
